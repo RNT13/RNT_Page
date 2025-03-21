@@ -1,0 +1,43 @@
+{
+  "name": "meu-novo-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.2.0",
+    "react-slick": "^0.30.3",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "@reduxjs/toolkit": "2.5.1",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@types/react-slick": "^0.23.13",
+    "@types/styled-components": "5.1.34",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.18",
+    "framer-motion": "12.4.2",
+    "globals": "^15.15.0",
+    "polished": "4.3.1",
+    "prettier": "^3.5.1",
+    "react-redux": "9.2.0",
+    "styled-components": "6.1.15",
+    "typescript": "5.7.3",
+    "typescript-eslint": "^8.24.0",
+    "vite": "^6.1.0"
+  }
+}

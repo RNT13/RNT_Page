@@ -1,0 +1,74 @@
+import styled, { createGlobalStyle } from 'styled-components'
+import { theme } from './theme'
+
+export const GlobalStyle = createGlobalStyle`
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+
+  body {
+    overflow: hidden;
+  }
+}
+`
+
+export const GlobalContainer = styled.div``
+
+export const GlobalLayout = styled.div``
+
+export const GlobalMain = styled.div``
+
+export const GlobalMainContent = styled.main<{ $isOpen: boolean }>`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px;
+  height: 100vh;
+  margin-left: ${({ $isOpen }) => ($isOpen ? '250px' : '80px')};
+  background-color: ${theme.colors.secondaryColor};
+  transition: margin-left 0.2s linear;
+  overflow: hidden;
+`
+
+export const MainContainer = styled.main`
+  padding: 0 100px 150px;
+  height: 100vh;
+`
+
+export const TitleH2 = styled.h2`
+  display: flex;
+  justify-content: center;
+  font-size: 3em;
+  margin: 48px 0px 48px 0px;
+`
+
+export const Campo = styled.input`
+  border-radius: 8px;
+  padding: 8px;
+  background-color: ${theme.colors.branco};
+  font-weight: bold;
+  color: ${theme.colors.cinza};
+  border: 1px solid ${theme.colors.cinza};
+  width: 100%;
+  margin-top: 10px;
+`
+
+export const Botao = styled.button`
+  font-weight: bold;
+  font-size: 12px;
+  color: ${theme.colors.branco};
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  background-color: ${theme.colors.primaryColor};
+  border-radius: 8px;
+  margin-right: 8px;
+`
+
+export const BotaoSalvar = styled(Botao)`
+  background-color: ${theme.colors.verde};
+`
+
+export default GlobalStyle
