@@ -1,14 +1,14 @@
-import styled from 'styled-components'
-import { theme } from '../styles/theme'
+import styled from 'styled-components';
+import { theme } from '../styles/theme';
 
-export const LinkButtonToggle = styled.button<{ $isOpen: boolean }>`
+export const LinkButtonToggle = styled.button<{ $isOpen: boolean; $isActive: boolean }>`
   display: flex;
   align-items: center;
   text-align: left;
   padding: 5px 10px;
   margin: 0px 8px 8px 0px;
-  color: ${theme.colors.branco};
-  background-color: ${theme.colors.secondaryColor};
+  color: ${props => (props.$isActive ? theme.colors.primaryColor : theme.colors.branco)};
+  background-color: ${props => (props.$isActive ? theme.colors.azul2 : theme.colors.secondaryColor)};
   box-shadow: 5px 5px 5px ${theme.colors.preto};
   font-size: 1rem;
   border-radius: 5px;
@@ -37,12 +37,12 @@ export const LinkButtonToggle = styled.button<{ $isOpen: boolean }>`
     background-color: ${theme.colors.azul2};
   }
 `
-export const LinkButton = styled.button`
+export const LinkButton = styled.button<{ $isActive: boolean }>`
   padding: 5px 10px;
   margin: 0px 8px 8px 0px;
   max-width: 150px;
-  color: ${theme.colors.branco};
-  background-color: ${theme.colors.secondaryColor};
+  color: ${props => (props.$isActive ? theme.colors.primaryColor : theme.colors.branco)};
+  background-color: ${props => (props.$isActive ? theme.colors.azul2 : theme.colors.secondaryColor)};
   text-decoration: none;
   font-size: 1rem;
   border-radius: 5px;

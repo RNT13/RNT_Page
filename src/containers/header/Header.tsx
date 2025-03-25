@@ -1,16 +1,21 @@
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { LinkButton } from '../../components/LinkButton'
-import { HeaderContainer, Nav } from './Header.styles'
+import { HeaderContainer, Nav } from '../Header/Header.styles'
 
 const Header = () => {
   const navigate = useNavigate()
+  const location = useLocation()
 
   return (
     <HeaderContainer>
       <h1>Header</h1>
       <Nav>
-        <LinkButton onClick={() => navigate('/')}>Home</LinkButton>
-        <LinkButton onClick={() => navigate('/produtos')}>Produtos</LinkButton>
+        <LinkButton onClick={() => navigate('/')} $isActive={location.pathname === '/'}>
+          Home
+        </LinkButton>
+        <LinkButton onClick={() => navigate('/ProductsPage')} $isActive={location.pathname === '/ProductsPage'}>
+          Produtos
+        </LinkButton>
       </Nav>
       <h1>Header</h1>
     </HeaderContainer>

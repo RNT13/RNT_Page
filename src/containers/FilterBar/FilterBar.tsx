@@ -1,43 +1,53 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import CardFilter from '../../components/CardFilter'
-import { alteraTermo } from '../../redux/reducers/filtro'
+import ContactCardFilter from '../../components/ContactsFilterBar'
+import TaskCardFilter from '../../components/TasksFilterBar'
+import { changeTerm } from '../../redux/reducers/filterReducer'
 import { RootReducer } from '../../redux/store'
-import { Botao, Campo } from '../../styles/globalStyles'
-import * as enums from '../../utils/enums/tarefa'
+import { Button, InputField } from '../../styles/globalStyles'
+import * as contactEnums from '../../utils/enums/contactEnums'
+import * as taskEnums from '../../utils/enums/taskEnums'
 import * as S from './FilterBarStyles'
 
 type props = {
   mostrarFiltros: boolean
+  type: 'contacts' | 'tasks'
 }
 
-const FilterBar = ({ mostrarFiltros }: props) => {
+const FilterBar = ({ mostrarFiltros, type }: props) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const { termo } = useSelector((state: RootReducer) => state.filtro)
+  const filterState = useSelector((state: RootReducer) => state.filter)
+  const term = filterState?.term || ''
 
   return (
     <S.Aside>
       <div>
         {mostrarFiltros ? (
           <>
-            <Campo
-              type="text"
-              placeholder="Buscar"
-              value={termo}
-              onChange={evento => dispatch(alteraTermo(evento.target.value))}
-            />
+            <InputField type="text" placeholder="Search" value={term} onChange={evento => dispatch(changeTerm(evento.target.value))} />
             <S.Filtros>
-              <CardFilter valor={enums.status.PENDENTE} criterio="status" legenda="pendentes" />
-              <CardFilter valor={enums.status.CONCLUIDA} criterio="status" legenda="concluidas" />
-              <CardFilter valor={enums.prioridade.URGENTE} criterio="status" legenda="urgentes" />
-              <CardFilter valor={enums.prioridade.IMPORTANTE} criterio="prioridade" legenda="importante" />
-              <CardFilter valor={enums.prioridade.NORMAL} criterio="prioridade" legenda="normal" />
-              <CardFilter criterio="todas" legenda="todas" />
+              {type === 'tasks' ? (
+                <>
+                  <TaskCardFilter taskValue={taskEnums.status.PENDING} criterion="status" caption="Pending" />
+                  <TaskCardFilter taskValue={taskEnums.status.COMPLETED} criterion="status" caption="Completed" />
+                  <TaskCardFilter taskValue={taskEnums.priority.URGENT} criterion="priority" caption="Urgent" />
+                  <TaskCardFilter taskValue={taskEnums.priority.IMPORTANT} criterion="priority" caption="Important" />
+                  <TaskCardFilter taskValue={taskEnums.priority.NORMAL} criterion="priority" caption="Normal" />
+                  <TaskCardFilter criterion="all" caption="all" />
+                </>
+              ) : (
+                <>
+                  <ContactCardFilter value={contactEnums.status.FRIEND} criterion="status" caption="Friend" />
+                  <ContactCardFilter value={contactEnums.status.KNOWN} criterion="status" caption="Known" />
+                  <ContactCardFilter value={contactEnums.status.UNKNOWN} criterion="status" caption="Unknown" />
+                  <ContactCardFilter criterion="all" caption="all" />
+                </>
+              )}
             </S.Filtros>
           </>
         ) : (
-          <Botao onClick={() => navigate('/Tarefas')}>Voltar a lista de tarefas</Botao>
+          <Button onClick={() => navigate(-1)}>Return</Button>
         )}
       </div>
     </S.Aside>

@@ -1,6 +1,6 @@
 import { TitleH2 } from '../../styles/globalStyles'
 
-const Calendario = () => {
+const CalendarPage = () => {
   return (
     <div>
       <TitleH2>Calendario</TitleH2>
@@ -8,4 +8,4 @@ const Calendario = () => {
   )
 }
 
-export default Calendario
+export default CalendarPage

@@ -10,11 +10,20 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     overflow: hidden;
+    font-family: 'Roboto', sans-serif;
   }
 }
 `
 
-export const GlobalContainer = styled.div``
+export const GlobalContainer = styled.div`
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
 
 export const GlobalLayout = styled.div``
 
@@ -44,7 +53,7 @@ export const TitleH2 = styled.h2`
   margin: 48px 0px 48px 0px;
 `
 
-export const Campo = styled.input`
+export const InputField = styled.input`
   border-radius: 8px;
   padding: 8px;
   background-color: ${theme.colors.branco};
@@ -55,7 +64,7 @@ export const Campo = styled.input`
   margin-top: 10px;
 `
 
-export const Botao = styled.button`
+export const Button = styled.button`
   font-weight: bold;
   font-size: 12px;
   color: ${theme.colors.branco};
@@ -65,10 +74,76 @@ export const Botao = styled.button`
   background-color: ${theme.colors.primaryColor};
   border-radius: 8px;
   margin-right: 8px;
+  margin-top: 8px;
 `
 
-export const BotaoSalvar = styled(Botao)`
+export const SaveButton = styled(Button)`
   background-color: ${theme.colors.verde};
+`
+
+export const Card = styled.div`
+  background-color: ${theme.colors.branco};
+  box-shadow: 0px 4px 4px ${theme.colors.preto};
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 32px;
+`
+
+export const FilterCard = styled.div<{ $ativo: boolean }>`
+  padding: 8px;
+  border-radius: 8px;
+  border: 2px solid ${props => (props.$ativo ? theme.colors.azul : theme.colors.cinza2)};
+  background-color: ${props => (props.$ativo ? theme.colors.branco : theme.colors.branco)};
+  color: ${props => (props.$ativo ? theme.colors.azul : theme.colors.cinza)};
+  background-color: ${props => (props.$ativo ? 'activeColor' : 'inactiveColor')};
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+export const Tag = styled.span<{ $status?: string; $priority?: string }>`
+  padding: 4px 8px;
+  color: ${theme.colors.branco};
+  font-weight: bold;
+  font-size: 10px;
+  background-color: ${props => {
+    if (props.$status) {
+      switch (props.$status) {
+        case 'Friend':
+          return theme.colors.verde
+        case 'Known':
+          return theme.colors.amarelo2
+        case 'Unknown':
+          return theme.colors.vermelho
+        case 'Completed':
+          return theme.colors.verde
+        case 'Pending':
+          return theme.colors.amarelo2
+        default:
+          return theme.colors.preto
+      }
+    }
+    if (props.$priority) {
+      return props.$priority === 'Urgent' ? theme.colors.vermelho : theme.colors.azul
+    }
+    return theme.colors.preto
+  }};
+  border-radius: 8px;
+  margin-right: 16px;
+  display: inline-block;
+  margin-bottom: 16px;
+`
+
+export const Counter = styled.span`
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: ${theme.colors.preto};
+`
+
+export const Label = styled.span`
+  font-size: 0.8rem;
+  color: ${theme.colors.preto};
 `
 
 export default GlobalStyle

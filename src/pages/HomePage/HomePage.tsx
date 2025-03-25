@@ -1,7 +1,7 @@
 import { TitleH2 } from '../../styles/globalStyles'
-import HomeContainer from './Home.styles'
+import HomeContainer from './HomePage.styles'
 
-const Home = () => {
+const HomePage = () => {
   return (
     <HomeContainer>
       <TitleH2>Home</TitleH2>
@@ -9,4 +9,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default HomePage

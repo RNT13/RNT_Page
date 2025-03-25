@@ -1,20 +1,20 @@
 import FilterBar from '../../containers/FilterBar/FilterBar'
-import TaskForm from '../../containers/Form/Form'
+import NewTaskForm from '../../containers/NewTaskForm/NewTaskForm'
 import { TitleH2 } from '../../styles/globalStyles'
-import { NewTaskContainer, NewTaskContent, NewTaskMain, NewTaskSidebar } from './NewTask.styles'
+import { NewTaskContainer, NewTaskContent, NewTaskMain, NewTaskSidebar } from './NewTaskPage.styles'
 
-const NewTask = () => (
+const NewTaskPage = () => (
   <NewTaskContainer>
     <NewTaskSidebar>
-      <FilterBar mostrarFiltros={false} />
+      <FilterBar mostrarFiltros={false} type={'tasks'} />
     </NewTaskSidebar>
     <NewTaskMain>
       <TitleH2>NewTask</TitleH2>
       <NewTaskContent>
-        <TaskForm />
+        <NewTaskForm />
       </NewTaskContent>
     </NewTaskMain>
   </NewTaskContainer>
 )
 
-export default NewTask
+export default NewTaskPage

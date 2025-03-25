@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { theme } from '../styles/theme'
 
-const Circulo = styled(Link)`
+const Circle = styled(Link)`
   display: block;
   width: 64px;
   height: 64px;
@@ -19,8 +19,10 @@ const Circulo = styled(Link)`
   box-shadow: 8px 8px 5px ${theme.colors.preto};
 `
 
-const BotaoAdicionar = () => {
-  return <Circulo to="/NewTask">+</Circulo>
+export const AddButtonTask = () => {
+  return <Circle to="/NewTaskPage">+</Circle>
 }
 
-export default BotaoAdicionar
+export const AddButtonContacts = () => {
+  return <Circle to="/NewContactsPage">+</Circle>
+}

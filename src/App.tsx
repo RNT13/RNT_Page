@@ -2,17 +2,17 @@ import { useState } from 'react'
 import { Provider } from 'react-redux'
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
 import AsideBar from './containers/AsideBar/AsideBar'
-import Header from './containers/header/Header'
-import Calendario from './pages/Calendario/Calendario'
-import Contatos from './pages/Contatos/Contatos'
-import Home from './pages/Home/Home'
-import NewTask from './pages/NewTask/NewTask'
-import Produtos from './pages/Produtos/Produtos'
-import Tarefas from './pages/Tarefas/Tarefas'
+import Header from './containers/Header/Header'
+import CalendarPage from './pages/CalendarPage/CalendarPage'
+import ContactsPage from './pages/ContactsPage/ContactsPage'
+import Home from './pages/HomePage/HomePage'
+import NewContactsPage from './pages/NewContactPage/NewContactPage'
+import NewTaskPage from './pages/NewTaskPage/NewTaskPage'
+import ProductsPage from './pages/productsPage/productsPage'
+import TasksPage from './pages/TasksPage/TasksPage'
 import store from './redux/store'
 import { GlobalMain, GlobalMainContent, GlobalStyle } from './styles/globalStyles'
 
-// Layout base que sempre renderiza o Header e AsideBar
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(false)
   const toggleSidebar = () => setIsOpen(prev => !prev)
@@ -33,18 +33,18 @@ const Layout = () => {
   )
 }
 
-// Definindo as rotas com o layout fixo
 const rotas = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
     children: [
       { path: '/', element: <Home /> },
-      { path: '/Tarefas', element: <Tarefas /> },
-      { path: '/Produtos', element: <Produtos /> },
-      { path: '/Contatos', element: <Contatos /> },
-      { path: '/Calendario', element: <Calendario /> },
-      { path: '/NewTask', element: <NewTask /> }
+      { path: '/TasksPage', element: <TasksPage /> },
+      { path: '/NewTaskPage', element: <NewTaskPage /> },
+      { path: '/ContactsPage', element: <ContactsPage /> },
+      { path: '/NewContactsPage', element: <NewContactsPage /> },
+      { path: '/ProductsPage', element: <ProductsPage /> },
+      { path: '/CalendarPage', element: <CalendarPage /> }
     ]
   }
 ])

@@ -1,14 +1,14 @@
-import Card from '../../components/Cards'
 import Carousel from '../../components/Carousel'
+import Card from '../../components/ProductsCard'
 import { TitleH2 } from '../../styles/globalStyles'
-import { ProdutosCardContainer, ProdutosContainer } from './Produtos.styles'
+import { ProductsCardContainer, ProductsContainer } from './productsPage.styles'
 
-const Produtos = () => {
+const ProductsPage = () => {
   return (
-    <ProdutosContainer>
+    <ProductsContainer>
       <Carousel />
       <TitleH2>Produtos</TitleH2>
-      <ProdutosCardContainer>
+      <ProductsCardContainer>
         <Card
           image="/images/canecas (1).png"
           name="Caneca Personalizada"
@@ -74,9 +74,9 @@ const Produtos = () => {
           name="Caneca Personalizada"
           description="Uma linda caneca personalizada para o seu café."
         />
-      </ProdutosCardContainer>
-    </ProdutosContainer>
+      </ProductsCardContainer>
+    </ProductsContainer>
   )
 }
 
-export default Produtos
+export default ProductsPage

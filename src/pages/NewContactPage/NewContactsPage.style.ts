@@ -1,16 +1,19 @@
 import styled from 'styled-components'
 
-export const TarefasContainer = styled.div`
+export const NewContactsContainer = styled.div`
   display: flex;
-  height: 100vh;
 `
 
-export const TarefasSidebar = styled.div`
+export const NewContactsSideBar = styled.div`
   width: 200px;
   height: 100%;
+
+  button {
+    margin-top: 18px;
+  }
 `
 
-export const TarefasMain = styled.div`
+export const NewContactsMain = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -20,9 +23,8 @@ export const TarefasMain = styled.div`
   }
 `
 
-export const TarefasContent = styled.div`
+export const NewContactsContent = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
 `

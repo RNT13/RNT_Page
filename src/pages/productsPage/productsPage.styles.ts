@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
-export const ProdutosContainer = styled.div`
+export const ProductsContainer = styled.div`
   height: 100vh;
   scroll-padding-top: 70px;
   overflow-y: scroll;
 `
 
-export const ProdutosCardContainer = styled.div`
+export const ProductsCardContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 32px;
