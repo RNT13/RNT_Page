@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { changeFilter } from '../redux/reducers/filterReducer'
 import { RootReducer } from '../redux/store'
-import { Counter, FilterCard, Label } from '../styles/globalStyles'
+import { Counter, FilterCard } from '../styles/globalStyles'
 import * as taskEnums from '../utils/enums/taskEnums'
 
 export type Props = {
@@ -47,7 +47,7 @@ const TaskCardFilter = ({ caption, criterion, taskValue }: Props) => {
   return (
     <FilterCard $ativo={active} onClick={filtrar}>
       <Counter>{contador}</Counter>
-      <Label>{caption}</Label>
+      <label>{caption}</label>
     </FilterCard>
   )
 }

@@ -10,10 +10,10 @@ const Header = () => {
     <HeaderContainer>
       <h1>Header</h1>
       <Nav>
-        <LinkButton onClick={() => navigate('/')} $isActive={location.pathname === '/'}>
+        <LinkButton onClick={() => navigate('/')} $isActive={location.pathname === '/'} title="Home">
           Home
         </LinkButton>
-        <LinkButton onClick={() => navigate('/ProductsPage')} $isActive={location.pathname === '/ProductsPage'}>
+        <LinkButton onClick={() => navigate('/ProductsPage')} $isActive={location.pathname === '/ProductsPage'} title="Produtos">
           Produtos
         </LinkButton>
       </Nav>

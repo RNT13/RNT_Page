@@ -17,18 +17,22 @@ const NewContactForm = () => {
 
   const registerContact = (e: React.FormEvent) => {
     e.preventDefault()
-    const contactToRegister = new Contacts(name, email, phone, Date.now())
-    contactToRegister.status = status
 
-    const contactPlainObject = {
-      name: contactToRegister.name,
-      email: contactToRegister.email,
-      phone: contactToRegister.phone,
-      id: contactToRegister.id,
-      status: contactToRegister.status
+    if (!name.trim() || !email.trim() || !phone.trim()) {
+      alert('Por favor, preencha todos os campos obrigatórios.')
+      return
     }
 
-    dispatch(addContact(contactPlainObject))
+    const phoneNumber = parseInt(phone, 10)
+    if (isNaN(phoneNumber)) {
+      alert('Por favor, insira um número de telefone válido.')
+      return
+    }
+
+    const contactToRegister = new Contacts(name, email, phoneNumber, Date.now())
+    contactToRegister.status = status as contactEnums.status
+
+    dispatch(addContact({ ...contactToRegister }))
     navigate('/ContactsPage')
   }
 
@@ -42,8 +46,7 @@ const NewContactForm = () => {
           <p>Status</p>
           {Object.values(contactEnums.status).map(status => (
             <Opcoe key={status}>
-              <input value={status} name="status" type="radio" id={status} defaultChecked={status === contactEnums.status.STRANGER} onChange={e => setStatus(e.target.value as contactEnums.status)} />{' '}
-              <label htmlFor={status}>{status}</label>
+              <input value={status} name="status" type="radio" id={status} defaultChecked={status === contactEnums.status.UNKNOWN} onChange={e => setStatus(e.target.value as contactEnums.status)} /> <label htmlFor={status}>{status}</label>
             </Opcoe>
           ))}
         </Opcoes>

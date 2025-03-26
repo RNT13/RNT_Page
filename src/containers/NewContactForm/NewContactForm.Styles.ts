@@ -10,7 +10,6 @@ export const Form = styled.form`
 
   textarea {
     resize: none;
-    margin: 16px 0;
   }
 `
 
@@ -18,7 +17,7 @@ export const Opcoes = styled.div`
   margin-bottom: 16px;
 
   p {
-    margin: 8px;
+    margin-bottom: 8px;
   }
 
   label {

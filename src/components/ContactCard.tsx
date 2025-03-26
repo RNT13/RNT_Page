@@ -11,22 +11,22 @@ type ContactProps = {
   contact: ContactModels
 }
 
-const Title = styled.h3`
+const ContactTitle = styled.input`
   font-size: 18px;
   font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin-left: 8px;
+  border: none;
+  background: transparent;
+  color: ${theme.colors.preto};
+  width: 100%;
 `
 
 const Description = styled.textarea`
   color: ${theme.colors.cinza};
   font-size: 14px;
   line-height: 24px;
-  font-family: 'Roboto Mono', monospace;
   display: block;
   width: 100%;
-  margin: 16px 0;
   resize: none;
   border: none;
   background-color: transparent;
@@ -36,18 +36,20 @@ const ActionBar = styled.div`
   border-top: 1px solid ${theme.colors.preto};
   padding-top: 16px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 `
 
 const InfoContainer = styled.div`
   display: flex;
   margin: 16px 16px;
   justify-content: start;
-`
 
-const Label = styled.span`
-  font-weight: bold;
-  margin-right: 8px;
+  label {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color: ${theme.colors.preto};
+  }
 `
 
 const RemoveContactButton = styled(Button)`
@@ -84,20 +86,21 @@ const ContactCard = ({ contact }: ContactProps) => {
 
   return (
     <Card>
-      <Title>
+      <div>
         <Tag $status={editedContact.status as Contactenums.status}>{editedContact.status}</Tag>
-      </Title>
+        {isEditing && <span>Editing...</span>}
+      </div>
       <InfoContainer>
-        <Label>Name:</Label>
-        <p>{editedContact.name}</p>
+        <label>Name:</label>
+        <ContactTitle name="name" value={editedContact.name} onChange={handleChange} disabled={!isEditing} />
       </InfoContainer>
       <InfoContainer>
-        <Label>Email:</Label>
-        <p>{editedContact.email}</p>
+        <label>Email:</label>
+        <ContactTitle name="email" value={editedContact.email} onChange={handleChange} disabled={!isEditing} />
       </InfoContainer>
       <InfoContainer>
-        <Label>Phone:</Label>
-        <p>{editedContact.phone}</p>
+        <label>Phone:</label>
+        <ContactTitle name="phone" value={editedContact.phone} onChange={handleChange} disabled={!isEditing} />
       </InfoContainer>
       <Description name="description" value={editedContact.description || ''} onChange={handleChange} disabled={!isEditing} placeholder="description" />
       <ActionBar>

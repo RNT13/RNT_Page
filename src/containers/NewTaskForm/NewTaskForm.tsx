@@ -16,17 +16,24 @@ const NewTaskForm = () => {
 
   const registerTask = (e: React.FormEvent) => {
     e.preventDefault()
-    const taskToTegister = new Tarefa(title, description, priority, taskEnums.status.PENDING, Date.now())
 
-    const taskPlainObject = {
-      title: taskToTegister.title,
-      description: taskToTegister.description,
-      priority: taskToTegister.priority,
-      status: taskToTegister.status,
-      id: taskToTegister.id
+    if (!title.trim() || !description.trim()) {
+      alert('Por favor, preencha todos os campos obrigatórios.')
+      return
     }
 
-    dispatch(addTask(taskPlainObject))
+    const taskToRegister = new Tarefa(title, description, priority, taskEnums.status.PENDING, Date.now())
+
+    dispatch(
+      addTask({
+        title: taskToRegister.title,
+        description: taskToRegister.description,
+        priority: taskToRegister.priority,
+        status: taskToRegister.status,
+        id: taskToRegister.id
+      })
+    )
+
     navigate('/TasksPage')
   }
 
@@ -39,19 +46,11 @@ const NewTaskForm = () => {
           <p>priority</p>
           {Object.values(taskEnums.priority).map(priority => (
             <Opcoe key={priority}>
-              <input
-                value={priority}
-                name="priority"
-                type="radio"
-                id={priority}
-                defaultChecked={priority === taskEnums.priority.NORMAL}
-                onChange={evento => setPriority(evento.target.value as taskEnums.priority)}
-              />{' '}
-              <label htmlFor={priority}>{priority}</label>
+              <input value={priority} name="priority" type="radio" id={priority} defaultChecked={priority === taskEnums.priority.NORMAL} onChange={evento => setPriority(evento.target.value as taskEnums.priority)} /> <label htmlFor={priority}>{priority}</label>
             </Opcoe>
           ))}
         </Opcoes>
-        <SaveButton type="submit">addTask</SaveButton>
+        <SaveButton type="submit">Save</SaveButton>
       </Form>
     </MainContainer>
   )

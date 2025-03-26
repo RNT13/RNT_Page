@@ -61,7 +61,7 @@ export const InputField = styled.input`
   color: ${theme.colors.cinza};
   border: 1px solid ${theme.colors.cinza};
   width: 100%;
-  margin-top: 10px;
+  margin: 12px 0px;
 `
 
 export const Button = styled.button`
@@ -86,7 +86,7 @@ export const Card = styled.div`
   box-shadow: 0px 4px 4px ${theme.colors.preto};
   border-radius: 16px;
   padding: 16px;
-  margin-bottom: 32px;
+  margin: 32px 100px;
 `
 
 export const FilterCard = styled.div<{ $ativo: boolean }>`
@@ -100,6 +100,11 @@ export const FilterCard = styled.div<{ $ativo: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  label {
+    font-size: 0.8rem;
+    color: ${theme.colors.preto};
+  }
 `
 
 export const Tag = styled.span<{ $status?: string; $priority?: string }>`
@@ -138,11 +143,6 @@ export const Tag = styled.span<{ $status?: string; $priority?: string }>`
 export const Counter = styled.span`
   font-size: 1.5rem;
   font-weight: bold;
-  color: ${theme.colors.preto};
-`
-
-export const Label = styled.span`
-  font-size: 0.8rem;
   color: ${theme.colors.preto};
 `
 

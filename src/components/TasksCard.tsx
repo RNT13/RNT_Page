@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { theme } from '../styles/theme'
-import * as enums from '../utils/enums/taskEnums'
+import * as taskEnums from '../utils/enums/taskEnums'
 
 import TaskModels from '../models/TaskModels'
 import { changeFilter } from '../redux/reducers/filterReducer'
@@ -10,20 +10,19 @@ import { changeStatus, editTask, removeTask } from '../redux/reducers/taskReduce
 import { RootReducer } from '../redux/store'
 import { Button, Card, SaveButton, Tag } from '../styles/globalStyles'
 
-const Title = styled.h3`
+const TaskTitle = styled.h3`
   font-size: 18px;
   font-weight: bold;
   margin-left: 8px;
+  color: ${theme.colors.preto};
 `
 
 const Description = styled.textarea`
   color: ${theme.colors.cinza};
   font-size: 14px;
   line-height: 24px;
-  font-family: 'Roboto Mono', monospace;
   display: block;
   width: 100%;
-  margin: 16px 0;
   resize: none;
   border: none;
   background-color: transparent;
@@ -32,6 +31,29 @@ const Description = styled.textarea`
 const ActionBar = styled.div`
   border-top: 1px solid ${theme.colors.preto};
   padding-top: 16px;
+  display: flex;
+  justify-content: flex-start;
+`
+
+const InfoContainer = styled.div`
+  margin: 16px 16px;
+
+  label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    font-size: 0.8rem;
+    color: ${theme.colors.preto};
+  }
+
+  input {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 8px;
+    border: none;
+    background: transparent;
+    color: ${theme.colors.preto};
+  }
 `
 
 const RemoveTaskButton = styled(Button)`
@@ -45,19 +67,21 @@ const TaskCard = ({ title, priority, status, description: originalDescription, i
   const [isEditing, setIsEditing] = useState(false)
   const [description, setdescription] = useState(originalDescription)
   const [taskState, setTaskState] = useState(status)
+  const [taskTitle, setTaskTitle] = useState(title)
 
   const cancelarEdicao = () => {
     setIsEditing(false)
     setdescription(originalDescription)
+    setTaskTitle(title)
   }
 
   const salvarEdicao = () => {
-    dispatch(editTask({ title, priority, status: taskState, description, id }))
+    dispatch(editTask({ title: taskTitle, priority, status: taskState, description, id }))
     setIsEditing(false)
   }
 
-  function changeStatusTarefa(evento: React.ChangeEvent<HTMLInputElement>) {
-    const novoStatus = evento.target.checked ? enums.status.COMPLETED : enums.status.PENDING
+  function changeStatusTask(evento: React.ChangeEvent<HTMLInputElement>) {
+    const novoStatus = evento.target.checked ? taskEnums.status.COMPLETED : taskEnums.status.PENDING
     setTaskState(novoStatus)
     dispatch(changeStatus({ id, finalizado: evento.target.checked }))
     dispatch(changeFilter({ criterion, value }))
@@ -69,23 +93,25 @@ const TaskCard = ({ title, priority, status, description: originalDescription, i
 
   return (
     <Card>
-      <label htmlFor={title}>
-        <input type="checkbox" id={title} checked={taskState === enums.status.COMPLETED} onChange={changeStatusTarefa} />
-        <Title>
-          {isEditing && <em>Editando: </em>}
-          {title}
-        </Title>
-      </label>
-      <Tag $priority={priority}>{priority}</Tag>
-      <Tag $priority="status" $status={taskState}>
-        {taskState}
-      </Tag>
+      <div>
+        <Tag $priority={priority}>{priority}</Tag>
+        <Tag $priority="status" $status={taskState}>
+          {taskState}
+        </Tag>
+        {isEditing && <span>Editing...</span>}
+      </div>
+      <InfoContainer>
+        <label htmlFor={title}>
+          <input type="checkbox" id={title} checked={taskState === taskEnums.status.COMPLETED} onChange={changeStatusTask} />
+          {isEditing ? <input type="text" value={taskTitle} onChange={e => setTaskTitle(e.target.value)} placeholder="Edit task title" /> : <TaskTitle>{title}</TaskTitle>}
+        </label>
+      </InfoContainer>
       <Description disabled={!isEditing} value={description} onChange={e => setdescription(e.target.value)} />
       <ActionBar>
         {isEditing ? (
           <>
-            <SaveButton onClick={salvarEdicao}>Salvar</SaveButton>
-            <RemoveTaskButton onClick={cancelarEdicao}>Cancelar</RemoveTaskButton>
+            <SaveButton onClick={salvarEdicao}>Save</SaveButton>
+            <RemoveTaskButton onClick={cancelarEdicao}>Cancel</RemoveTaskButton>
           </>
         ) : (
           <>

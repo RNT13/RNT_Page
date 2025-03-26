@@ -10,7 +10,6 @@ export const Form = styled.form`
 
   textarea {
     resize: none;
-    margin: 16px 0;
   }
 `
 
