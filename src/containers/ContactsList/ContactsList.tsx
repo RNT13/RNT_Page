@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux'
 import ContactCard from '../../components/ContactCard'
-import { MainContactContainer } from '../../containers/ContactsList/ContactssList.Styles'
 import { RootReducer } from '../../redux/store'
 import { TitleH2 } from '../../styles/globalStyles'
+import { MainContactContainer } from './ContactsListStyles'
 
 const ContactsList = () => {
   const { term, criterion, value } = useSelector((state: RootReducer) => state.filter)

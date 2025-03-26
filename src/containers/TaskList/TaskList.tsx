@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux'
 import Tasks from '../../components/TasksCard'
 import { RootReducer } from '../../redux/store'
 import { TitleH2 } from '../../styles/globalStyles'
-import { MainTaskContainer } from './TaskList.styles'
+import { MainTaskContainer } from './TaskListStyles'
 
 const TaskList = () => {
   const { itens } = useSelector((state: RootReducer) => state.tasks)

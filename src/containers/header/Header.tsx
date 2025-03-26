@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 import { LinkButton } from '../../components/LinkButton'
-import { HeaderContainer, Nav } from '../Header/Header.styles'
+import { HeaderContainer, Nav } from './HeaderStyles'
 
 const Header = () => {
   const navigate = useNavigate()

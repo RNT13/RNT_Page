@@ -5,7 +5,7 @@ import Contacts from '../../models/ContactModels'
 import { addContact } from '../../redux/reducers/contactsReducer'
 import { InputField, MainContainer, SaveButton } from '../../styles/globalStyles'
 import * as contactEnums from '../../utils/enums/contactEnums'
-import { Form, Opcoe, Opcoes } from './NewContactForm.Styles'
+import { Form, Opcoe, Opcoes } from './NewContactFormStyles'
 
 const NewContactForm = () => {
   const dispatch = useDispatch()

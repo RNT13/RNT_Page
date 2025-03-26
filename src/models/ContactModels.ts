@@ -5,7 +5,7 @@ class ContactModels {
   email: string
   phone: number
   id: number
-  status: contactEnums.status | undefined
+  status: contactEnums.status | string | undefined
   description?: string
 
   constructor(name: string, email: string, phone: number, id: number) {
