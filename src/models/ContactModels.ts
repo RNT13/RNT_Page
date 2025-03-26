@@ -1,11 +1,11 @@
-type Status = 'active' | 'inactive' | 'pending'
+import * as contactEnums from '../utils/enums/contactEnums'
 
 class ContactModels {
   name: string
   email: string
   phone: number
   id: number
-  status: Status | undefined
+  status: contactEnums.status | undefined
   description?: string
 
   constructor(name: string, email: string, phone: number, id: number) {
