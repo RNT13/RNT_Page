@@ -16,7 +16,7 @@ describe('testes para o componente Header', () => {
       </Router>
     )
 
-    expect(screen.getAllByText('Header')).toHaveLength(2)
+    expect(screen.getAllByText('Header')).toHaveLength(1)
   })
 
   test('deve mostrar 2 botões', () => {
@@ -28,6 +28,6 @@ describe('testes para o componente Header', () => {
       </Router>
     )
 
-    expect(screen.getAllByRole('button')).toHaveLength(2)
+    expect(screen.getAllByRole('button')).toHaveLength(3)
   })
 })

@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 import { LinkButton } from '../../components/LinkButton/LinkButton'
+import LoginButton from '../../components/LoginButton/LoginButton'
 import { HeaderContainer, Nav } from './HeaderStyles'
 
 const Header = () => {
@@ -17,7 +18,7 @@ const Header = () => {
           Produtos
         </LinkButton>
       </Nav>
-      <h1>Header</h1>
+      <LoginButton />
     </HeaderContainer>
   )
 }
