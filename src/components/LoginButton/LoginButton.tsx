@@ -1,18 +1,26 @@
 import React, { useState } from 'react'
 import LoginWindow from '../../components/LoginWindow/LoginWindow'
-import { ButtonContainer, LoginIcon } from './LoginButtonStyles'
+import { ButtonContainer, LoginIcon, Overlay } from '../LoginButton/LoginButtonStyles'
 
 const LoginButton: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div style={{ position: 'relative' }}>
-      <ButtonContainer onClick={() => setIsOpen(!isOpen)}>
+    <>
+      <ButtonContainer onClick={() => setIsOpen(true)}>
         <LoginIcon src="/images/cadastroIcone.png" alt="Login" />
         Login
       </ButtonContainer>
-      {isOpen && <LoginWindow />}
-    </div>
+
+      {isOpen && (
+        <>
+          <Overlay onClick={() => setIsOpen(false)} />
+          <div style={{ position: 'relative', zIndex: 20 }}>
+            <LoginWindow close={() => setIsOpen(false)} />
+          </div>
+        </>
+      )}
+    </>
   )
 }
 
