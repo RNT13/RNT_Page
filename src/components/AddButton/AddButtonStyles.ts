@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import { theme } from '../styles/theme'
+import { styled } from 'styled-components'
+import { theme } from '../../styles/theme'
 
-const Circle = styled(Link)`
+export const Circle = styled(Link)`
   display: block;
   width: 64px;
   height: 64px;
@@ -18,11 +18,3 @@ const Circle = styled(Link)`
   text-decoration: none;
   box-shadow: 8px 8px 5px ${theme.colors.preto};
 `
-
-export const AddButtonTask = () => {
-  return <Circle to="/NewTaskPage">+</Circle>
-}
-
-export const AddButtonContacts = () => {
-  return <Circle to="/NewContactsPage">+</Circle>
-}

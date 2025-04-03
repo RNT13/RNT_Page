@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import ContactCardFilter from '../../components/ContactsFilterBar'
-import TaskCardFilter from '../../components/TasksFilterBar'
+import ContactCardFilter from '../../components/ContactsFilterBar/ContactsFilterBar'
+import TaskCardFilter from '../../components/TasksFilterBar/TasksFilterBar'
 import { changeTerm } from '../../redux/reducers/filterReducer'
-import { RootReducer } from '../../redux/store'
+import { RootState } from '../../redux/store'
 import { Button, InputField } from '../../styles/globalStyles'
 import * as contactEnums from '../../utils/enums/contactEnums'
 import * as taskEnums from '../../utils/enums/taskEnums'
@@ -17,7 +17,7 @@ type props = {
 const FilterBar = ({ mostrarFiltros, type }: props) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const filterState = useSelector((state: RootReducer) => state.filter)
+  const filterState = useSelector((state: RootState) => state.filter)
   const term = filterState?.term || ''
 
   return (
@@ -25,7 +25,7 @@ const FilterBar = ({ mostrarFiltros, type }: props) => {
       <div>
         {mostrarFiltros ? (
           <>
-            <InputField type="text" placeholder="Search" value={term} onChange={evento => dispatch(changeTerm(evento.target.value))} />
+            <InputField id="search" type="text" placeholder="Search" value={term} onChange={evento => dispatch(changeTerm(evento.target.value))} />
             <S.Filtros>
               {type === 'tasks' ? (
                 <>

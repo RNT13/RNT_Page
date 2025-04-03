@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { changeFilter } from '../redux/reducers/filterReducer'
-import { RootReducer } from '../redux/store'
-import { Counter, FilterCard } from '../styles/globalStyles'
-import * as enums from '../utils/enums/contactEnums'
+import { FilterCard } from '../../components/ContactsFilterBar/ContactsFilterBarStyles'
+import { changeFilter } from '../../redux/reducers/filterReducer'
+import { RootState } from '../../redux/store'
+import { Counter, TextH3 } from '../../styles/globalStyles'
+import * as enums from '../../utils/enums/contactEnums'
 
 export type Props = {
   caption: string
@@ -12,8 +13,8 @@ export type Props = {
 
 const ContactsCardFilter = ({ caption, criterion, value }: Props) => {
   const dispatch = useDispatch()
-  const filtro = useSelector((state: RootReducer) => state.filter)
-  const contatos = useSelector((state: RootReducer) => state.contacts.itens || [])
+  const filtro = useSelector((state: RootState) => state.filter)
+  const contatos = useSelector((state: RootState) => state.contacts.itens || [])
 
   const verifyActive = () => {
     const mesmocriterion = filtro.criterion === criterion
@@ -22,7 +23,7 @@ const ContactsCardFilter = ({ caption, criterion, value }: Props) => {
     return mesmocriterion && mesmovalue
   }
 
-  const contarContatos = () => {
+  const contactCounter = () => {
     if (criterion === 'all') return contatos.length
     if (criterion === 'status') {
       return contatos.filter(item => item.status === value).length
@@ -39,12 +40,12 @@ const ContactsCardFilter = ({ caption, criterion, value }: Props) => {
   }
 
   const active = verifyActive()
-  const contador = contarContatos()
+  const contador = contactCounter()
 
   return (
     <FilterCard $ativo={active} onClick={filtrar}>
       <Counter>{contador}</Counter>
-      <label>{caption}</label>
+      <TextH3>{caption}</TextH3>
     </FilterCard>
   )
 }

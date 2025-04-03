@@ -53,6 +53,12 @@ export const TitleH2 = styled.h2`
   margin: 48px 0px 48px 0px;
 `
 
+export const TextH3 = styled.h3`
+  display: flex;
+  justify-content: center;
+  font-size: 0.8em;
+`
+
 export const InputField = styled.input`
   border-radius: 8px;
   padding: 8px;
@@ -87,24 +93,6 @@ export const Card = styled.div`
   border-radius: 16px;
   padding: 16px;
   margin: 32px 100px;
-`
-
-export const FilterCard = styled.div<{ $ativo: boolean }>`
-  padding: 8px;
-  border-radius: 8px;
-  border: 2px solid ${props => (props.$ativo ? theme.colors.azul : theme.colors.cinza2)};
-  background-color: ${props => (props.$ativo ? theme.colors.branco : theme.colors.branco)};
-  color: ${props => (props.$ativo ? theme.colors.azul : theme.colors.cinza)};
-  background-color: ${props => (props.$ativo ? 'activeColor' : 'inactiveColor')};
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  label {
-    font-size: 0.8rem;
-    color: ${theme.colors.preto};
-  }
 `
 
 export const Tag = styled.span<{ $status?: string; $priority?: string }>`

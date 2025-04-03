@@ -1,60 +1,15 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
-import { theme } from '../styles/theme'
-import * as taskEnums from '../utils/enums/taskEnums'
+import { theme } from '../../styles/theme'
+import * as taskEnums from '../../utils/enums/taskEnums'
 
-import TaskModels from '../models/TaskModels'
-import { changeFilter } from '../redux/reducers/filterReducer'
-import { changeStatus, editTask, removeTask } from '../redux/reducers/taskReducer'
-import { RootReducer } from '../redux/store'
-import { Button, Card, SaveButton, Tag } from '../styles/globalStyles'
-
-const TaskTitle = styled.h3`
-  font-size: 18px;
-  font-weight: bold;
-  margin-left: 8px;
-  color: ${theme.colors.preto};
-`
-
-const Description = styled.textarea`
-  color: ${theme.colors.cinza};
-  font-size: 14px;
-  line-height: 24px;
-  display: block;
-  width: 100%;
-  resize: none;
-  border: none;
-  background-color: transparent;
-`
-
-const ActionBar = styled.div`
-  border-top: 1px solid ${theme.colors.preto};
-  padding-top: 16px;
-  display: flex;
-  justify-content: flex-start;
-`
-
-const InfoContainer = styled.div`
-  margin: 16px 16px;
-
-  label {
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
-    font-size: 0.8rem;
-    color: ${theme.colors.preto};
-  }
-
-  input {
-    font-size: 18px;
-    font-weight: bold;
-    margin-left: 8px;
-    border: none;
-    background: transparent;
-    color: ${theme.colors.preto};
-  }
-`
+import TaskModels from '../../models/TaskModels'
+import { changeFilter } from '../../redux/reducers/filterReducer'
+import { changeStatus, editTask, removeTask } from '../../redux/reducers/taskReducer'
+import { RootState } from '../../redux/store'
+import { Button, Card, SaveButton, Tag } from '../../styles/globalStyles'
+import { ActionBar, Description, InfoContainer, TaskTitle } from './TasksCardStyles'
 
 const RemoveTaskButton = styled(Button)`
   background-color: ${theme.colors.vermelho};
@@ -62,20 +17,20 @@ const RemoveTaskButton = styled(Button)`
 
 const TaskCard = ({ title, priority, status, description: originalDescription, id }: TaskModels) => {
   const dispatch = useDispatch()
-  const filter = useSelector((state: RootReducer) => state.filter)
+  const filter = useSelector((state: RootState) => state.filter)
   const { criterion, value } = filter || { criterion: 'all', value: undefined }
   const [isEditing, setIsEditing] = useState(false)
   const [description, setdescription] = useState(originalDescription)
   const [taskState, setTaskState] = useState(status)
   const [taskTitle, setTaskTitle] = useState(title)
 
-  const cancelarEdicao = () => {
+  const cancelEdication = () => {
     setIsEditing(false)
     setdescription(originalDescription)
     setTaskTitle(title)
   }
 
-  const salvarEdicao = () => {
+  const saveEdition = () => {
     dispatch(editTask({ title: taskTitle, priority, status: taskState, description, id }))
     setIsEditing(false)
   }
@@ -106,12 +61,12 @@ const TaskCard = ({ title, priority, status, description: originalDescription, i
           {isEditing ? <input type="text" value={taskTitle} onChange={e => setTaskTitle(e.target.value)} placeholder="Edit task title" /> : <TaskTitle>{title}</TaskTitle>}
         </label>
       </InfoContainer>
-      <Description disabled={!isEditing} value={description} onChange={e => setdescription(e.target.value)} />
+      <Description id="description" disabled={!isEditing} value={description} onChange={e => setdescription(e.target.value)} />
       <ActionBar>
         {isEditing ? (
           <>
-            <SaveButton onClick={salvarEdicao}>Save</SaveButton>
-            <RemoveTaskButton onClick={cancelarEdicao}>Cancel</RemoveTaskButton>
+            <SaveButton onClick={saveEdition}>Save</SaveButton>
+            <RemoveTaskButton onClick={cancelEdication}>Cancel</RemoveTaskButton>
           </>
         ) : (
           <>

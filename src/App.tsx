@@ -10,7 +10,7 @@ import NewContactsPage from './pages/NewContactPage/NewContactPage'
 import NewTaskPage from './pages/NewTaskPage/NewTaskPage'
 import ProductsPage from './pages/productsPage/productsPage'
 import TasksPage from './pages/TasksPage/TasksPage'
-import store from './redux/store'
+import { store } from './redux/store'
 import { GlobalMain, GlobalMainContent, GlobalStyle } from './styles/globalStyles'
 
 const Layout = () => {

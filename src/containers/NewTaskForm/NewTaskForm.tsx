@@ -40,8 +40,8 @@ const NewTaskForm = () => {
   return (
     <MainContainer>
       <Form onSubmit={registerTask}>
-        <InputField value={title} onChange={({ target }) => setTitle(target.value)} type="text" placeholder="title" />
-        <InputField value={description} onChange={({ target }) => setDescription(target.value)} as="textarea" placeholder="Descrição da Tarefa" />
+        <InputField id="title" value={title} onChange={({ target }) => setTitle(target.value)} type="text" placeholder="title" />
+        <InputField id="description" value={description} onChange={({ target }) => setDescription(target.value)} as="textarea" placeholder="Descrição da Tarefa" />
         <Opcoes>
           <p>priority</p>
           {Object.values(taskEnums.priority).map(priority => (

@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { changeFilter } from '../redux/reducers/filterReducer'
-import { RootReducer } from '../redux/store'
-import { Counter, FilterCard } from '../styles/globalStyles'
-import * as taskEnums from '../utils/enums/taskEnums'
+import { changeFilter } from '../../redux/reducers/filterReducer'
+import { RootState } from '../../redux/store'
+import { Counter, TextH3 } from '../../styles/globalStyles'
+import * as taskEnums from '../../utils/enums/taskEnums'
+import { FilterCard } from './TasksFilterBarStyles'
 
 export type Props = {
   caption: string
@@ -12,8 +13,8 @@ export type Props = {
 
 const TaskCardFilter = ({ caption, criterion, taskValue }: Props) => {
   const dispatch = useDispatch()
-  const filtro = useSelector((state: RootReducer) => state.filter)
-  const tarefas = useSelector((state: RootReducer) => state.tasks.itens || [])
+  const filtro = useSelector((state: RootState) => state.filter)
+  const tarefas = useSelector((state: RootState) => state.tasks.itens || [])
 
   const verifyActive = () => {
     const samecriterion = filtro.criterion === criterion
@@ -22,7 +23,7 @@ const TaskCardFilter = ({ caption, criterion, taskValue }: Props) => {
     return samecriterion && sametaskValue
   }
 
-  const contarTarefas = () => {
+  const taskCounter = () => {
     if (criterion === 'all') return tarefas.length
     if (criterion === 'priority') {
       return tarefas.filter(item => item.priority === taskValue).length
@@ -42,12 +43,12 @@ const TaskCardFilter = ({ caption, criterion, taskValue }: Props) => {
   }
 
   const active = verifyActive()
-  const contador = contarTarefas()
+  const contador = taskCounter()
 
   return (
     <FilterCard $ativo={active} onClick={filtrar}>
       <Counter>{contador}</Counter>
-      <label>{caption}</label>
+      <TextH3>{caption}</TextH3>
     </FilterCard>
   )
 }

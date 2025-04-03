@@ -1,5 +1,7 @@
+// eslint-disable-next-line prettier/prettier
 import styled from 'styled-components';
-import { theme } from '../styles/theme';
+// eslint-disable-next-line prettier/prettier
+import { theme } from '../../styles/theme';
 
 export const LinkButtonToggle = styled.button<{ $isOpen: boolean; $isActive: boolean }>`
   display: flex;

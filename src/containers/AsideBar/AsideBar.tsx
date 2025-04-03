@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom'
-import { LinkButtonToggle } from '../../components/LinkButton'
-import { ToggleButton } from '../../components/ToggleButton'
+import { LinkButtonToggle } from '../../components/LinkButton/LinkButton'
+import { ToggleButton } from '../../components/ToggleButton/ToggleButton'
 import { AsideAppsDiv, AsideContainer, AsideSocialLinks } from './AsideBarStyles'
 
 const AsideBar = ({ isOpen, toggleSidebar }: { isOpen: boolean; toggleSidebar: () => void }) => {

@@ -1,60 +1,14 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import styled from 'styled-components'
-import ContactModels from '../models/ContactModels'
-import { editContact, removeContact } from '../redux/reducers/contactsReducer'
-import { Button, Card, SaveButton, Tag } from '../styles/globalStyles'
-import { theme } from '../styles/theme'
-import * as Contactenums from '../utils/enums/contactEnums'
+import ContactModels from '../../models/ContactModels'
+import { editContact, removeContact } from '../../redux/reducers/contactsReducer'
+import { Button, Card, SaveButton, Tag } from '../../styles/globalStyles'
+import * as Contactenums from '../../utils/enums/contactEnums'
+import { ActionBar, ContactTitle, Description, InfoContainer, RemoveContactButton } from './ContactCardStyles'
 
 type ContactProps = {
   contact: ContactModels
 }
-
-const ContactTitle = styled.input`
-  font-size: 18px;
-  font-weight: bold;
-  margin-left: 8px;
-  border: none;
-  background: transparent;
-  color: ${theme.colors.preto};
-  width: 100%;
-`
-
-const Description = styled.textarea`
-  color: ${theme.colors.cinza};
-  font-size: 14px;
-  line-height: 24px;
-  display: block;
-  width: 100%;
-  resize: none;
-  border: none;
-  background-color: transparent;
-`
-
-const ActionBar = styled.div`
-  border-top: 1px solid ${theme.colors.preto};
-  padding-top: 16px;
-  display: flex;
-  justify-content: flex-start;
-`
-
-const InfoContainer = styled.div`
-  display: flex;
-  margin: 16px 16px;
-  justify-content: start;
-
-  label {
-    display: flex;
-    align-items: center;
-    font-size: 0.8rem;
-    color: ${theme.colors.preto};
-  }
-`
-
-const RemoveContactButton = styled(Button)`
-  background-color: ${theme.colors.vermelho};
-`
 
 const ContactCard = ({ contact }: ContactProps) => {
   const dispatch = useDispatch()

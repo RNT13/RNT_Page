@@ -1,4 +1,4 @@
-import { AddButtonContacts } from '../../components/AddButton'
+import { AddButtonContacts } from '../../components/AddButton/AddButton'
 import ContactsList from '../../containers/ContactsList/ContactsList'
 import FilterBar from '../../containers/FilterBar/FilterBar'
 import { TitleH2 } from '../../styles/globalStyles'

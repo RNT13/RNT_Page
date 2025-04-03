@@ -1,48 +1,48 @@
 import { useSelector } from 'react-redux'
-import Tasks from '../../components/TasksCard'
-import { RootReducer } from '../../redux/store'
+import TaskCard from '../../components/TasksCard/TasksCard'
+import { RootState } from '../../redux/store'
 import { TitleH2 } from '../../styles/globalStyles'
 import { MainTaskContainer } from './TaskListStyles'
 
 const TaskList = () => {
-  const { itens } = useSelector((state: RootReducer) => state.tasks)
-  const { term = '', criterion, value } = useSelector((state: RootReducer) => state.filter)
+  const { itens } = useSelector((state: RootState) => state.tasks)
+  const { term = '', criterion, value } = useSelector((state: RootState) => state.filter)
 
-  const filtrarTarefas = () => {
-    let tarefasFiltradas = itens
+  const filterTasks = () => {
+    let FilteredTasks = itens
     if (term !== '') {
-      tarefasFiltradas = tarefasFiltradas.filter(item => item.title.toLocaleLowerCase().search(term.toLocaleLowerCase()) >= 0)
+      FilteredTasks = FilteredTasks.filter(item => item.title.toLocaleLowerCase().search(term.toLocaleLowerCase()) >= 0)
     }
     if (criterion === 'priority') {
-      tarefasFiltradas = tarefasFiltradas.filter(item => item.priority === value)
+      FilteredTasks = FilteredTasks.filter(item => item.priority === value)
     } else if (criterion === 'status') {
-      tarefasFiltradas = tarefasFiltradas.filter(item => item.status === value)
+      FilteredTasks = FilteredTasks.filter(item => item.status === value)
     }
-    return tarefasFiltradas
+    return FilteredTasks
   }
 
-  const exibeResultadoFiltrado = (quantidade: number) => {
-    let mensagem = ''
-    const complementacao = term !== undefined && term.length > 0 ? ` e "${term}"` : ''
+  const displayFilteredResult = (amount: number) => {
+    let message = ''
+    const complementation = term !== undefined && term.length > 0 ? ` e "${term}"` : ''
 
     if (criterion === 'all') {
-      mensagem = `${quantidade} tarefa(s) marcada(s) como: todas ${complementacao}`
+      message = `${amount} task(s) marked as: all ${complementation}`
     } else {
-      mensagem = `${quantidade} tarefa(s) marcada(s) como: "${`${criterion} = ${value}`}" ${complementacao}`
+      message = `${amount} task(s) marked as: "${`${criterion} = ${value}`}" ${complementation}`
     }
-    return mensagem
+    return message
   }
 
-  const tarefas = filtrarTarefas()
-  const mensagem = exibeResultadoFiltrado(tarefas.length)
+  const Tasks = filterTasks()
+  const message = displayFilteredResult(Tasks.length)
 
   return (
     <MainTaskContainer>
-      <TitleH2 as="p">{mensagem}</TitleH2>
+      <TitleH2 as="p">{message}</TitleH2>
       <ul>
-        {tarefas.map(t => (
+        {Tasks.map(t => (
           <li key={t.title}>
-            <Tasks id={t.id} title={t.title} priority={t.priority} status={t.status} description={t.description} />
+            <TaskCard id={t.id} title={t.title} priority={t.priority} status={t.status} description={t.description} />
           </li>
         ))}
       </ul>

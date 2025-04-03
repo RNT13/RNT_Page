@@ -1,20 +1,9 @@
 import Slider from 'react-slick'
-import styled from 'styled-components'
 
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
+import { CarouselContainer, images } from './CarouselStyles'
 
-const images = ['/images/banner 1.png', '/images/banner 2.png', '/images/banner 3.png']
-
-const CarouselContainer = styled.div`
-  width: 80%;
-  margin: 0 auto;
-  .slick-slide img {
-    width: 100%;
-    border-radius: 10px;
-    margin-top: 24px;
-  }
-`
 const Carousel: React.FC = () => {
   const settings = {
     dots: true,

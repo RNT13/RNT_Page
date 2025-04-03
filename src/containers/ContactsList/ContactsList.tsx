@@ -1,46 +1,46 @@
 import { useSelector } from 'react-redux'
-import ContactCard from '../../components/ContactCard'
-import { RootReducer } from '../../redux/store'
+import ContactCard from '../../components/ContactCard/ContactCard'
+import { RootState } from '../../redux/store'
 import { TitleH2 } from '../../styles/globalStyles'
 import { MainContactContainer } from './ContactsListStyles'
 
 const ContactsList = () => {
-  const { term, criterion, value } = useSelector((state: RootReducer) => state.filter)
-  const contatos = useSelector((state: RootReducer) => state.contacts.itens)
+  const { term, criterion, value } = useSelector((state: RootState) => state.filter)
+  const contacts = useSelector((state: RootState) => state.contacts.itens)
 
-  const filtrarContatos = () => {
-    let contatosFiltrados = contatos
+  const filtrarcontacts = () => {
+    let filteredcontacts = contacts
     if (term !== '') {
-      contatosFiltrados = contatosFiltrados.filter(contato => contato.name.toLocaleLowerCase().includes(term.toLocaleLowerCase()))
+      filteredcontacts = filteredcontacts.filter(contact => contact.name.toLocaleLowerCase().includes(term.toLocaleLowerCase()))
     }
     if (criterion === 'status') {
-      contatosFiltrados = contatosFiltrados.filter(contato => contato.status === value)
+      filteredcontacts = filteredcontacts.filter(contact => contact.status === value)
     }
-    return contatosFiltrados
+    return filteredcontacts
   }
 
-  const exibeResultadoFiltrado = (quantidade: number) => {
-    let mensagem = ''
-    const complementacao = term !== undefined && term.length > 0 ? ` e "${term}"` : ''
+  const displayFilteredResult = (amount: number) => {
+    let message = ''
+    const complementation = term !== undefined && term.length > 0 ? ` e "${term}"` : ''
 
     if (criterion === 'all') {
-      mensagem = `${quantidade} contato(s) marcado(s) como: todos ${complementacao}`
+      message = `${amount} contact(s) marked as: all ${complementation}`
     } else {
-      mensagem = `${quantidade} contato(s) marcado(s) como: "${`${criterion} = ${value}`}" ${complementacao}`
+      message = `${amount} contact(s) marked as: "${`${criterion} = ${value}`}" ${complementation}`
     }
-    return mensagem
+    return message
   }
 
-  const contatosFiltrados = filtrarContatos()
-  const mensagem = exibeResultadoFiltrado(contatosFiltrados.length)
+  const filteredcontacts = filtrarcontacts()
+  const message = displayFilteredResult(filteredcontacts.length)
 
   return (
     <MainContactContainer>
-      <TitleH2 as="p">{mensagem}</TitleH2>
+      <TitleH2 as="p">{message}</TitleH2>
       <ul>
-        {contatosFiltrados.map(contato => (
-          <li key={contato.id}>
-            <ContactCard contact={contato} />
+        {filteredcontacts.map(contact => (
+          <li key={contact.id}>
+            <ContactCard contact={contact} />
           </li>
         ))}
       </ul>

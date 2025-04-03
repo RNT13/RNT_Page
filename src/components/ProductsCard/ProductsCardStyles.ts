@@ -1,13 +1,7 @@
 import styled from 'styled-components'
-import { theme } from '../styles/theme'
+import { theme } from '../../styles/theme'
 
-export type CardProps = {
-  image: string
-  name: string
-  description: string
-}
-
-const CardContainer = styled.div`
+export const CardContainer = styled.div`
   width: 250px;
   height: 300px;
   background: ${theme.colors.primaryColor};
@@ -25,13 +19,13 @@ const CardContainer = styled.div`
   }
 `
 
-const ProductImage = styled.img`
+export const ProductImage = styled.img`
   width: 100%;
   height: 150px;
   object-fit: cover;
 `
 
-const CardBody = styled.div`
+export const CardBody = styled.div`
   flex: 1;
   padding: 10px;
   color: ${theme.colors.branco};
@@ -42,7 +36,7 @@ const CardBody = styled.div`
   gap: 10px;
 `
 
-const CardFooter = styled.div`
+export const CardFooter = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
@@ -57,7 +51,7 @@ const CardFooter = styled.div`
     transform 0.3s ease;
 `
 
-const Button = styled.button`
+export const Button = styled.button`
   background: linear-gradient(50deg, ${theme.colors.azul} 0%, ${theme.colors.azul2} 100%);
   font-weight: bold;
   font-size: 16px;
@@ -72,20 +66,3 @@ const Button = styled.button`
     filter: brightness(1.5);
   }
 `
-
-const Card = ({ image, name, description }: CardProps) => {
-  return (
-    <CardContainer>
-      <ProductImage src={image} alt={name} />
-      <CardBody>
-        <h3>{name}</h3>
-        <p>{description}</p>
-      </CardBody>
-      <CardFooter className="card-footer">
-        <Button>Comprar</Button>
-      </CardFooter>
-    </CardContainer>
-  )
-}
-
-export default Card

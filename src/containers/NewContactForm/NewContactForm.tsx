@@ -48,9 +48,9 @@ const NewContactForm = () => {
   return (
     <MainContainer>
       <Form onSubmit={registerContact}>
-        <InputField value={name} onChange={e => setName(e.target.value)} type="text" placeholder="Full Name" />
-        <InputField value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder="Email" />
-        <InputField value={phone} onChange={e => setPhone(e.target.value)} type="tel" placeholder="Phone" />
+        <InputField id="name" value={name} onChange={e => setName(e.target.value)} type="text" placeholder="Full Name" />
+        <InputField id="email" value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder="Email" />
+        <InputField id="phone" value={phone} onChange={e => setPhone(e.target.value)} type="tel" placeholder="Phone" />
         <Opcoes>
           <p>Status</p>
           {Object.values(contactEnums.status).map(statusValue => (
