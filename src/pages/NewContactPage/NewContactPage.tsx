@@ -1,8 +1,7 @@
 import FilterBar from '../../containers/FilterBar/FilterBar'
 import NewContactForm from '../../containers/NewContactForm/NewContactForm'
-import { NewContactsContainer } from '../../pages/NewContactPage/NewContactsPage.style'
 import { TitleH2 } from '../../styles/globalStyles'
-import { NewContactsContent, NewContactsMain, NewContactsSideBar } from './NewContactsPage.style'
+import { NewContactsContainer, NewContactsContent, NewContactsMain, NewContactsSideBar } from './NewContactsPageStyles'
 
 const NewContactsPage = () => (
   <NewContactsContainer>

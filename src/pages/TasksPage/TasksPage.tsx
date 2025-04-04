@@ -2,7 +2,7 @@ import { AddButtonTask } from '../../components/AddButton/AddButton'
 import FilterBar from '../../containers/FilterBar/FilterBar'
 import TaskList from '../../containers/TaskList/TaskList'
 import { TitleH2 } from '../../styles/globalStyles'
-import { TaskContainer, TaskContent, TaskMain, TaskSideBar } from './TasksPage.style'
+import { TaskContainer, TaskContent, TaskMain, TaskSideBar } from './TasksPageStyles'
 
 const TasksPage = () => {
   return (

@@ -1,7 +1,7 @@
 import FilterBar from '../../containers/FilterBar/FilterBar'
 import NewTaskForm from '../../containers/NewTaskForm/NewTaskForm'
 import { TitleH2 } from '../../styles/globalStyles'
-import { NewTaskContainer, NewTaskContent, NewTaskMain, NewTaskSidebar } from './NewTaskPage.styles'
+import { NewTaskContainer, NewTaskContent, NewTaskMain, NewTaskSidebar } from './NewTaskPageStyles'
 
 const NewTaskPage = () => (
   <NewTaskContainer>

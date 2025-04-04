@@ -1,7 +1,7 @@
 import Carousel from '../../components/Carousel/Carousel'
 import Card from '../../components/ProductsCard/ProductsCard'
 import { TitleH2 } from '../../styles/globalStyles'
-import { ProductsCardContainer, ProductsContainer } from './productsPage.styles'
+import { ProductsCardContainer, ProductsContainer } from './productsPageStyles'
 
 const ProductsPage = () => {
   return (
