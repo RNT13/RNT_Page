@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 import { LinkButton } from '../../components/LinkButton/LinkButton'
-import LoginButton from '../../components/LoginButton/LoginButton'
 import { Logo } from '../../components/Logo/Logo'
+import MenuButton from '../../components/MenuButton/MenuButton'
 import { HeaderContainer, Nav } from './HeaderStyles'
 
 const Header = () => {
@@ -19,7 +19,7 @@ const Header = () => {
           Produtos
         </LinkButton>
       </Nav>
-      <LoginButton />
+      <MenuButton />
     </HeaderContainer>
   )
 }

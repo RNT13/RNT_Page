@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { theme } from '../../styles/theme'
 
-export const ButtonContainer = styled.button`
+export const MenuButtonContainer = styled.button`
   display: flex;
   align-items: center;
   background-color: ${theme.colors.secondaryColor};
@@ -18,13 +18,13 @@ export const ButtonContainer = styled.button`
   }
 `
 
-export const LoginIcon = styled.img`
+export const MenuLogo = styled.img`
   width: 30px;
   height: 30px;
   margin-right: 8px;
 `
 
-export const Overlay = styled.div`
+export const MenuOverlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;

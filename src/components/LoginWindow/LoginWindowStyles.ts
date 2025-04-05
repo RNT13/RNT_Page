@@ -1,13 +1,11 @@
 import { styled } from 'styled-components'
-import { Button } from '../../styles/globalStyles'
+import { Button, TextH3 } from '../../styles/globalStyles'
 import { theme } from '../../styles/theme'
 
-export const WindowContainer = styled.div`
-  position: absolute;
-  top: 30px;
-  left: -300px;
-  width: 300px;
-  height: 400px;
+export const LoginWindowContainer = styled.div`
+  width: 350px;
+  height: 450px;
+
   background: ${theme.colors.primaryColor};
   border: 1px solid ${theme.colors.azul2};
   padding: 16px;
@@ -18,6 +16,20 @@ export const WindowContainer = styled.div`
   box-shadow: 5px 5px 5px ${theme.colors.preto};
 `
 
+export const LoginWindowContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 0 18px;
+`
+
+export const LoginWindowFooter = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+`
+
 export const InputWrapper = styled.div`
   position: relative;
   display: flex;
@@ -26,18 +38,20 @@ export const InputWrapper = styled.div`
 `
 
 export const TooglePasswordButton = styled.button`
-  position: absolute;
-  padding: 5px;
-  top: 50%;
-  right: 10px;
-  transform: translate(-10%, -50%);
   border: none;
-  cursor: pointer;
-  font-size: 18px;
-  box-shadow: none;
+  font-size: 14px;
+  height: 20px;
+  width: 40px;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: transparent;
   color: ${theme.colors.azul2};
-  z-index: 1000;
+  cursor: pointer;
+  box-shadow: none;
+  font-weight: bold;
+  z-index: 11;
 `
 export const FloatingLabel = styled.label`
   position: absolute;
@@ -57,7 +71,8 @@ export const FloatingLabel = styled.label`
 `
 
 export const LoginButton = styled(Button)`
-  width: 100%;
+  width: 180px;
+  max-width: 100%;
   background-color: ${theme.colors.secondaryColor};
   color: ${theme.colors.branco};
   padding: 8px;
@@ -65,8 +80,13 @@ export const LoginButton = styled(Button)`
   cursor: pointer;
   font-size: 14px;
   text-transform: uppercase;
+  margin: 50px auto;
 
   &:hover {
     background-color: ${theme.colors.azul2};
   }
+`
+export const LoginTitle = styled(TextH3)`
+  font-size: 2em;
+  color: ${theme.colors.branco};
 `

@@ -6,6 +6,7 @@ import Header from './containers/Header/Header'
 import CalendarPage from './pages/CalendarPage/CalendarPage'
 import ContactsPage from './pages/ContactsPage/ContactsPage'
 import Home from './pages/HomePage/HomePage'
+import LoginPage from './pages/LoginPage/LoginPage'
 import NewContactsPage from './pages/NewContactPage/NewContactPage'
 import NewTaskPage from './pages/NewTaskPage/NewTaskPage'
 import ProductsPage from './pages/productsPage/productsPage'
@@ -44,7 +45,8 @@ const rotas = createBrowserRouter([
       { path: '/ContactsPage', element: <ContactsPage /> },
       { path: '/NewContactsPage', element: <NewContactsPage /> },
       { path: '/ProductsPage', element: <ProductsPage /> },
-      { path: '/CalendarPage', element: <CalendarPage /> }
+      { path: '/CalendarPage', element: <CalendarPage /> },
+      { path: '/LoginPage', element: <LoginPage /> }
     ]
   }
 ])

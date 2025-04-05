@@ -1,5 +1,5 @@
 import { TitleH2 } from '../../styles/globalStyles'
-import HomeContainer from './HomePageStyles'
+import { HomeContainer } from './HomePageStyles'
 
 const HomePage = () => {
   return (
