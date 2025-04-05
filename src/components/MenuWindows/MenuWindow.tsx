@@ -15,13 +15,23 @@ const MenuWindow: React.FC<MenuProps> = ({ onClose }) => {
     Navigate('/LoginPage')
   }
 
+  const handleProfileCkick = () => {
+    onClose()
+    Navigate('/ProfilePage')
+  }
+
+  const handleRequestsClick = () => {
+    onClose()
+    Navigate('/RequestsPage')
+  }
+
   return (
     <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 50 }} transition={{ duration: 0.3, ease: 'easeInOut' }}>
       <MenuWindowContainer>
         <MenuTitle>Menu</MenuTitle>
         <MenuCountentContainer>
-          <MenuButton>Profile</MenuButton>
-          <MenuButton>Cart</MenuButton>
+          <MenuButton onClick={handleProfileCkick}>Profile</MenuButton>
+          <MenuButton onClick={handleRequestsClick}>Requests</MenuButton>
           <MenuButton onClick={handleLoginClick}>Login</MenuButton>
         </MenuCountentContainer>
         <MenuFooterContainer>

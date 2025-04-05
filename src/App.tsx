@@ -10,6 +10,8 @@ import LoginPage from './pages/LoginPage/LoginPage'
 import NewContactsPage from './pages/NewContactPage/NewContactPage'
 import NewTaskPage from './pages/NewTaskPage/NewTaskPage'
 import ProductsPage from './pages/productsPage/productsPage'
+import ProfilePage from './pages/ProfilePage/ProfilePage'
+import RequestsPage from './pages/RequestsPage/RequestsPage'
 import TasksPage from './pages/TasksPage/TasksPage'
 import { store } from './redux/store'
 import { GlobalMain, GlobalMainContent, GlobalStyle } from './styles/globalStyles'
@@ -46,7 +48,9 @@ const rotas = createBrowserRouter([
       { path: '/NewContactsPage', element: <NewContactsPage /> },
       { path: '/ProductsPage', element: <ProductsPage /> },
       { path: '/CalendarPage', element: <CalendarPage /> },
-      { path: '/LoginPage', element: <LoginPage /> }
+      { path: '/LoginPage', element: <LoginPage /> },
+      { path: '/ProfilePage', element: <ProfilePage /> },
+      { path: '/RequestsPage', element: <RequestsPage /> }
     ]
   }
 ])
