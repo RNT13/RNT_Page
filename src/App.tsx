@@ -1,8 +1,16 @@
 import { useState } from 'react'
-import { Provider } from 'react-redux'
+import { I18nextProvider } from 'react-i18next'
+import { Provider, useSelector } from 'react-redux'
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
+import { ThemeProvider } from 'styled-components'
+
 import AsideBar from './containers/AsideBar/AsideBar'
 import Header from './containers/Header/Header'
+import i18n from './i18n'
+import { RootState, store } from './redux/store'
+import { GlobalMain, GlobalMainContent, GlobalStyle } from './styles/globalStyles'
+
+// páginas
 import CalendarPage from './pages/CalendarPage/CalendarPage'
 import ContactsPage from './pages/ContactsPage/ContactsPage'
 import Home from './pages/HomePage/HomePage'
@@ -13,15 +21,16 @@ import ProductsPage from './pages/productsPage/productsPage'
 import ProfilePage from './pages/ProfilePage/ProfilePage'
 import RequestsPage from './pages/RequestsPage/RequestsPage'
 import TasksPage from './pages/TasksPage/TasksPage'
-import { store } from './redux/store'
-import { GlobalMain, GlobalMainContent, GlobalStyle } from './styles/globalStyles'
+import { themeConfig } from './styles/theme'
 
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const theme = useSelector((state: RootState) => state.theme.theme)
+
   const toggleSidebar = () => setIsOpen(prev => !prev)
 
   return (
-    <Provider store={store}>
+    <ThemeProvider theme={themeConfig[theme]}>
       <GlobalStyle />
       <div>
         <Header />
@@ -32,31 +41,37 @@ const Layout = () => {
           <Outlet />
         </GlobalMainContent>
       </GlobalMain>
-    </Provider>
+    </ThemeProvider>
   )
 }
 
-const rotas = createBrowserRouter([
-  {
-    path: '/',
-    element: <Layout />,
-    children: [
-      { path: '/', element: <Home /> },
-      { path: '/TasksPage', element: <TasksPage /> },
-      { path: '/NewTaskPage', element: <NewTaskPage /> },
-      { path: '/ContactsPage', element: <ContactsPage /> },
-      { path: '/NewContactsPage', element: <NewContactsPage /> },
-      { path: '/ProductsPage', element: <ProductsPage /> },
-      { path: '/CalendarPage', element: <CalendarPage /> },
-      { path: '/LoginPage', element: <LoginPage /> },
-      { path: '/ProfilePage', element: <ProfilePage /> },
-      { path: '/RequestsPage', element: <RequestsPage /> }
-    ]
-  }
-])
+const App = () => {
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Layout />,
+      children: [
+        { path: '/', element: <Home /> },
+        { path: '/TasksPage', element: <TasksPage /> },
+        { path: '/NewTaskPage', element: <NewTaskPage /> },
+        { path: '/ContactsPage', element: <ContactsPage /> },
+        { path: '/NewContactsPage', element: <NewContactsPage /> },
+        { path: '/ProductsPage', element: <ProductsPage /> },
+        { path: '/CalendarPage', element: <CalendarPage /> },
+        { path: '/LoginPage', element: <LoginPage /> },
+        { path: '/ProfilePage', element: <ProfilePage /> },
+        { path: '/RequestsPage', element: <RequestsPage /> }
+      ]
+    }
+  ])
 
-function App() {
-  return <RouterProvider router={rotas} />
+  return (
+    <Provider store={store}>
+      <I18nextProvider i18n={i18n}>
+        <RouterProvider router={router} />
+      </I18nextProvider>
+    </Provider>
+  )
 }
 
 export default App

@@ -1,18 +1,17 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
-import { theme } from '../../styles/theme'
 import * as taskEnums from '../../utils/enums/taskEnums'
 
 import TaskModels from '../../models/TaskModels'
-import { changeFilter } from '../../redux/reducers/filterReducer'
-import { changeStatus, editTask, removeTask } from '../../redux/reducers/taskReducer'
+import { changeFilter } from '../../redux/slices/filterSlice'
+import { changeStatus, editTask, removeTask } from '../../redux/slices/taskSlice'
 import { RootState } from '../../redux/store'
 import { Button, Card, SaveButton, Tag } from '../../styles/globalStyles'
-import { ActionBar, Description, InfoContainer, TaskTitle } from './TasksCardStyles'
+import { ActionBar, CancelButton, Description, EditButton, InfoContainer, TaskTitle } from './TasksCardStyles'
 
 const RemoveTaskButton = styled(Button)`
-  background-color: ${theme.colors.vermelho};
+  background-color: ${({ theme }) => theme.colors.red};
 `
 
 const TaskCard = ({ title, priority, status, description: originalDescription, id }: TaskModels) => {
@@ -66,11 +65,11 @@ const TaskCard = ({ title, priority, status, description: originalDescription, i
         {isEditing ? (
           <>
             <SaveButton onClick={saveEdition}>Save</SaveButton>
-            <RemoveTaskButton onClick={cancelEdication}>Cancel</RemoveTaskButton>
+            <CancelButton onClick={cancelEdication}>Cancel</CancelButton>
           </>
         ) : (
           <>
-            <Button onClick={() => setIsEditing(true)}>Edit Task</Button>
+            <EditButton onClick={() => setIsEditing(true)}>Edit Task</EditButton>
             <RemoveTaskButton onClick={() => dispatch(removeTask(id))}>Remove</RemoveTaskButton>
           </>
         )}

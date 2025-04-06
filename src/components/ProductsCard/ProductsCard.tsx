@@ -1,4 +1,4 @@
-import { Button, CardBody, CardContainer, CardFooter, ProductImage } from './ProductsCardStyles'
+import { CardBody, CardButton, CardContainer, CardFooter, ProductImage } from './ProductsCardStyles'
 
 export type CardProps = {
   image: string
@@ -15,7 +15,7 @@ const Card = ({ image, name, description }: CardProps) => {
         <p>{description}</p>
       </CardBody>
       <CardFooter className="card-footer">
-        <Button>ADD TO CART</Button>
+        <CardButton>ADD TO CART</CardButton>
       </CardFooter>
     </CardContainer>
   )

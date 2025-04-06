@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import ContactModels from '../../models/ContactModels'
-import { editContact, removeContact } from '../../redux/reducers/contactsReducer'
-import { Button, Card, SaveButton, Tag } from '../../styles/globalStyles'
+import { editContact, removeContact } from '../../redux/slices/contactsSlice'
+import { Card, SaveButton, Tag } from '../../styles/globalStyles'
 import * as Contactenums from '../../utils/enums/contactEnums'
-import { ActionBar, ContactTitle, Description, InfoContainer, RemoveContactButton } from './ContactCardStyles'
+import { ActionBar, CancelButton, ContactTitle, Description, EditButton, InfoContainer, RemoveContactButton } from './ContactCardStyles'
 
 type ContactProps = {
   contact: ContactModels
@@ -61,11 +61,11 @@ const ContactCard = ({ contact }: ContactProps) => {
         {isEditing ? (
           <>
             <SaveButton onClick={handleSave}>Save</SaveButton>
-            <Button onClick={handleCancel}>Cancel</Button>
+            <CancelButton onClick={handleCancel}>Cancel</CancelButton>
           </>
         ) : (
           <>
-            <Button onClick={handleEdit}>Edit Contact</Button>
+            <EditButton onClick={handleEdit}>Edit Contact</EditButton>
             <RemoveContactButton onClick={handleRemove}>Remove</RemoveContactButton>
           </>
         )}

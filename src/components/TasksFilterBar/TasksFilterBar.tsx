@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { changeFilter } from '../../redux/reducers/filterReducer'
+import { changeFilter } from '../../redux/slices/filterSlice'
 import { RootState } from '../../redux/store'
 import { Counter, TextH3 } from '../../styles/globalStyles'
 import * as taskEnums from '../../utils/enums/taskEnums'

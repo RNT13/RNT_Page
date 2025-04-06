@@ -1,12 +1,11 @@
 import styled from 'styled-components'
-import { theme } from '../../styles/theme'
 
 export const Form = styled.form`
   max-width: 550px;
   width: 100%;
   font-weight: bold;
   font-size: 18px;
-  color: ${theme.colors.preto};
+  color: ${({ theme }) => theme.colors.textColor};
 
   textarea {
     resize: none;
@@ -21,7 +20,7 @@ export const Opcoes = styled.div`
   }
 
   label {
-    margin-right: 8px;
+    margin: 0px 8px;
   }
 `
 

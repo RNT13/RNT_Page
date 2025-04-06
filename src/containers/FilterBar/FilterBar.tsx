@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import ContactCardFilter from '../../components/ContactsFilterBar/ContactsFilterBar'
 import TaskCardFilter from '../../components/TasksFilterBar/TasksFilterBar'
-import { changeTerm } from '../../redux/reducers/filterReducer'
+import { changeTerm } from '../../redux/slices/filterSlice'
 import { RootState } from '../../redux/store'
 import { Button, InputField } from '../../styles/globalStyles'
 import * as contactEnums from '../../utils/enums/contactEnums'
@@ -34,14 +34,14 @@ const FilterBar = ({ mostrarFiltros, type }: props) => {
                   <TaskCardFilter taskValue={taskEnums.priority.URGENT} criterion="priority" caption="Urgent" />
                   <TaskCardFilter taskValue={taskEnums.priority.IMPORTANT} criterion="priority" caption="Important" />
                   <TaskCardFilter taskValue={taskEnums.priority.NORMAL} criterion="priority" caption="Normal" />
-                  <TaskCardFilter criterion="all" caption="all" />
+                  <TaskCardFilter criterion="all" caption="All" />
                 </>
               ) : (
                 <>
                   <ContactCardFilter value={contactEnums.status.FRIEND} criterion="status" caption="Friend" />
                   <ContactCardFilter value={contactEnums.status.KNOWN} criterion="status" caption="Known" />
                   <ContactCardFilter value={contactEnums.status.UNKNOWN} criterion="status" caption="Unknown" />
-                  <ContactCardFilter criterion="all" caption="all" />
+                  <ContactCardFilter criterion="all" caption="All" />
                 </>
               )}
             </S.Filtros>

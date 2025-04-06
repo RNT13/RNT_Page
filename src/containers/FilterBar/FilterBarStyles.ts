@@ -1,9 +1,8 @@
 import styled from 'styled-components'
-import { theme } from '../../styles/theme'
 
 export const Aside = styled.aside`
   padding: 16px;
-  background-color: ${theme.colors.cinza};
+  background-color: ${({ theme }) => theme.colors.background};
   height: 100vh;
 `
 export const Filtros = styled.div`

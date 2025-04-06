@@ -1,7 +1,5 @@
 // eslint-disable-next-line prettier/prettier
 import styled from 'styled-components';
-// eslint-disable-next-line prettier/prettier
-import { theme } from '../../styles/theme';
 
 export const LinkButtonToggle = styled.button<{ $isOpen: boolean; $isActive: boolean }>`
   display: flex;
@@ -9,9 +7,6 @@ export const LinkButtonToggle = styled.button<{ $isOpen: boolean; $isActive: boo
   text-align: left;
   padding: 5px 10px;
   margin: 0px 8px 8px 0px;
-  color: ${props => (props.$isActive ? theme.colors.primaryColor : theme.colors.branco)};
-  background-color: ${props => (props.$isActive ? theme.colors.azul2 : theme.colors.secondaryColor)};
-  box-shadow: 5px 5px 5px ${theme.colors.preto};
   font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
@@ -20,6 +15,11 @@ export const LinkButtonToggle = styled.button<{ $isOpen: boolean; $isActive: boo
   width: ${props => (props.$isOpen ? '220px' : '100%')};
   text-decoration: none;
   transition: all 0.2s linear;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: ${({ theme, $isActive }) => ($isActive ? theme.colors.blue2 : theme.colors.textColor)};
+  background-color: ${({ theme, $isActive }) => ($isActive ? theme.colors.grey : theme.colors.background)};
+  box-shadow: 5px 5px 5px ${({ theme, $isActive }) => ($isActive ? theme.colors.blue2 : theme.colors.shadow)};
 
   span {
     display: ${props => (props.$isOpen ? 'inline' : 'none')};
@@ -36,24 +36,30 @@ export const LinkButtonToggle = styled.button<{ $isOpen: boolean; $isActive: boo
   }
 
   &:hover {
-    background-color: ${theme.colors.azul2};
+    background-color: ${({ theme }) => theme.colors.grey};
+    color: ${({ theme }) => theme.colors.white};
+    transition: all 0.2s ease;
   }
 `
 export const LinkButton = styled.button<{ $isActive: boolean }>`
   padding: 5px 10px;
   margin: 0px 8px 8px 0px;
   max-width: 150px;
-  color: ${props => (props.$isActive ? theme.colors.primaryColor : theme.colors.branco)};
-  background-color: ${props => (props.$isActive ? theme.colors.azul2 : theme.colors.secondaryColor)};
+  color: ${({ theme, $isActive }) => ($isActive ? theme.colors.blue2 : theme.colors.textColor)};
+  background-color: ${({ theme, $isActive }) => ($isActive ? theme.colors.grey : theme.colors.background)};
+  box-shadow: 5px 5px 5px ${({ theme, $isActive }) => ($isActive ? theme.colors.blue2 : theme.colors.shadow)};
   text-decoration: none;
   font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
   border: none;
-  box-shadow: 5px 5px 5px ${theme.colors.preto};
   transition: all 0.2s linear;
+  text-transform: uppercase;
+  font-weight: bold;
 
   &:hover {
-    background-color: ${theme.colors.azul2};
+    background-color: ${({ theme }) => theme.colors.grey};
+    color: ${({ theme }) => theme.colors.white};
+    transition: all 0.2s ease;
   }
 `

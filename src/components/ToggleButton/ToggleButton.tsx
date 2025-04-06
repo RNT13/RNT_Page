@@ -1,10 +1,10 @@
 import { styled } from 'styled-components'
-import { theme } from '../../styles/theme'
 
 export const ToggleButton = styled.button<{ $isOpen: boolean }>`
-  background: ${theme.colors.primaryColor};
+  background: ${({ theme }) => theme.colors.primaryColor};
+  color: ${({ theme }) => theme.colors.textColor};
+  font-weight: bold;
   border: none;
-  color: ${theme.colors.branco};
   padding: 12px;
   border-radius: 0px 0px 10px 0px;
   width: 25px;

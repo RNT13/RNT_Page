@@ -16,7 +16,7 @@ const Header = () => {
           Home
         </LinkButton>
         <LinkButton onClick={() => navigate('/ProductsPage')} $isActive={location.pathname === '/ProductsPage'} title="Produtos">
-          Produtos
+          Products
         </LinkButton>
       </Nav>
       <MenuButton />

@@ -9,7 +9,7 @@ const NewContactsPage = () => (
       <FilterBar mostrarFiltros={false} type={'contacts'} />
     </NewContactsSideBar>
     <NewContactsMain>
-      <TitleH2>New Contacts</TitleH2>
+      <TitleH2>New Contact</TitleH2>
       <NewContactsContent>
         <NewContactForm />
       </NewContactsContent>

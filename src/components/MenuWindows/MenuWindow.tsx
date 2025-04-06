@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion'
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { toggleLanguage, toggleTheme } from '../../redux/slices/themeSlice'
+import { RootState } from '../../redux/store'
 import { MenuButton, MenuCountentContainer, MenuFooterButton, MenuFooterContainer, MenuTitle, MenuWindowContainer } from './MenuWindowStyles'
 
 interface MenuProps {
@@ -9,6 +12,8 @@ interface MenuProps {
 
 const MenuWindow: React.FC<MenuProps> = ({ onClose }) => {
   const Navigate = useNavigate()
+  const dispatch = useDispatch()
+  const { theme, language } = useSelector((state: RootState) => state.theme)
 
   const handleLoginClick = () => {
     onClose()
@@ -35,8 +40,8 @@ const MenuWindow: React.FC<MenuProps> = ({ onClose }) => {
           <MenuButton onClick={handleLoginClick}>Login</MenuButton>
         </MenuCountentContainer>
         <MenuFooterContainer>
-          <MenuFooterButton>L</MenuFooterButton>
-          <MenuFooterButton>L</MenuFooterButton>
+          <MenuFooterButton onClick={() => dispatch(toggleTheme())}>{theme === 'dark' ? '🌙 dark' : '☀️ light'}</MenuFooterButton>
+          <MenuFooterButton onClick={() => dispatch(toggleLanguage())}>{language === 'pt-br' ? '🇧🇷 PT' : '🇺🇸 EN'}</MenuFooterButton>
           <MenuFooterButton>L</MenuFooterButton>
         </MenuFooterContainer>
       </MenuWindowContainer>

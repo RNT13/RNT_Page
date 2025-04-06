@@ -9,7 +9,7 @@ const NewTaskPage = () => (
       <FilterBar mostrarFiltros={false} type={'tasks'} />
     </NewTaskSidebar>
     <NewTaskMain>
-      <TitleH2>NewTask</TitleH2>
+      <TitleH2>New Task</TitleH2>
       <NewTaskContent>
         <NewTaskForm />
       </NewTaskContent>

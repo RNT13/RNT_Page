@@ -26,9 +26,9 @@ const TaskList = () => {
     const complementation = term !== undefined && term.length > 0 ? ` e "${term}"` : ''
 
     if (criterion === 'all') {
-      message = `${amount} task(s) marked as: all ${complementation}`
+      message = `${amount} task(s) marked as: All ${complementation}`
     } else {
-      message = `${amount} task(s) marked as: "${`${criterion} = ${value}`}" ${complementation}`
+      message = `${amount} task(s) marked as: ${`${value}`} ${complementation}`
     }
     return message
   }

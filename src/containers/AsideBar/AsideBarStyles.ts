@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { theme } from '../../styles/theme'
 
 export const AsideContainer = styled.aside<{ $isOpen: boolean }>`
   padding: 1rem;
@@ -8,7 +7,7 @@ export const AsideContainer = styled.aside<{ $isOpen: boolean }>`
   position: fixed;
   left: 0;
   top: 60px;
-  background-color: ${theme.colors.primaryColor};
+  background-color: ${({ theme }) => theme.colors.primaryColor};
   transition: all 0.2s linear;
 
   div {

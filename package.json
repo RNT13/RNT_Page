@@ -12,8 +12,10 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "i18next": "^24.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-i18next": "^15.4.1",
     "react-router-dom": "^7.4.1",
     "react-slick": "^0.30.3",
     "redux": "^5.0.1",

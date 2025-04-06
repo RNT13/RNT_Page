@@ -1,12 +1,11 @@
 import styled from 'styled-components'
-import { theme } from '../../styles/theme'
 
 export const HeaderContainer = styled.header`
-  background-color: ${theme.colors.primaryColor};
+  background-color: ${({ theme }) => theme.colors.primaryColor};
   width: 100%;
   height: 70px;
   padding: 16px;
-  color: ${theme.colors.branco};
+  color: ${({ theme }) => theme.colors.white};
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -1,17 +1,16 @@
 import styled from 'styled-components'
-import { theme } from '../../styles/theme'
 
 export const CardContainer = styled.div`
   width: 250px;
   height: 300px;
-  background: ${theme.colors.primaryColor};
+  background: ${({ theme }) => theme.colors.primaryColor};
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 8px 8px 5px ${theme.colors.preto};
   transition: 0.3s;
   display: flex;
   flex-direction: column;
   position: relative;
+  box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
 
   &:hover .card-footer {
     opacity: 1;
@@ -28,7 +27,7 @@ export const ProductImage = styled.img`
 export const CardBody = styled.div`
   flex: 1;
   padding: 10px;
-  color: ${theme.colors.branco};
+  color: ${({ theme }) => theme.colors.textColor};
   position: relative;
   display: flex;
   flex-direction: column;
@@ -41,7 +40,7 @@ export const CardFooter = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  background: ${theme.colors.preto};
+  background: ${({ theme }) => theme.colors.background};
   padding: 10px;
   text-align: center;
   opacity: 0;
@@ -51,13 +50,16 @@ export const CardFooter = styled.div`
     transform 0.3s ease;
 `
 
-export const Button = styled.button`
-  background: linear-gradient(50deg, ${theme.colors.azul} 0%, ${theme.colors.azul2} 100%);
+export const CardButton = styled.button`
+  background: linear-gradient(50deg, ${({ theme }) => theme.colors.neon.blue1} 0%, ${({ theme }) => theme.colors.neon.blue2} 100%);
+  color: ${({ theme }) => theme.colors.textColor};
+  padding: 1rem;
+  border-radius: 1rem;
   font-weight: bold;
   font-size: 16px;
   border: none;
   padding: 10px;
-  color: ${theme.colors.branco};
+  color: ${({ theme }) => theme.colors.shadow};
   cursor: pointer;
   width: 100%;
   border-radius: 5px;

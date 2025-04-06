@@ -36,7 +36,7 @@ const AsideBar = ({ isOpen, toggleSidebar }: { isOpen: boolean; toggleSidebar: (
             <img src="/images/gitHubIcon.png" alt="github logo" />
             <span>GitHub</span>
           </LinkButtonToggle>
-          <LinkButtonToggle as="a" href="https://www.linkedin.com/in/renato-luiz-0b072b327/" target="_blank" rel="noopener noreferrer" $isOpen={isOpen} $isActive={false} title="LinkedIn">
+          <LinkButtonToggle as="a" href="https://www.linkedin.com/in/renato-luiz-0b072b247/" target="_blank" rel="noopener noreferrer" $isOpen={isOpen} $isActive={false} title="LinkedIn">
             <img src="/images/linkedinIcon.png" alt="LinkedIn logo" />
             <span>LinkedIn</span>
           </LinkButtonToggle>

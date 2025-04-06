@@ -24,9 +24,9 @@ const ContactsList = () => {
     const complementation = term !== undefined && term.length > 0 ? ` e "${term}"` : ''
 
     if (criterion === 'all') {
-      message = `${amount} contact(s) marked as: all ${complementation}`
+      message = `${amount} contact(s) marked as: All ${complementation}`
     } else {
-      message = `${amount} contact(s) marked as: "${`${criterion} = ${value}`}" ${complementation}`
+      message = `${amount} contact(s) marked as: ${` ${value}`} ${complementation}`
     }
     return message
   }
