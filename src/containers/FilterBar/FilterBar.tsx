@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import ContactCardFilter from '../../components/ContactsFilterBar/ContactsFilterBar'
@@ -15,6 +16,7 @@ type props = {
 }
 
 const FilterBar = ({ mostrarFiltros, type }: props) => {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const filterState = useSelector((state: RootState) => state.filter)
@@ -25,29 +27,29 @@ const FilterBar = ({ mostrarFiltros, type }: props) => {
       <div>
         {mostrarFiltros ? (
           <>
-            <InputField id="search" type="text" placeholder="Search" value={term} onChange={evento => dispatch(changeTerm(evento.target.value))} />
-            <S.Filtros>
+            <InputField id="search" type="text" placeholder={t('search')} value={term} onChange={evento => dispatch(changeTerm(evento.target.value))} />
+            <S.filters>
               {type === 'tasks' ? (
                 <>
-                  <TaskCardFilter taskValue={taskEnums.status.PENDING} criterion="status" caption="Pending" />
-                  <TaskCardFilter taskValue={taskEnums.status.COMPLETED} criterion="status" caption="Completed" />
-                  <TaskCardFilter taskValue={taskEnums.priority.URGENT} criterion="priority" caption="Urgent" />
-                  <TaskCardFilter taskValue={taskEnums.priority.IMPORTANT} criterion="priority" caption="Important" />
+                  <TaskCardFilter taskValue={taskEnums.status.PENDING} criterion="status" caption={t('pending')} />
+                  <TaskCardFilter taskValue={taskEnums.status.COMPLETED} criterion="status" caption={t('completed')} />
+                  <TaskCardFilter taskValue={taskEnums.priority.URGENT} criterion="priority" caption={t('urgent')} />
+                  <TaskCardFilter taskValue={taskEnums.priority.IMPORTANT} criterion="priority" caption={t('important')} />
                   <TaskCardFilter taskValue={taskEnums.priority.NORMAL} criterion="priority" caption="Normal" />
-                  <TaskCardFilter criterion="all" caption="All" />
+                  <TaskCardFilter criterion="all" caption={t('all')} />
                 </>
               ) : (
                 <>
-                  <ContactCardFilter value={contactEnums.status.FRIEND} criterion="status" caption="Friend" />
-                  <ContactCardFilter value={contactEnums.status.KNOWN} criterion="status" caption="Known" />
-                  <ContactCardFilter value={contactEnums.status.UNKNOWN} criterion="status" caption="Unknown" />
-                  <ContactCardFilter criterion="all" caption="All" />
+                  <ContactCardFilter value={contactEnums.status.FRIEND} criterion="status" caption={t('friend')} />
+                  <ContactCardFilter value={contactEnums.status.KNOWN} criterion="status" caption={t('known')} />
+                  <ContactCardFilter value={contactEnums.status.UNKNOWN} criterion="status" caption={t('unknown')} />
+                  <ContactCardFilter criterion="all" caption={t('all')} />
                 </>
               )}
-            </S.Filtros>
+            </S.filters>
           </>
         ) : (
-          <Button onClick={() => navigate(-1)}>Return</Button>
+          <Button onClick={() => navigate(-1)}>{t('return')}</Button>
         )}
       </div>
     </S.Aside>

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import Tarefa from '../../models/TaskModels'
@@ -8,6 +9,7 @@ import * as taskEnums from '../../utils/enums/taskEnums'
 import { Form, Opcoe, Opcoes } from './NewTaskFormStyles'
 
 const NewTaskForm = () => {
+  const { t } = useTranslation()
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const [title, setTitle] = useState('')
@@ -18,7 +20,7 @@ const NewTaskForm = () => {
     e.preventDefault()
 
     if (!title.trim() || !description.trim()) {
-      alert('Por favor, preencha todos os campos obrigatórios.')
+      alert(t('fillAllFilds'))
       return
     }
 
@@ -40,8 +42,8 @@ const NewTaskForm = () => {
   return (
     <MainContainer>
       <Form onSubmit={registerTask}>
-        <InputField id="title" value={title} onChange={({ target }) => setTitle(target.value)} type="text" placeholder="title" />
-        <InputField id="description" value={description} onChange={({ target }) => setDescription(target.value)} as="textarea" placeholder="Descrição da Tarefa" />
+        <InputField id="title" value={title} onChange={({ target }) => setTitle(target.value)} type="text" placeholder={t('title')} />
+        <InputField id="description" value={description} onChange={({ target }) => setDescription(target.value)} as="textarea" placeholder={t('description')} />
         <Opcoes>
           <p>priority</p>
           {Object.values(taskEnums.priority).map(priority => (
@@ -50,7 +52,7 @@ const NewTaskForm = () => {
             </Opcoe>
           ))}
         </Opcoes>
-        <SaveButton type="submit">Save</SaveButton>
+        <SaveButton type="submit">{t('save')}</SaveButton>
       </Form>
     </MainContainer>
   )

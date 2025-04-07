@@ -1,6 +1,7 @@
 import { combineReducers, configureStore as toolkitConfigureStore } from '@reduxjs/toolkit'
 import contactsReducer from './slices/contactsSlice'
 import filterReducer from './slices/filterSlice'
+import languageReducer from './slices/languageSlice'
 import tasksReducer from './slices/taskSlice'
 import themeReducer from './slices/themeSlice'
 
@@ -8,7 +9,8 @@ const rootReducer = combineReducers({
   tasks: tasksReducer,
   filter: filterReducer,
   contacts: contactsReducer,
-  theme: themeReducer
+  theme: themeReducer,
+  language: languageReducer
 })
 
 export type RootState = ReturnType<typeof rootReducer>

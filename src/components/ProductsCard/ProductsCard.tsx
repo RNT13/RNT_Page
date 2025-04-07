@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { CardBody, CardButton, CardContainer, CardFooter, ProductImage } from './ProductsCardStyles'
 
 export type CardProps = {
@@ -7,6 +8,8 @@ export type CardProps = {
 }
 
 const Card = ({ image, name, description }: CardProps) => {
+  const { t } = useTranslation()
+
   return (
     <CardContainer>
       <ProductImage src={image} alt={name} />
@@ -15,7 +18,7 @@ const Card = ({ image, name, description }: CardProps) => {
         <p>{description}</p>
       </CardBody>
       <CardFooter className="card-footer">
-        <CardButton>ADD TO CART</CardButton>
+        <CardButton>{t('addToCart')}</CardButton>
       </CardFooter>
     </CardContainer>
   )

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
 import ContactModels from '../../models/ContactModels'
 import { editContact, removeContact } from '../../redux/slices/contactsSlice'
@@ -12,6 +13,7 @@ type ContactProps = {
 
 const ContactCard = ({ contact }: ContactProps) => {
   const dispatch = useDispatch()
+  const { t } = useTranslation()
   const [isEditing, setIsEditing] = useState(false)
   const [editedContact, setEditedContact] = useState(contact)
 
@@ -40,33 +42,31 @@ const ContactCard = ({ contact }: ContactProps) => {
 
   return (
     <Card>
-      <div>
-        <Tag $status={editedContact.status as Contactenums.status}>{editedContact.status}</Tag>
-        {isEditing && <span>Editing...</span>}
-      </div>
+      <Tag $status={editedContact.status as Contactenums.status}>{t((editedContact.status as string).toLowerCase())}</Tag>
+
       <InfoContainer>
-        <label>Name:</label>
+        <label>{t('name')}:</label>
         <ContactTitle name="name" value={editedContact.name} onChange={handleChange} disabled={!isEditing} />
       </InfoContainer>
       <InfoContainer>
-        <label>Email:</label>
+        <label>{t('email')}:</label>
         <ContactTitle name="email" value={editedContact.email} onChange={handleChange} disabled={!isEditing} />
       </InfoContainer>
       <InfoContainer>
-        <label>Phone:</label>
+        <label>{t('phone')}:</label>
         <ContactTitle name="phone" value={editedContact.phone} onChange={handleChange} disabled={!isEditing} />
       </InfoContainer>
       <Description name="description" value={editedContact.description || ''} onChange={handleChange} disabled={!isEditing} placeholder="description" />
       <ActionBar>
         {isEditing ? (
           <>
-            <SaveButton onClick={handleSave}>Save</SaveButton>
-            <CancelButton onClick={handleCancel}>Cancel</CancelButton>
+            <SaveButton onClick={handleSave}>{t('save')}</SaveButton>
+            <CancelButton onClick={handleCancel}>{t('cancel')}</CancelButton>
           </>
         ) : (
           <>
-            <EditButton onClick={handleEdit}>Edit Contact</EditButton>
-            <RemoveContactButton onClick={handleRemove}>Remove</RemoveContactButton>
+            <EditButton onClick={handleEdit}>{t('editContact')} </EditButton>
+            <RemoveContactButton onClick={handleRemove}>{t('remove')}</RemoveContactButton>
           </>
         )}
       </ActionBar>

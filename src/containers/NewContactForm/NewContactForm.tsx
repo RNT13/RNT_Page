@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import Contacts from '../../models/ContactModels'
@@ -8,6 +9,7 @@ import * as contactEnums from '../../utils/enums/contactEnums'
 import { Form, Opcoe, Opcoes } from './NewContactFormStyles'
 
 const NewContactForm = () => {
+  const { t } = useTranslation()
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const [name, setName] = useState('')
@@ -19,13 +21,13 @@ const NewContactForm = () => {
     e.preventDefault()
 
     if (!name.trim() || !email.trim() || !phone.trim()) {
-      alert('Por favor, preencha todos os campos obrigatórios.')
+      alert(t('fillAllFilds'))
       return
     }
 
     const parsedPhone = parseInt(phone, 10)
     if (isNaN(parsedPhone)) {
-      alert('Por favor, insira um número de telefone válido.')
+      alert(t('fillAllFilds'))
       return
     }
 
@@ -48,9 +50,9 @@ const NewContactForm = () => {
   return (
     <MainContainer>
       <Form onSubmit={registerContact}>
-        <InputField id="name" value={name} onChange={e => setName(e.target.value)} type="text" placeholder="Full Name" />
-        <InputField id="email" value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder="Email" />
-        <InputField id="phone" value={phone} onChange={e => setPhone(e.target.value)} type="tel" placeholder="Phone" />
+        <InputField id="name" value={name} onChange={e => setName(e.target.value)} type="text" placeholder={t('fullName')} />
+        <InputField id="email" value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder={t('email')} />
+        <InputField id="phone" value={phone} onChange={e => setPhone(e.target.value)} type="tel" placeholder={t('phone')} />
         <Opcoes>
           <p>Status</p>
           {Object.values(contactEnums.status).map(statusValue => (
@@ -60,7 +62,7 @@ const NewContactForm = () => {
             </Opcoe>
           ))}
         </Opcoes>
-        <SaveButton type="submit">Save</SaveButton>
+        <SaveButton type="submit">{t('save')}</SaveButton>
       </Form>
     </MainContainer>
   )

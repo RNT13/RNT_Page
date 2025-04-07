@@ -1,13 +1,16 @@
+import { useTranslation } from 'react-i18next'
 import Carousel from '../../components/Carousel/Carousel'
 import Card from '../../components/ProductsCard/ProductsCard'
 import { TitleH2 } from '../../styles/globalStyles'
 import { ProductsCardContainer, ProductsContainer } from './productsPageStyles'
 
 const ProductsPage = () => {
+  const { t } = useTranslation()
+
   return (
     <ProductsContainer>
       <Carousel />
-      <TitleH2>Products</TitleH2>
+      <TitleH2>{t('products')}</TitleH2>
       <ProductsCardContainer>
         <Card image="/images/canecas (1).png" name="Caneca Personalizada" description="Uma linda caneca personalizada para o seu café." />
         <Card image="/images/canecas (2).png" name="Caneca Personalizada" description="Uma linda caneca personalizada para o seu café." />

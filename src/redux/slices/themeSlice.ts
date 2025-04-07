@@ -2,12 +2,10 @@ import { createSlice } from '@reduxjs/toolkit'
 
 interface ThemeState {
   theme: 'light' | 'dark'
-  language: 'en' | 'pt-br'
 }
 
 const initialState: ThemeState = {
-  theme: 'dark',
-  language: 'pt-br'
+  theme: 'dark'
 }
 
 const themeSlice = createSlice({
@@ -15,14 +13,10 @@ const themeSlice = createSlice({
   initialState,
   reducers: {
     toggleTheme: state => {
-      state.theme = state.theme === 'dark' ? 'light' : 'dark'
-    },
-    toggleLanguage: state => {
-      state.language = state.language === 'en' ? 'pt-br' : 'en'
+      state.theme = state.theme === 'light' ? 'dark' : 'light'
     }
   }
 })
 
-export const { toggleTheme, toggleLanguage } = themeSlice.actions
-
+export const { toggleTheme } = themeSlice.actions
 export default themeSlice.reducer

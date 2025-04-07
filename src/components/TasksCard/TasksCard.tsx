@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import * as taskEnums from '../../utils/enums/taskEnums'
 
+import { useTranslation } from 'react-i18next'
 import TaskModels from '../../models/TaskModels'
 import { changeFilter } from '../../redux/slices/filterSlice'
 import { changeStatus, editTask, removeTask } from '../../redux/slices/taskSlice'
@@ -15,6 +16,7 @@ const RemoveTaskButton = styled(Button)`
 `
 
 const TaskCard = ({ title, priority, status, description: originalDescription, id }: TaskModels) => {
+  const { t } = useTranslation()
   const dispatch = useDispatch()
   const filter = useSelector((state: RootState) => state.filter)
   const { criterion, value } = filter || { criterion: 'all', value: undefined }
@@ -48,11 +50,11 @@ const TaskCard = ({ title, priority, status, description: originalDescription, i
   return (
     <Card>
       <div>
-        <Tag $priority={priority}>{priority}</Tag>
+        <Tag $priority={priority}>{t(priority.toLowerCase())}</Tag>
         <Tag $priority="status" $status={taskState}>
-          {taskState}
+          {t(taskState.toLowerCase())}
         </Tag>
-        {isEditing && <span>Editing...</span>}
+        {isEditing && <span>{t('editing')}</span>}
       </div>
       <InfoContainer>
         <label htmlFor={title}>
@@ -64,13 +66,13 @@ const TaskCard = ({ title, priority, status, description: originalDescription, i
       <ActionBar>
         {isEditing ? (
           <>
-            <SaveButton onClick={saveEdition}>Save</SaveButton>
-            <CancelButton onClick={cancelEdication}>Cancel</CancelButton>
+            <SaveButton onClick={saveEdition}>{t('save')}</SaveButton>
+            <CancelButton onClick={cancelEdication}>{t('cancel')}</CancelButton>
           </>
         ) : (
           <>
-            <EditButton onClick={() => setIsEditing(true)}>Edit Task</EditButton>
-            <RemoveTaskButton onClick={() => dispatch(removeTask(id))}>Remove</RemoveTaskButton>
+            <EditButton onClick={() => setIsEditing(true)}>{t('editTask')}</EditButton>
+            <RemoveTaskButton onClick={() => dispatch(removeTask(id))}>{t('remove')}</RemoveTaskButton>
           </>
         )}
       </ActionBar>

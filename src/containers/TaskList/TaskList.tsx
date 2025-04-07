@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import TaskCard from '../../components/TasksCard/TasksCard'
 import { RootState } from '../../redux/store'
@@ -5,6 +6,7 @@ import { TitleH2 } from '../../styles/globalStyles'
 import { MainTaskContainer } from './TaskListStyles'
 
 const TaskList = () => {
+  const { t } = useTranslation()
   const { itens } = useSelector((state: RootState) => state.tasks)
   const { term = '', criterion, value } = useSelector((state: RootState) => state.filter)
 
@@ -26,9 +28,9 @@ const TaskList = () => {
     const complementation = term !== undefined && term.length > 0 ? ` e "${term}"` : ''
 
     if (criterion === 'all') {
-      message = `${amount} task(s) marked as: All ${complementation}`
+      message = `${amount} ${t('taskMarkedAsAll')} ${complementation}`
     } else {
-      message = `${amount} task(s) marked as: ${`${value}`} ${complementation}`
+      message = `${amount} ${t('taskMarketAs')} ${`${value}`} ${complementation}`
     }
     return message
   }

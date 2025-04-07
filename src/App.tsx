@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { Provider, useSelector } from 'react-redux'
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
@@ -9,6 +9,7 @@ import Header from './containers/Header/Header'
 import i18n from './i18n'
 import { RootState, store } from './redux/store'
 import { GlobalMain, GlobalMainContent, GlobalStyle } from './styles/globalStyles'
+import { themeConfig } from './styles/theme'
 
 // páginas
 import CalendarPage from './pages/CalendarPage/CalendarPage'
@@ -21,7 +22,6 @@ import ProductsPage from './pages/productsPage/productsPage'
 import ProfilePage from './pages/ProfilePage/ProfilePage'
 import RequestsPage from './pages/RequestsPage/RequestsPage'
 import TasksPage from './pages/TasksPage/TasksPage'
-import { themeConfig } from './styles/theme'
 
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -45,7 +45,13 @@ const Layout = () => {
   )
 }
 
-const App = () => {
+const AppContent = () => {
+  const language = useSelector((state: RootState) => state.language.language)
+
+  useEffect(() => {
+    i18n.changeLanguage(language)
+  }, [language])
+
   const router = createBrowserRouter([
     {
       path: '/',
@@ -65,10 +71,14 @@ const App = () => {
     }
   ])
 
+  return <RouterProvider router={router} />
+}
+
+const App = () => {
   return (
     <Provider store={store}>
       <I18nextProvider i18n={i18n}>
-        <RouterProvider router={router} />
+        <AppContent />
       </I18nextProvider>
     </Provider>
   )
