@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { LinkButtonToggle } from '../../components/LinkButton/LinkButton'
-import { ToggleButton } from '../../components/ToggleButton/ToggleButton'
-import { AsideAppsDiv, AsideContainer, AsideSocialLinks } from './AsideBarStyles'
+import { LinkButtonToggle } from '../../components/linkButton/LinkButton'
+import { ToggleButton } from '../../components/toggleButton/ToggleButton'
+import { AsideAppsDiv, AsideContainer, AsideSocialLinks } from '../asideBar/AsideBarStyles'
 
 const AsideBar = ({ isOpen, toggleSidebar }: { isOpen: boolean; toggleSidebar: () => void }) => {
   const { t } = useTranslation()

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { TitleH2 } from '../../styles/globalStyles'
-import { RequestsPageContainer } from './RequestsPageStyles'
+import { RequestsPageContainer } from '../requestsPage/RequestsPageStyles'
 
 const RequestsPage = () => {
   const { t } = useTranslation()

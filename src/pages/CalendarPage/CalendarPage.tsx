@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { TitleH2 } from '../../styles/globalStyles'
-import { CalendarContainer, CalendarContent } from './CalendarPageStyles'
+import { CalendarContainer, CalendarContent } from '../calendarPage/CalendarPageStyles'
 
 const CalendarPage = () => {
   const { t } = useTranslation()

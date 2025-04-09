@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import TaskCard from '../../components/TasksCard/TasksCard'
+import TaskCard from '../../components/tasksCard/TasksCard'
 import { RootState } from '../../redux/store'
 import { TitleH2 } from '../../styles/globalStyles'
-import { MainTaskContainer } from './TaskListStyles'
+import { MainTaskContainer } from '../taskList/TaskListStyles'
 
 const TaskList = () => {
   const { t } = useTranslation()

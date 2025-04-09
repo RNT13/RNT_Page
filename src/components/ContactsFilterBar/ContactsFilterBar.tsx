@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { FilterCard } from '../../components/ContactsFilterBar/ContactsFilterBarStyles'
 import { changeFilter } from '../../redux/slices/filterSlice'
 import { RootState } from '../../redux/store'
 import { Counter, TextH3 } from '../../styles/globalStyles'
 import * as enums from '../../utils/enums/contactEnums'
+import { FilterCard } from '../contactsFilterBar/ContactsFilterBarStyles'
 
 export type Props = {
   caption: string

@@ -1,14 +1,14 @@
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import ContactCardFilter from '../../components/ContactsFilterBar/ContactsFilterBar'
-import TaskCardFilter from '../../components/TasksFilterBar/TasksFilterBar'
+import ContactCardFilter from '../../components/contactsFilterBar/ContactsFilterBar'
+import TaskCardFilter from '../../components/tasksFilterBar/TasksFilterBar'
 import { changeTerm } from '../../redux/slices/filterSlice'
 import { RootState } from '../../redux/store'
 import { Button, InputField } from '../../styles/globalStyles'
 import * as contactEnums from '../../utils/enums/contactEnums'
 import * as taskEnums from '../../utils/enums/taskEnums'
-import * as S from './FilterBarStyles'
+import * as S from '../filterBar/FilterBarStyles'
 
 type props = {
   mostrarFiltros: boolean

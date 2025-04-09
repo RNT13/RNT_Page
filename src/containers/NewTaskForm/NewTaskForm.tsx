@@ -6,7 +6,7 @@ import Tarefa from '../../models/TaskModels'
 import { addTask } from '../../redux/slices/taskSlice'
 import { InputField, MainContainer, SaveButton } from '../../styles/globalStyles'
 import * as taskEnums from '../../utils/enums/taskEnums'
-import { Form, Opcoe, Opcoes } from './NewTaskFormStyles'
+import { Form, Opcoe, Opcoes } from '../newTaskForm/NewTaskFormStyles'
 
 const NewTaskForm = () => {
   const { t } = useTranslation()

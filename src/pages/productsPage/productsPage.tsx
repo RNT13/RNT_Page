@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next'
-import Carousel from '../../components/Carousel/Carousel'
-import Card from '../../components/ProductsCard/ProductsCard'
+import Carousel from '../../components/carousel/Carousel'
+import Card from '../../components/productsCard/ProductsCard'
 import { TitleH2 } from '../../styles/globalStyles'
-import { ProductsCardContainer, ProductsContainer } from './productsPageStyles'
+import { ProductsCardContainer, ProductsContainer } from '../productsPage/productsPageStyles'
 
 const ProductsPage = () => {
   const { t } = useTranslation()

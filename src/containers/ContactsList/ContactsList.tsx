@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import ContactCard from '../../components/ContactCard/ContactCard'
+import ContactCard from '../../components/contactCard/ContactCard'
 import { RootState } from '../../redux/store'
 import { TitleH2 } from '../../styles/globalStyles'
-import { MainContactContainer } from './ContactsListStyles'
+import { MainContactContainer } from '../contactsList/ContactsListStyles'
 
 const ContactsList = () => {
   const { t } = useTranslation()

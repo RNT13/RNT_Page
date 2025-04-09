@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next'
-import FilterBar from '../../containers/FilterBar/FilterBar'
-import NewContactForm from '../../containers/NewContactForm/NewContactForm'
+import FilterBar from '../../containers/filterBar/FilterBar'
+import NewContactForm from '../../containers/newContactForm/NewContactForm'
 import { TitleH2 } from '../../styles/globalStyles'
-import { NewContactsContainer, NewContactsContent, NewContactsMain, NewContactsSideBar } from './NewContactsPageStyles'
+import { NewContactsContainer, NewContactsContent, NewContactsMain, NewContactsSideBar } from '../newContactPage/NewContactsPageStyles'
 
 const NewContactsPage = () => {
   const { t } = useTranslation()

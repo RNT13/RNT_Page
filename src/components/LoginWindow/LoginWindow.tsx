@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
-import { FloatingLabel, InputWrapper, LoginButton, LoginTitle, LoginWindowContainer, LoginWindowContent, LoginWindowFooter, TooglePasswordButton } from '../../components/LoginWindow/LoginWindowStyles'
 import { InputField } from '../../styles/globalStyles'
+import { FloatingLabel, InputWrapper, LoginButton, LoginTitle, LoginWindowContainer, LoginWindowContent, LoginWindowFooter, TooglePasswordButton } from './LoginWindowStyles'
 
 const LoginWindow: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false)

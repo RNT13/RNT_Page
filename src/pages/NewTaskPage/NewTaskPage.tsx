@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next'
-import FilterBar from '../../containers/FilterBar/FilterBar'
-import NewTaskForm from '../../containers/NewTaskForm/NewTaskForm'
+import FilterBar from '../../containers/filterBar/FilterBar'
+import NewTaskForm from '../../containers/newTaskForm/NewTaskForm'
 import { TitleH2 } from '../../styles/globalStyles'
-import { NewTaskContainer, NewTaskContent, NewTaskMain, NewTaskSidebar } from './NewTaskPageStyles'
+import { NewTaskContainer, NewTaskContent, NewTaskMain, NewTaskSidebar } from '../newTaskPage/NewTaskPageStyles'
 
 const NewTaskPage = () => {
   const { t } = useTranslation()

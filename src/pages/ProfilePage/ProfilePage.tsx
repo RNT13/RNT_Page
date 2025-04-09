@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { ProfilePageContainer } from '../../pages/ProfilePage/ProfilePageStyles'
+import { ProfilePageContainer } from '../../pages/profilePage/ProfilePageStyles'
 import { TitleH2 } from '../../styles/globalStyles'
 
 const ProfilePage = () => {

@@ -4,7 +4,7 @@ import { Provider, useSelector } from 'react-redux'
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 
-import AsideBar from './containers/AsideBar/AsideBar'
+import AsideBar from './containers/asideBar/AsideBar'
 import Header from './containers/Header/Header'
 import i18n from './i18n'
 import { RootState, store } from './redux/store'
@@ -22,7 +22,7 @@ import ProductsPage from './pages/productsPage/productsPage'
 import ProfilePage from './pages/ProfilePage/ProfilePage'
 import RequestsPage from './pages/RequestsPage/RequestsPage'
 import TasksPage from './pages/TasksPage/TasksPage'
-import TestPage from './pages/TestPage/testPage'
+import TestPage from './pages/TestPage/TestPage'
 
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(false)

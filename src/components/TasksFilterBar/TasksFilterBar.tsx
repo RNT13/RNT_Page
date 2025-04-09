@@ -3,7 +3,7 @@ import { changeFilter } from '../../redux/slices/filterSlice'
 import { RootState } from '../../redux/store'
 import { Counter, TextH3 } from '../../styles/globalStyles'
 import * as taskEnums from '../../utils/enums/taskEnums'
-import { FilterCard } from './TasksFilterBarStyles'
+import { FilterCard } from '../tasksFilterBar/TasksFilterBarStyles'
 
 export type Props = {
   caption: string

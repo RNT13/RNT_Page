@@ -6,7 +6,7 @@ import Contacts from '../../models/ContactModels'
 import { addContact } from '../../redux/slices/contactsSlice'
 import { InputField, MainContainer, SaveButton } from '../../styles/globalStyles'
 import * as contactEnums from '../../utils/enums/contactEnums'
-import { Form, Opcoe, Opcoes } from './NewContactFormStyles'
+import { Form, Opcoe, Opcoes } from '../newContactForm/NewContactFormStyles'
 
 const NewContactForm = () => {
   const { t } = useTranslation()

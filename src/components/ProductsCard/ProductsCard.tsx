@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { CardBody, CardButton, CardContainer, CardFooter, ProductImage } from './ProductsCardStyles'
+import { CardBody, CardButton, CardContainer, CardFooter, ProductImage } from '../productsCard/ProductsCardStyles'
 
 export type CardProps = {
   image: string

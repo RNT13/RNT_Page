@@ -1,7 +1,7 @@
 import { AnimatePresence } from 'framer-motion'
 import React, { useState } from 'react'
-import MenuWindow from '../MenuWindows/MenuWindow'
-import { MenuButtonContainer, MenuLogo, MenuOverlay } from './MenuButtonStyles'
+import { MenuButtonContainer, MenuLogo, MenuOverlay } from '../menuButton/MenuButtonStyles'
+import MenuWindow from '../menuWindows/MenuWindow'
 
 const MenuButton: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)

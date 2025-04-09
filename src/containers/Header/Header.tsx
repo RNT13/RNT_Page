@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { LinkButton } from '../../components/LinkButton/LinkButton'
-import { Logo } from '../../components/Logo/Logo'
-import MenuButton from '../../components/MenuButton/MenuButton'
-import { HeaderContainer, Nav } from './HeaderStyles'
+import { LinkButton } from '../../components/linkButton/LinkButton'
+import { Logo } from '../../components/logo/Logo'
+import MenuButton from '../../components/menuButton/MenuButton'
+import { HeaderContainer, Nav } from '../header/HeaderStyles'
 
 const Header = () => {
   const { t } = useTranslation()

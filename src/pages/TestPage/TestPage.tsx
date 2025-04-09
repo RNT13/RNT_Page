@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { TitleH2 } from '../../styles/globalStyles'
-import { GradientButton, LineHoverButton, TestContainer, TestContent } from './TestPageStyles'
+import { GradientButton, LineHoverButton, TestContainer, TestContent } from '../testPage/TestPageStyles'
 
 const TestPage = () => {
   const { t } = useTranslation()
