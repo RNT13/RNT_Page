@@ -21,8 +21,8 @@ import NewTaskPage from './pages/newTaskPage/NewTaskPage'
 import ProductsPage from './pages/productsPage/productsPage'
 import ProfilePage from './pages/profilePage/ProfilePage'
 import RequestsPage from './pages/requestsPage/RequestsPage'
-import TestPage from './pages/simulationPage/TestPage'
 import TasksPage from './pages/tasksPage/TasksPage'
+import TestPage from './pages/testPage/TestPage'
 
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(false)
