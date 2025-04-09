@@ -53,7 +53,9 @@ i18n.use(initReactI18next).init({
         taskMarkedAsAll: 'task(s) marked as: All',
         taskMarketAs: 'task(s) marked as:',
         title: 'Title',
-        fillAllFilds: 'Please fill in all required fields.'
+        fillAllFilds: 'Please fill in all required fields.',
+        test: 'Test',
+        click: 'Click Here'
       }
     },
     pt: {
@@ -106,7 +108,9 @@ i18n.use(initReactI18next).init({
         taskMarkedAsAll: 'tarefa(s) marcado(s) como: Todos',
         taskMarketAs: 'tarefa(s) marcado(s) como:',
         title: 'Título',
-        fillAllFilds: 'Por favor, preencha todos os campos obrigatórios.'
+        fillAllFilds: 'Por favor, preencha todos os campos obrigatórios.',
+        test: 'Teste',
+        click: 'Clique Aqui'
       }
     }
   },

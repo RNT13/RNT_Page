@@ -1,13 +1,15 @@
 import { useTranslation } from 'react-i18next'
 import { TitleH2 } from '../../styles/globalStyles'
+import { CalendarContainer, CalendarContent } from './CalendarPageStyles'
 
 const CalendarPage = () => {
   const { t } = useTranslation()
 
   return (
-    <div>
+    <CalendarContainer>
       <TitleH2>{t('calendar')}</TitleH2>
-    </div>
+      <CalendarContent></CalendarContent>
+    </CalendarContainer>
   )
 }
 

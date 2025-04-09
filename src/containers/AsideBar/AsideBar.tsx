@@ -17,19 +17,24 @@ const AsideBar = ({ isOpen, toggleSidebar }: { isOpen: boolean; toggleSidebar: (
         </ToggleButton>
 
         <AsideAppsDiv>
-          <LinkButtonToggle $isOpen={isOpen} onClick={() => navigate('/CalendarPage')} $isActive={location.pathname === '/CalendarPage'} title="Calendar">
+          <LinkButtonToggle $isOpen={isOpen} onClick={() => navigate('/CalendarPage')} $isActive={location.pathname === '/CalendarPage'} title={t('calendar')}>
             <img src="/images/calendarioIcon.png" alt="CalendarPage" />
             <span>{t('calendar')}</span>
           </LinkButtonToggle>
 
-          <LinkButtonToggle $isOpen={isOpen} onClick={() => navigate('/TasksPage')} $isActive={location.pathname === '/TasksPage'} title="Tasks">
+          <LinkButtonToggle $isOpen={isOpen} onClick={() => navigate('/TasksPage')} $isActive={location.pathname === '/TasksPage'} title={t('tasks')}>
             <img src="/images/tarefasIcon.png" alt="TasksPage" />
             <span>{t('tasks')}</span>
           </LinkButtonToggle>
 
-          <LinkButtonToggle $isOpen={isOpen} onClick={() => navigate('/ContactsPage')} $isActive={location.pathname === '/ContactsPage'} title="Contacts">
+          <LinkButtonToggle $isOpen={isOpen} onClick={() => navigate('/ContactsPage')} $isActive={location.pathname === '/ContactsPage'} title={t('contacts')}>
             <img src="/images/contatoIcon.png" alt="ContactsPage" />
             <span>{t('contacts')}</span>
+          </LinkButtonToggle>
+
+          <LinkButtonToggle $isOpen={isOpen} onClick={() => navigate('/TestPage')} $isActive={location.pathname === '/TestPage'} title={t('test')}>
+            <img src="/images/FormIcon.png" alt="TestPage" />
+            <span>{t('test')}</span>
           </LinkButtonToggle>
         </AsideAppsDiv>
 
