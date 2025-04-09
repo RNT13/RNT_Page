@@ -9,7 +9,7 @@ import { changeFilter } from '../../redux/slices/filterSlice'
 import { changeStatus, editTask, removeTask } from '../../redux/slices/taskSlice'
 import { RootState } from '../../redux/store'
 import { Button, Card, SaveButton, Tag } from '../../styles/globalStyles'
-import { ActionBar, CancelButton, Description, EditButton, InfoContainer, TaskTitle } from './TasksCardStyles'
+import { ActionBar, CancelButton, Description, EditButton, InfoContainer, TaskTitle } from '../tasksCard/TasksCardStyles'
 
 const RemoveTaskButton = styled(Button)`
   background-color: ${({ theme }) => theme.colors.red};
