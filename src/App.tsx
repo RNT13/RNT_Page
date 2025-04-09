@@ -22,6 +22,7 @@ import ProductsPage from './pages/productsPage/productsPage'
 import ProfilePage from './pages/profilePage/ProfilePage'
 import RequestsPage from './pages/requestsPage/RequestsPage'
 import TasksPage from './pages/tasksPage/TasksPage'
+import TestPage from './pages/testPage/TestPage'
 
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -66,7 +67,8 @@ const AppContent = () => {
         { path: '/CalendarPage', element: <CalendarPage /> },
         { path: '/LoginPage', element: <LoginPage /> },
         { path: '/ProfilePage', element: <ProfilePage /> },
-        { path: '/RequestsPage', element: <RequestsPage /> }
+        { path: '/RequestsPage', element: <RequestsPage /> },
+        { path: '/TestPage', element: <TestPage /> }
       ]
     }
   ])
