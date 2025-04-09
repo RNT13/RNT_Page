@@ -26,11 +26,15 @@ const TaskList = () => {
   const displayFilteredResult = (amount: number) => {
     let message = ''
     const complementation = term !== undefined && term.length > 0 ? ` e "${term}"` : ''
+    const getTranslatedStatus = (value: string) => {
+      const lower = value.toLowerCase()
+      return t(lower, value)
+    }
 
     if (criterion === 'all') {
       message = `${amount} ${t('taskMarkedAsAll')} ${complementation}`
     } else {
-      message = `${amount} ${t('taskMarketAs')} ${`${value}`} ${complementation}`
+      message = `${amount} ${t('taskMarketAs')} ${getTranslatedStatus(value || '')} ${complementation}`
     }
     return message
   }

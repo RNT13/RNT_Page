@@ -24,11 +24,15 @@ const ContactsList = () => {
   const displayFilteredResult = (amount: number) => {
     let message = ''
     const complementation = term !== undefined && term.length > 0 ? ` e "${term}"` : ''
+    const getTranslatedStatus = (value: string) => {
+      const lower = value.toLowerCase()
+      return t(lower, value)
+    }
 
     if (criterion === 'all') {
       message = `${amount} ${t('contactMarkedAsAll')} ${complementation}`
     } else {
-      message = `${amount} ${t('contactMarketAs')} ${`${value}`} ${complementation}`
+      message = `${amount} ${t('contactMarketAs')} ${getTranslatedStatus(value || '')} ${complementation}`
     }
     return message
   }

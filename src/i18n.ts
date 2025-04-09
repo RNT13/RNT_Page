@@ -97,7 +97,7 @@ i18n.use(initReactI18next).init({
         unknown: 'Desconhecido',
         search: 'Pesquisar',
         return: 'Voltar',
-        all: 'Todos',
+        all: 'Todos(as)',
         markedAs: 'marcado como',
         task: 'Tarefa',
         contact: 'Contato',
@@ -105,10 +105,10 @@ i18n.use(initReactI18next).init({
         fullName: 'Nome Completo',
         contactMarkedAsAll: 'contato(s) marcado(s) como: Todos',
         contactMarketAs: 'contato(s) marcado(s) como:',
-        taskMarkedAsAll: 'tarefa(s) marcado(s) como: Todos',
-        taskMarketAs: 'tarefa(s) marcado(s) como:',
+        taskMarkedAsAll: 'tarefa(s) marcada(s) como: Todas',
+        taskMarketAs: 'tarefa(s) marcada(s) como:',
         title: 'Título',
-        fillAllFilds: 'Por favor, preencha todos os campos obrigatórios.',
+        fillAllFilds: 'Por favor, preencha Todos os campos obrigatórios.',
         test: 'Teste',
         click: 'Clique Aqui'
       }
