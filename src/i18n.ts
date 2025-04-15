@@ -55,7 +55,10 @@ i18n.use(initReactI18next).init({
         title: 'Title',
         fillAllFilds: 'Please fill in all required fields.',
         test: 'Test',
-        click: 'Click Here'
+        click: 'Click Here',
+        cart: 'Cart',
+        cartEmpty: 'Your cart is empty',
+        cartTotal: 'Total'
       }
     },
     pt: {
@@ -110,7 +113,10 @@ i18n.use(initReactI18next).init({
         title: 'Título',
         fillAllFilds: 'Por favor, preencha Todos os campos obrigatórios.',
         test: 'Teste',
-        click: 'Clique Aqui'
+        click: 'Clique Aqui',
+        cart: 'Carrinho',
+        cartEmpty: 'Seu carrinho está vazio',
+        cartTotal: 'Total'
       }
     }
   },

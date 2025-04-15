@@ -9,8 +9,7 @@ const MenuButton: React.FC = () => {
   return (
     <>
       <MenuButtonContainer onClick={() => setIsOpen(true)}>
-        <MenuLogo src="/images/MenuIcon.png" alt="Login" />
-        Menu
+        <MenuLogo />
       </MenuButtonContainer>
 
       <AnimatePresence>

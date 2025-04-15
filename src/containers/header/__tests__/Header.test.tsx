@@ -7,7 +7,7 @@ import { providerRender } from '../../../utils/tests/tests'
 import Header from '../Header'
 
 describe('testes para o componente Header', () => {
-  test('deve mostrar 2 botões', () => {
+  test('deve mostrar botões', () => {
     providerRender(
       <Router>
         <Provider store={store}>
@@ -16,6 +16,6 @@ describe('testes para o componente Header', () => {
       </Router>
     )
 
-    expect(screen.getAllByRole('button')).toHaveLength(3)
+    expect(screen.getAllByRole('button')).toHaveLength(4)
   })
 })

@@ -13,6 +13,7 @@ import { themeConfig } from './styles/theme'
 
 // páginas
 import CalendarPage from './pages/calendarPage/CalendarPage'
+import CartPage from './pages/cartPage/CartPage'
 import ContactsPage from './pages/contactsPage/ContactsPage'
 import Home from './pages/homePage/HomePage'
 import LoginPage from './pages/loginPage/LoginPage'
@@ -68,7 +69,8 @@ const AppContent = () => {
         { path: '/LoginPage', element: <LoginPage /> },
         { path: '/ProfilePage', element: <ProfilePage /> },
         { path: '/RequestsPage', element: <RequestsPage /> },
-        { path: '/TestPage', element: <TestPage /> }
+        { path: '/TestPage', element: <TestPage /> },
+        { path: '/CartPage', element: <CartPage /> }
       ]
     }
   ])

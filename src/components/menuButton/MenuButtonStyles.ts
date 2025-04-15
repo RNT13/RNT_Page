@@ -1,3 +1,4 @@
+import { TiThMenu } from 'react-icons/ti'
 import styled from 'styled-components'
 
 export const MenuButtonContainer = styled.button`
@@ -20,10 +21,8 @@ export const MenuButtonContainer = styled.button`
   }
 `
 
-export const MenuLogo = styled.img`
-  width: 30px;
-  height: 30px;
-  margin-right: 8px;
+export const MenuLogo = styled(TiThMenu)`
+  font-size: 32px;
 `
 
 export const MenuOverlay = styled.div`

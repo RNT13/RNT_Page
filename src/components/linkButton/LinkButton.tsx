@@ -63,3 +63,7 @@ export const LinkButton = styled.button<{ $isActive: boolean }>`
     transition: all 0.2s ease;
   }
 `
+
+export const LinkButtonIcon = styled.div`
+  font-size: 28px;
+`

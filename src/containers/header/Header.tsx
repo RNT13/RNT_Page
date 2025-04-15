@@ -1,9 +1,10 @@
 import { useTranslation } from 'react-i18next'
 import { useLocation, useNavigate } from 'react-router-dom'
+import CartButton from '../../components/cartButton/CartButton'
 import { LinkButton } from '../../components/linkButton/LinkButton'
 import { Logo } from '../../components/logo/Logo'
 import MenuButton from '../../components/menuButton/MenuButton'
-import { HeaderContainer, Nav } from '../header/HeaderStyles'
+import { HeaderContainer, Nav, NavLeft } from '../header/HeaderStyles'
 
 const Header = () => {
   const { t } = useTranslation()
@@ -21,7 +22,10 @@ const Header = () => {
           {t('products')}
         </LinkButton>
       </Nav>
-      <MenuButton />
+      <NavLeft>
+        {(location.pathname === '/ProductsPage' || location.pathname === '/CartPage') && <CartButton />}
+        <MenuButton />
+      </NavLeft>
     </HeaderContainer>
   )
 }

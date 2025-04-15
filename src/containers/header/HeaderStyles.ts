@@ -16,8 +16,16 @@ export const HeaderContainer = styled.header`
 
 export const Nav = styled.nav`
   gap: 15px;
-  width: 100%;
+  width: 85%;
   display: flex;
   align-items: center;
   justify-content: center;
+`
+
+export const NavLeft = styled.nav`
+  gap: 15px;
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 `
