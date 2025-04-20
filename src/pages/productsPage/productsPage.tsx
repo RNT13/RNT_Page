@@ -1,14 +1,14 @@
 import { useTranslation } from 'react-i18next'
 import Carousel from '../../components/carousel/Carousel'
 import Card from '../../components/productsCard/ProductsCard'
-import { TitleH2 } from '../../styles/globalStyles'
-import { ProductsCardContainer, ProductsContainer } from '../productsPage/productsPageStyles'
+import { GlobalMainContent, TitleH2 } from '../../styles/globalStyles'
+import { ProductsCardContainer } from '../productsPage/productsPageStyles'
 
 const ProductsPage = () => {
   const { t } = useTranslation()
 
   return (
-    <ProductsContainer>
+    <GlobalMainContent>
       <Carousel />
       <TitleH2>{t('products')}</TitleH2>
       <ProductsCardContainer>
@@ -26,7 +26,7 @@ const ProductsPage = () => {
         <Card image="/images/canecas (12).png" name="Caneca Personalizada" description="Uma linda caneca personalizada para o seu café." />
         <Card image="/images/canecas (13).png" name="Caneca Personalizada" description="Uma linda caneca personalizada para o seu café." />
       </ProductsCardContainer>
-    </ProductsContainer>
+    </GlobalMainContent>
   )
 }
 

@@ -1,15 +1,13 @@
 import { useTranslation } from 'react-i18next'
-import { TitleH2 } from '../../styles/globalStyles'
-import { CartContent, CartPageContainer } from './CartPageStyles'
+import { GlobalMainContent, TitleH2 } from '../../styles/globalStyles'
 
 const CartPage = () => {
   const { t } = useTranslation()
 
   return (
-    <CartPageContainer>
+    <GlobalMainContent>
       <TitleH2>{t('cart')}</TitleH2>
-      <CartContent></CartContent>
-    </CartPageContainer>
+    </GlobalMainContent>
   )
 }
 

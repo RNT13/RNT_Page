@@ -5,8 +5,7 @@ export const LinkButtonToggle = styled.button<{ $isOpen: boolean; $isActive: boo
   display: flex;
   align-items: center;
   text-align: left;
-  padding: 5px 10px;
-  margin: 0px 8px 8px 0px;
+  padding: 0px 10px;
   font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
@@ -23,7 +22,6 @@ export const LinkButtonToggle = styled.button<{ $isOpen: boolean; $isActive: boo
 
   span {
     display: ${props => (props.$isOpen ? 'inline' : 'none')};
-    margin-left: ${props => (props.$isOpen ? '10px' : '0px')};
     flex-grow: 1;
     text-align: center;
     opacity: ${props => (props.$isOpen ? 1 : 0)};
@@ -43,7 +41,6 @@ export const LinkButtonToggle = styled.button<{ $isOpen: boolean; $isActive: boo
 `
 export const LinkButton = styled.button<{ $isActive: boolean }>`
   padding: 5px 10px;
-  margin: 0px 8px 8px 0px;
   max-width: 150px;
   color: ${({ theme, $isActive }) => ($isActive ? theme.colors.blue2 : theme.colors.textColor)};
   background-color: ${({ theme, $isActive }) => ($isActive ? theme.colors.grey : theme.colors.background)};
@@ -66,4 +63,5 @@ export const LinkButton = styled.button<{ $isActive: boolean }>`
 
 export const LinkButtonIcon = styled.div`
   font-size: 28px;
+  margin-top: 5px;
 `

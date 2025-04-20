@@ -1,8 +1,9 @@
 import styled from 'styled-components'
+import { GlobalMainContent } from '../../styles/globalStyles'
 
-export const ContactsContainer = styled.div`
-  display: flex;
-  height: 100vh;
+export const ContactsContainer = styled(GlobalMainContent)`
+  flex-direction: row;
+  overflow: hidden;
 `
 
 export const ContactsSidebar = styled.div`

@@ -30,6 +30,7 @@ export const ActionBar = styled.div`
   padding-top: 16px;
   display: flex;
   justify-content: flex-start;
+  gap: 10px;
 `
 
 export const InfoContainer = styled.div`

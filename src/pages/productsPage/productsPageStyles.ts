@@ -1,16 +1,8 @@
 import styled from 'styled-components'
 
-export const ProductsContainer = styled.div`
-  height: 100vh;
-  scroll-padding-top: 70px;
-  overflow-y: scroll;
-`
-
 export const ProductsCardContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 32px;
-  padding: 16px 16px 100px 16px;
-  justify-items: center;
-  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0px 100px 100px 100px;
 `

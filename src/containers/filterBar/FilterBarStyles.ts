@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
 export const Aside = styled.aside`
-  padding: 25px 10px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
   background-color: ${({ theme }) => theme.colors.background};
   height: 100vh;
 `

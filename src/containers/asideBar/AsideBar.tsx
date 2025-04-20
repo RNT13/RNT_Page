@@ -4,20 +4,29 @@ import { FaCalendarAlt, FaTasks } from 'react-icons/fa'
 import { FaGithub, FaLinkedin } from 'react-icons/fa6'
 import { LuTestTubeDiagonal } from 'react-icons/lu'
 import { RiContactsFill } from 'react-icons/ri'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { LinkButtonIcon, LinkButtonToggle } from '../../components/linkButton/LinkButton'
 import { ToggleButton } from '../../components/toggleButton/ToggleButton'
-import { AsideAppsDiv, AsideContainer, AsideSocialLinks } from '../asideBar/AsideBarStyles'
+import { toggleSidebar } from '../../redux/slices/sideBarSlice'
+import { RootState } from '../../redux/store'
+import { AsideAppsDiv, AsideContainer, AsideContent, AsideSocialLinks } from '../asideBar/AsideBarStyles'
 
-const AsideBar = ({ isOpen, toggleSidebar }: { isOpen: boolean; toggleSidebar: () => void }) => {
+const AsideBar = () => {
   const { t } = useTranslation()
   const navigate = useNavigate()
-  const location = useLocation()
+
+  const dispatch = useDispatch()
+  const isOpen = useSelector((state: RootState) => state.sidebar.isOpen)
+
+  const handleToggleSidebar = () => {
+    dispatch(toggleSidebar())
+  }
 
   return (
     <AsideContainer $isOpen={isOpen}>
-      <div>
-        <ToggleButton $isOpen={isOpen} onClick={toggleSidebar}>
+      <AsideContent>
+        <ToggleButton $isOpen={isOpen} onClick={handleToggleSidebar}>
           {isOpen ? '<<' : '>>'}
         </ToggleButton>
 
@@ -71,7 +80,7 @@ const AsideBar = ({ isOpen, toggleSidebar }: { isOpen: boolean; toggleSidebar: (
             <span>Instagram</span>
           </LinkButtonToggle>
         </AsideSocialLinks>
-      </div>
+      </AsideContent>
     </AsideContainer>
   )
 }

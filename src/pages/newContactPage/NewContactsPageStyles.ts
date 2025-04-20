@@ -1,12 +1,14 @@
 import styled from 'styled-components'
+import { GlobalMainContent } from '../../styles/globalStyles'
 
-export const NewContactsContainer = styled.div`
-  display: flex;
+export const NewContactsContainer = styled(GlobalMainContent)`
+  flex-direction: row;
+  overflow: hidden;
 `
 
 export const NewContactsSideBar = styled.div`
   width: 200px;
-  height: 100%;
+  height: 100vh;
 
   button {
     margin-top: 18px;

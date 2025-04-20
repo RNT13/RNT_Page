@@ -7,6 +7,7 @@ export const LoginWindowContainer = styled.div`
   background: ${({ theme }) => theme.colors.primaryColor};
   border: 1px solid ${({ theme }) => theme.colors.black};
   padding: 16px;
+  margin-top: 24px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;

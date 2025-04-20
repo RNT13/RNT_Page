@@ -3,14 +3,14 @@ import styled from 'styled-components'
 export const CardContainer = styled.div`
   width: 250px;
   height: 300px;
-  background: ${({ theme }) => theme.colors.primaryColor};
   border-radius: 12px;
-  overflow: hidden;
-  transition: 0.3s;
   display: flex;
   flex-direction: column;
   position: relative;
+  transition: 0.3s;
+  background: ${({ theme }) => theme.colors.primaryColor};
   box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
+  overflow: hidden;
 
   &:hover .card-footer {
     opacity: 1;

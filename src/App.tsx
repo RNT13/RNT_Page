@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { Provider, useSelector } from 'react-redux'
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
@@ -8,7 +8,7 @@ import AsideBar from './containers/asideBar/AsideBar'
 import Header from './containers/header/Header'
 import i18n from './i18n'
 import { RootState, store } from './redux/store'
-import { GlobalMain, GlobalMainContent, GlobalStyle } from './styles/globalStyles'
+import { GlobalStyle, MainContent } from './styles/globalStyles'
 import { themeConfig } from './styles/theme'
 
 // páginas
@@ -26,23 +26,17 @@ import TasksPage from './pages/tasksPage/TasksPage'
 import TestPage from './pages/testPage/TestPage'
 
 const Layout = () => {
-  const [isOpen, setIsOpen] = useState(false)
   const theme = useSelector((state: RootState) => state.theme.theme)
-
-  const toggleSidebar = () => setIsOpen(prev => !prev)
+  const isOpen = useSelector((state: RootState) => state.sidebar.isOpen)
 
   return (
     <ThemeProvider theme={themeConfig[theme]}>
       <GlobalStyle />
-      <div>
-        <Header />
-        <AsideBar isOpen={isOpen} toggleSidebar={toggleSidebar} />
-      </div>
-      <GlobalMain>
-        <GlobalMainContent $isOpen={isOpen}>
-          <Outlet />
-        </GlobalMainContent>
-      </GlobalMain>
+      <Header />
+      <AsideBar />
+      <MainContent $isOpen={isOpen}>
+        <Outlet />
+      </MainContent>
     </ThemeProvider>
   )
 }

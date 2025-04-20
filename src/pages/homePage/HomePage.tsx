@@ -1,14 +1,13 @@
 import { useTranslation } from 'react-i18next'
-import { TitleH2 } from '../../styles/globalStyles'
-import { HomeContainer } from '../homePage/HomePageStyles'
+import { GlobalMainContent, TitleH2 } from '../../styles/globalStyles'
 
 const HomePage = () => {
   const { t } = useTranslation()
 
   return (
-    <HomeContainer>
+    <GlobalMainContent>
       <TitleH2>{t('home')}</TitleH2>
-    </HomeContainer>
+    </GlobalMainContent>
   )
 }
 

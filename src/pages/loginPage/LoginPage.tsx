@@ -1,11 +1,14 @@
 import LoginWindow from '../../components/loginWindow/LoginWindow'
+import { GlobalMainContent } from '../../styles/globalStyles'
 import { LoginContainer } from '../loginPage/LoginPageStyles'
 
 const LoginPage = () => {
   return (
-    <LoginContainer>
-      <LoginWindow />
-    </LoginContainer>
+    <GlobalMainContent>
+      <LoginContainer>
+        <LoginWindow />
+      </LoginContainer>
+    </GlobalMainContent>
   )
 }
 

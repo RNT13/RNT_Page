@@ -8,8 +8,8 @@ export const Circle = styled(Link)`
   background-color: ${({ theme }) => theme.colors.green};
   color: ${({ theme }) => theme.colors.white};
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  bottom: 30px;
+  right: 30px;
   border-radius: 50%;
   text-align: center;
   line-height: 64px;

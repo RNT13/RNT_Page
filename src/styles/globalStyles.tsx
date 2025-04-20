@@ -8,70 +8,57 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     list-style: none;
     font-family: 'Roboto', sans-serif;
+
     scrollbar-width: thin;
     scrollbar-color: ${({ theme }) => theme.colors.textColor} ${({ theme }) => theme.colors.primaryColor};
+    scroll-behavior: smooth;
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: ${({ theme }) => theme.colors.primaryColor};
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: ${({ theme }) => theme.colors.secondaryColor};
+      border-radius: 10px; /* Arredondamento */
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: ${({ theme }) => theme.colors.textColor};
+    }
   }
 
-  body {
-    overflow: hidden;
+  body,html {
     background-color: ${({ theme }) => theme.colors.background};
+    overflow: hidden;
   }
-
-  ::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: ${({ theme }) => theme.colors.textColor};
-}
-
-::-webkit-scrollbar-thumb {
-  background: ${({ theme }) => theme.colors.textColor};
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: ${({ theme }) => theme.colors.textColor};
-}
 `
 
-// 🔧 Componentes estilizados reutilizáveis
-export const GlobalContainer = styled.div`
-  max-width: 1024px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
+export const GlobalMainContent = styled.main`
   display: flex;
   flex-direction: column;
-  align-items: center;
-`
-
-export const GlobalLayout = styled.div``
-
-export const GlobalMain = styled.div``
-
-export const GlobalMainContent = styled.main<{ $isOpen: boolean }>`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding-top: 70px;
   height: 100vh;
-  margin-left: ${({ $isOpen }) => ($isOpen ? '250px' : '80px')};
   background-color: ${({ theme }) => theme.colors.secondaryColor};
+  overflow: auto;
+`
+export const MainContent = styled.main<{ $isOpen: boolean }>`
+  margin-left: ${({ $isOpen }) => ($isOpen ? '210px' : '40px')};
   transition: margin-left 0.2s linear;
-  overflow: hidden;
+  padding: 0px 0px 0px 40px;
 `
 
 export const MainContainer = styled.main`
-  padding: 0 100px 150px;
-  height: 100vh;
+  margin: 0 auto;
 `
 
 export const TitleH2 = styled.h2`
   display: flex;
   justify-content: center;
   font-size: 3em;
-  margin: 48px 0;
+  margin: 40px 10px;
 `
 
 export const TextH3 = styled.h3`
@@ -102,7 +89,6 @@ export const Button = styled.button`
   border: none;
   cursor: pointer;
   border-radius: 8px;
-  margin: 8px 8px 0 0;
 `
 
 export const SaveButton = styled(Button)`
