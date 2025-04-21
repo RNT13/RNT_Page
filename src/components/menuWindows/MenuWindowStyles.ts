@@ -51,20 +51,9 @@ export const MenuFooterContainer = styled.div`
 `
 
 export const MenuFooterButton = styled(Button)`
-  background-color: ${({ theme }) => theme.colors.background};
-  color: ${({ theme }) => theme.colors.textColor};
-  box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
   padding: 8px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
   text-transform: uppercase;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.grey};
-    color: ${({ theme }) => theme.colors.textColor};
-    transition: all 0.2s ease;
-  }
+  background-color: ${({ theme }) => theme.colors.background};
 `
 
 export const MenuTitle = styled(TextH3)`

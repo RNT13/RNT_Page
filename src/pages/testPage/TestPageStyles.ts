@@ -25,7 +25,7 @@ export const GradientButton = styled.button`
   padding: 4px;
   border-radius: 1000px;
 
-  h1 {
+  h3 {
     position: relative;
     font-size: 1rem;
     padding: 10px 20px;
@@ -34,7 +34,7 @@ export const GradientButton = styled.button`
     transition: background 0.3s ease;
   }
 
-  h1:hover {
+  h3:hover {
     background-color: transparent;
     box-shadow:
       40px 0 100px rgba(0, 140, 255, 0.5),
@@ -49,9 +49,9 @@ export const LineHoverButton = styled.button`
   background: #151a20;
   color: #fff;
   padding: 10px;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 10px;
 
-  h1 {
+  h3 {
     position: relative;
     margin: 0;
     font-size: 1rem;

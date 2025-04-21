@@ -10,10 +10,10 @@ const TestPage = () => {
       <TitleH2>{t('test')}</TitleH2>
       <TestContent>
         <GradientButton>
-          <h1>{t('click')}</h1>
+          <h3>{t('click')}</h3>
         </GradientButton>
         <LineHoverButton>
-          <h1>{t('click')}</h1>
+          <h3>{t('click')}</h3>
         </LineHoverButton>
       </TestContent>
     </GlobalMainContent>

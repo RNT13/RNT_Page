@@ -1,6 +1,8 @@
 import { useTranslation } from 'react-i18next'
+import Banner from '../../components/banner/banner'
 import Carousel from '../../components/carousel/Carousel'
 import Card from '../../components/productsCard/ProductsCard'
+import ProductsNav from '../../components/productsNav/ProductsNav'
 import { GlobalMainContent, TitleH2 } from '../../styles/globalStyles'
 import { ProductsCardContainer } from '../productsPage/productsPageStyles'
 
@@ -9,6 +11,8 @@ const ProductsPage = () => {
 
   return (
     <GlobalMainContent>
+      <ProductsNav />
+      <Banner />
       <Carousel />
       <TitleH2>{t('products')}</TitleH2>
       <ProductsCardContainer>

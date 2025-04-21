@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     list-style: none;
     font-family: 'Roboto', sans-serif;
+    text-decoration: none;
 
     scrollbar-width: thin;
     scrollbar-color: ${({ theme }) => theme.colors.textColor} ${({ theme }) => theme.colors.primaryColor};
@@ -42,6 +43,8 @@ export const GlobalMainContent = styled.main`
   flex-direction: column;
   height: 100vh;
   background-color: ${({ theme }) => theme.colors.secondaryColor};
+  width: 100%;
+  margin: 0 auto;
   overflow: auto;
 `
 export const MainContent = styled.main<{ $isOpen: boolean }>`
@@ -68,27 +71,37 @@ export const TextH3 = styled.h3`
 `
 
 export const InputField = styled.input`
-  border-radius: 8px;
   padding: 8px;
-  background-color: ${({ theme }) => theme.colors.inputColor};
-  font-weight: bold;
-  color: ${({ theme }) => theme.colors.textColor};
-  border: 1px solid ${({ theme }) => theme.colors.textColor};
-  width: 100%;
   margin: 12px 0;
+  font-weight: bold;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid ${({ theme }) => theme.colors.textColor};
+  color: ${({ theme }) => theme.colors.textColor};
+  background-color: ${({ theme }) => theme.colors.inputColor};
   box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
 `
 
 export const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 5px;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
   color: ${({ theme }) => theme.colors.textColor};
   background-color: ${({ theme }) => theme.colors.primaryColor};
   box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
-  padding: 8px 12px;
-  border: none;
-  cursor: pointer;
-  border-radius: 8px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.grey};
+    color: ${({ theme }) => theme.colors.white};
+    transition: all 0.2s ease;
+  }
 `
 
 export const SaveButton = styled(Button)`
@@ -108,6 +121,9 @@ export const Tag = styled.span<{ $status?: string; $priority?: string }>`
   color: ${({ theme }) => theme.colors.shadow};
   font-weight: bold;
   font-size: 10px;
+  border-radius: 8px;
+  margin: 0 16px 16px 0;
+  display: inline-block;
   background-color: ${({ $status, $priority, theme }) => {
     if ($status) {
       switch ($status) {
@@ -120,6 +136,8 @@ export const Tag = styled.span<{ $status?: string; $priority?: string }>`
           return theme.colors.yellow
         case 'Unknown':
           return theme.colors.red
+        case 'Highlight':
+          return theme.colors.green
         default:
           return theme.colors.black
       }
@@ -129,9 +147,7 @@ export const Tag = styled.span<{ $status?: string; $priority?: string }>`
     }
     return theme.colors.black
   }};
-  border-radius: 8px;
-  margin: 0 16px 16px 0;
-  display: inline-block;
+  box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
 `
 
 export const Counter = styled.span`

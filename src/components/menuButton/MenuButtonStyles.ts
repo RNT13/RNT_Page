@@ -1,24 +1,9 @@
 import { TiThMenu } from 'react-icons/ti'
 import styled from 'styled-components'
+import { Button } from '../../styles/globalStyles'
 
-export const MenuButtonContainer = styled.button`
-  display: flex;
-  align-items: center;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  position: relative;
-  color: ${({ theme }) => theme.colors.textColor};
+export const MenuButtonContainer = styled(Button)`
   background-color: ${({ theme }) => theme.colors.background};
-  box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.grey};
-    color: ${({ theme }) => theme.colors.white};
-    transition: all 0.2s ease;
-  }
 `
 
 export const MenuLogo = styled(TiThMenu)`
@@ -31,7 +16,7 @@ export const MenuOverlay = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
   backdrop-filter: blur(5px);
   z-index: 10;
+  box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
 `

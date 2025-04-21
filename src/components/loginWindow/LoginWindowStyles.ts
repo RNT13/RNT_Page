@@ -72,22 +72,12 @@ export const FloatingLabel = styled.label`
 export const LoginButton = styled(Button)`
   width: 180px;
   max-width: 100%;
-  background-color: ${({ theme }) => theme.colors.background};
-  color: ${({ theme }) => theme.colors.textColor};
-  box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
   padding: 8px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  text-transform: uppercase;
   margin: 50px auto;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.grey};
-    color: ${({ theme }) => theme.colors.primaryColor};
-    transition: all 0.2s ease;
-  }
+  text-transform: uppercase;
+  background-color: ${({ theme }) => theme.colors.background};
 `
+
 export const LoginTitle = styled(TextH3)`
   font-size: 2em;
   color: ${({ theme }) => theme.colors.textColor};
