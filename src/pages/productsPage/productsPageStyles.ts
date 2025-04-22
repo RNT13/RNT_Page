@@ -4,6 +4,10 @@ import { media } from '../../styles/media'
 
 export const ProductsContainer = styled(GlobalMainContent)`
   margin-left: 80px;
+
+  ${(media.sm, media.md)} {
+    margin-left: 0px;
+  }
 `
 
 export const ProductsCardContainer = styled.div`
