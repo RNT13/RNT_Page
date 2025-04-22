@@ -3,14 +3,14 @@ import Banner from '../../components/banner/banner'
 import Carousel from '../../components/carousel/Carousel'
 import Card from '../../components/productsCard/ProductsCard'
 import ProductsNav from '../../components/productsNav/ProductsNav'
-import { GlobalMainContent, TitleH2 } from '../../styles/globalStyles'
-import { ProductsCardContainer } from '../productsPage/productsPageStyles'
+import { TitleH2 } from '../../styles/globalStyles'
+import { ProductsCardContainer, ProductsContainer } from '../productsPage/productsPageStyles'
 
 const ProductsPage = () => {
   const { t } = useTranslation()
 
   return (
-    <GlobalMainContent>
+    <ProductsContainer>
       <ProductsNav />
       <Banner />
       <Carousel />
@@ -30,7 +30,7 @@ const ProductsPage = () => {
         <Card image="/images/canecas (12).png" name="Caneca Personalizada" description="Uma linda caneca personalizada para o seu café." />
         <Card image="/images/canecas (13).png" name="Caneca Personalizada" description="Uma linda caneca personalizada para o seu café." />
       </ProductsCardContainer>
-    </GlobalMainContent>
+    </ProductsContainer>
   )
 }
 

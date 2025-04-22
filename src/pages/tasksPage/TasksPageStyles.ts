@@ -1,29 +1,25 @@
 import styled from 'styled-components'
 import { GlobalMainContent } from '../../styles/globalStyles'
+import { media } from '../../styles/media'
 
 export const TaskContainer = styled(GlobalMainContent)`
   flex-direction: row;
-  overflow: hidden;
-`
 
-export const TaskSideBar = styled.div`
-  width: 200px;
-  height: 100%;
+  ${(media.sm, media.md)} {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 export const TaskMain = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-
-  h2 {
-    margin: 8px;
-  }
 `
 
 export const TaskContent = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: auto;
 `

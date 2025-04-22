@@ -105,7 +105,7 @@ i18n.use(initReactI18next).init({
         normal: 'Normal',
         friend: 'Amigo',
         known: 'Conhecido',
-        unknown: 'Desconhecido',
+        unknown: `Desconhecido`,
         search: 'Pesquisar',
         return: 'Voltar',
         all: 'Todos(as)',

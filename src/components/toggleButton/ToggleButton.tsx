@@ -1,4 +1,5 @@
 import { styled } from 'styled-components'
+import { media } from '../../styles/media'
 
 export const ToggleButton = styled.button<{ $isOpen: boolean }>`
   padding: 12px;
@@ -18,4 +19,8 @@ export const ToggleButton = styled.button<{ $isOpen: boolean }>`
   background: ${({ theme }) => theme.colors.primaryColor};
   color: ${({ theme }) => theme.colors.textColor};
   transition: all 0.2s linear;
+
+  ${(media.sm, media.md)} {
+    display: none;
+  }
 `

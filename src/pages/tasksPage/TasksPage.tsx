@@ -3,16 +3,14 @@ import { AddButtonTask } from '../../components/addButton/AddButton'
 import FilterBar from '../../containers/filterBar/FilterBar'
 import TaskList from '../../containers/taskList/TaskList'
 import { TitleH2 } from '../../styles/globalStyles'
-import { TaskContainer, TaskContent, TaskMain, TaskSideBar } from '../tasksPage/TasksPageStyles'
+import { TaskContainer, TaskContent, TaskMain } from '../tasksPage/TasksPageStyles'
 
 const TasksPage = () => {
   const { t } = useTranslation()
 
   return (
     <TaskContainer>
-      <TaskSideBar>
-        <FilterBar mostrarFiltros={true} type="tasks" />
-      </TaskSideBar>
+      <FilterBar mostrarFiltros={true} type="tasks" />
       <TaskMain>
         <TitleH2>{t('task')}</TitleH2>
         <TaskContent>

@@ -8,7 +8,7 @@ import { RootState } from '../../redux/store'
 import { Button, InputField } from '../../styles/globalStyles'
 import * as contactEnums from '../../utils/enums/contactEnums'
 import * as taskEnums from '../../utils/enums/taskEnums'
-import * as S from '../filterBar/FilterBarStyles'
+import { Aside, AsideContent, Filters } from './FilterBarStyles'
 
 type props = {
   mostrarFiltros: boolean
@@ -23,12 +23,12 @@ const FilterBar = ({ mostrarFiltros, type }: props) => {
   const term = filterState?.term || ''
 
   return (
-    <S.Aside>
-      <div>
+    <Aside>
+      <AsideContent>
         {mostrarFiltros ? (
           <>
             <InputField id="search" type="text" placeholder={t('search')} value={term} onChange={evento => dispatch(changeTerm(evento.target.value))} />
-            <S.filters>
+            <Filters>
               {type === 'tasks' ? (
                 <>
                   <TaskCardFilter taskValue={taskEnums.status.PENDING} criterion="status" caption={t('pending')} />
@@ -46,13 +46,13 @@ const FilterBar = ({ mostrarFiltros, type }: props) => {
                   <ContactCardFilter criterion="all" caption={t('all')} />
                 </>
               )}
-            </S.filters>
+            </Filters>
           </>
         ) : (
           <Button onClick={() => navigate(-1)}>{t('return')}</Button>
         )}
-      </div>
-    </S.Aside>
+      </AsideContent>
+    </Aside>
   )
 }
 

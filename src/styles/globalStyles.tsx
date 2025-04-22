@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
+import { media } from './media'
 
 // 🌍 Estilos globais
 export const GlobalStyle = createGlobalStyle`
@@ -6,8 +7,8 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    list-style: none;
     font-family: 'Roboto', sans-serif;
+    list-style: none;
     text-decoration: none;
 
     scrollbar-width: thin;
@@ -33,24 +34,24 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body,html {
-    background-color: ${({ theme }) => theme.colors.background};
-    overflow: hidden;
+    overflow-y: hidden;
   }
 `
 
 export const GlobalMainContent = styled.main`
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   background-color: ${({ theme }) => theme.colors.secondaryColor};
-  width: 100%;
-  margin: 0 auto;
-  overflow: auto;
+  overflow-y: auto;
+
+  ${(media.sm, media.md)} {
+    display: block;
+  }
 `
 export const MainContent = styled.main<{ $isOpen: boolean }>`
-  margin-left: ${({ $isOpen }) => ($isOpen ? '210px' : '40px')};
+  margin-left: ${({ $isOpen }) => ($isOpen ? '170px' : '0px')};
   transition: margin-left 0.2s linear;
-  padding: 0px 0px 0px 40px;
 `
 
 export const MainContainer = styled.main`
@@ -61,13 +62,17 @@ export const TitleH2 = styled.h2`
   display: flex;
   justify-content: center;
   font-size: 3em;
-  margin: 40px 10px;
+  margin: 20px 50px;
 `
 
 export const TextH3 = styled.h3`
   display: flex;
   justify-content: center;
   font-size: 0.8em;
+
+  ${(media.sm, media.md)} {
+    font-size: 0.6em;
+  }
 `
 
 export const InputField = styled.input`
@@ -116,6 +121,33 @@ export const Card = styled.div`
   box-shadow: 8px 8px 5px ${({ theme }) => theme.colors.shadow};
 `
 
+export const FilterCard = styled.div<{ $ativo: boolean }>`
+  width: 85px;
+  height: 60px;
+  padding: 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  white-space: break-spaces;
+  word-break: break-all;
+
+  border: 2px solid ${({ theme, $ativo }) => ($ativo ? theme.colors.blue2 : theme.colors.primaryColor)};
+  background-color: ${({ theme, $ativo }) => ($ativo ? theme.colors.secondaryColor : theme.colors.grey2)};
+  color: ${({ theme, $ativo }) => ($ativo ? theme.colors.textColor : theme.colors.grey2)};
+  box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
+
+  ${(media.sm, media.md)} {
+    width: 55px;
+    height: 45px;
+    padding: 2px;
+  }
+`
+
 export const Tag = styled.span<{ $status?: string; $priority?: string }>`
   padding: 4px 8px;
   color: ${({ theme }) => theme.colors.shadow};
@@ -154,4 +186,8 @@ export const Counter = styled.span`
   font-size: 1.5rem;
   font-weight: bold;
   color: ${({ theme }) => theme.colors.black};
+
+  ${(media.sm, media.md)} {
+    font-size: 1rem;
+  }
 `
