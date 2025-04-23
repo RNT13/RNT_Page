@@ -23,6 +23,6 @@ export const Circle = styled(Link)`
     width: 46px;
     height: 46px;
     bottom: 65px;
-    right: 5px;
+    right: 10px;
   }
 `

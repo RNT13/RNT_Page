@@ -4,7 +4,7 @@ import { Button } from '../../styles/globalStyles'
 
 export const CartButtonContainer = styled(Link)``
 
-export const CartButtonContent = styled(Button)<{ $isActive: boolean }>`
+export const CartButtonContent = styled(Button)`
   font-size: 24px;
-  background-color: ${({ theme, $isActive }) => ($isActive ? theme.colors.grey : theme.colors.background)};
+  background-color: ${({ theme }) => theme.colors.prirycolor};
 `

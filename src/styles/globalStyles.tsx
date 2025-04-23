@@ -25,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
 
     ::-webkit-scrollbar-thumb {
       background: ${({ theme }) => theme.colors.secondaryColor};
-      border-radius: 10px; /* Arredondamento */
+      border-radius: 10px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
@@ -34,12 +34,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body,html {
-    overflow-y: hidden;
+
   }
 `
 
 export const GlobalMainContent = styled.main`
-  height: 100vh;
+  height: calc(100vh - 70px);
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.secondaryColor};
@@ -47,6 +47,7 @@ export const GlobalMainContent = styled.main`
 
   ${(media.sm, media.md)} {
     display: block;
+    padding-bottom: 50px;
   }
 `
 export const MainContent = styled.main<{ $isOpen: boolean }>`

@@ -3,7 +3,8 @@ import { media } from '../../styles/media'
 
 export const AsideContainer = styled.aside<{ $isOpen: boolean }>`
   position: fixed;
-  height: 100vh;
+  height: calc(100vh - 70px);
+  max-height: 100%;
   width: ${props => (props.$isOpen ? '250px' : '80px')};
   background-color: ${({ theme }) => theme.colors.primaryColor};
   transition: all 0.2s linear;
@@ -46,7 +47,7 @@ export const AsideAppsDiv = styled.div`
 `
 
 export const AsideSocialLinks = styled.div`
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   gap: 8px;
   display: flex;
   flex-direction: column;

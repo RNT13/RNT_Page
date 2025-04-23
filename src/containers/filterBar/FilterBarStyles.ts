@@ -4,16 +4,21 @@ import { media } from '../../styles/media'
 export const Aside = styled.aside`
   padding: 16px;
   margin-left: 80px;
-  height: 100vh;
+  height: calc(100vh - 70px);
   background-color: ${({ theme }) => theme.colors.background};
 
   ${(media.sm, media.md)} {
-    padding: 0px;
+    padding: 16px;
     width: 100%;
     height: 130px;
     margin-left: 0;
 
+    button {
+      margin-top: 12px;
+    }
+
     #search {
+      margin: 0px 0px 12px 0px;
       width: 90%;
       display: flex;
       align-items: center;
