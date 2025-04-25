@@ -3,15 +3,14 @@ import { Button, TextH3 } from '../../styles/globalStyles'
 
 export const LoginWindowContainer = styled.div`
   width: 350px;
-  height: 450px;
+  height: 400px;
   background: ${({ theme }) => theme.colors.primaryColor};
   border: 1px solid ${({ theme }) => theme.colors.black};
   padding: 16px;
-  margin-top: 24px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  gap: 55px;
+  gap: 26px;
   box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
 `
 
