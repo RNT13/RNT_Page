@@ -1,14 +1,25 @@
 import { styled } from 'styled-components'
 import { Button } from '../../styles/globalStyles'
 
-export const TaskTitle = styled.h3`
+export const TaskCardHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  h2 {
+    color: ${({ theme }) => theme.colors.textColor};
+    font-size: 0.8rem;
+  }
+`
+
+export const TaskCardTitle = styled.h3`
   font-size: 18px;
   font-weight: bold;
   margin-left: 8px;
   color: ${({ theme }) => theme.colors.textColor};
 `
 
-export const Description = styled.textarea`
+export const TaskCardDescription = styled.textarea`
   color: ${({ theme }) => theme.colors.textColor};
   font-size: 14px;
   line-height: 24px;
@@ -25,7 +36,7 @@ export const Description = styled.textarea`
   }
 `
 
-export const ActionBar = styled.div`
+export const TaskCardActionBar = styled.div`
   border-top: 1px solid ${({ theme }) => theme.colors.black};
   padding-top: 16px;
   display: flex;
@@ -33,7 +44,7 @@ export const ActionBar = styled.div`
   gap: 10px;
 `
 
-export const InfoContainer = styled.div`
+export const TaskCardContainer = styled.div`
   margin: 16px 16px;
 
   label {

@@ -1,7 +1,18 @@
 import { styled } from 'styled-components'
 import { Button } from '../../styles/globalStyles'
 
-export const ContactTitle = styled.input`
+export const ContactCardHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  h2 {
+    color: ${({ theme }) => theme.colors.textColor};
+    font-size: 0.8rem;
+  }
+`
+
+export const ContactCardTitle = styled.input`
   font-size: 18px;
   font-weight: bold;
   margin-left: 8px;
@@ -11,7 +22,7 @@ export const ContactTitle = styled.input`
   width: 100%;
 `
 
-export const Description = styled.textarea`
+export const ContactCardDescription = styled.textarea`
   color: ${({ theme }) => theme.colors.textColor};
   font-size: 14px;
   line-height: 24px;
@@ -28,7 +39,7 @@ export const Description = styled.textarea`
   }
 `
 
-export const ActionBar = styled.div`
+export const ContactCardActionBar = styled.div`
   border-top: 1px solid ${({ theme }) => theme.colors.textColor};
   padding-top: 16px;
   display: flex;
@@ -36,7 +47,7 @@ export const ActionBar = styled.div`
   gap: 10px;
 `
 
-export const InfoContainer = styled.div`
+export const ContactCardContainer = styled.div`
   display: flex;
   margin: 16px 16px;
   justify-content: start;

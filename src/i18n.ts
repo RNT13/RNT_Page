@@ -55,7 +55,7 @@ i18n.use(initReactI18next).init({
         title: 'Title',
         fillAllFilds: 'Please fill in all required fields.',
         test: 'Test',
-        click: 'Click Here',
+        click: 'Click Here to Buy',
         cart: 'Cart',
         cartEmpty: 'Your cart is empty',
         cartTotal: 'Total',
@@ -66,7 +66,12 @@ i18n.use(initReactI18next).init({
         DailyHighlight: 'Daily Highlight',
         SpiderMan: 'Spider-man: Miles Morales PS4 & PS5',
         from: 'from',
-        forOnly: 'for only'
+        forOnly: 'for only',
+        BuyNow: 'Buy Now',
+        goToCart: 'Go to Cart',
+        toggleTheme: 'Toggle Theme',
+        toggleLanguage: 'Toggle Language',
+        searchPlaceholder: 'Search...'
       }
     },
     pt: {
@@ -121,7 +126,7 @@ i18n.use(initReactI18next).init({
         title: 'Título',
         fillAllFilds: 'Por favor, preencha Todos os campos obrigatórios.',
         test: 'Teste',
-        click: 'Clique Aqui',
+        click: 'Clique Aqui para Comprar',
         cart: 'Carrinho',
         cartEmpty: 'Seu carrinho está vazio',
         cartTotal: 'Total',
@@ -132,7 +137,12 @@ i18n.use(initReactI18next).init({
         DailyHighlight: 'Destaque Diário',
         SpiderMan: 'Homen-aranha: Miles Morales PS4 & PS5',
         from: 'de',
-        forOnly: 'por apenas'
+        forOnly: 'por apenas',
+        BuyNow: 'Comprar Agora',
+        goToCart: 'Ir para o Carrinho',
+        toggleTheme: 'Alternar Tema',
+        toggleLanguage: 'Alternar Idioma',
+        searchPlaceholder: 'Pesquisar...'
       }
     }
   },

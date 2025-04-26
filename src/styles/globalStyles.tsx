@@ -155,7 +155,6 @@ export const Tag = styled.span<{ $status?: string; $priority?: string }>`
   font-weight: bold;
   font-size: 10px;
   border-radius: 8px;
-  margin: 0 16px 16px 0;
   display: inline-block;
   background-color: ${({ $status, $priority, theme }) => {
     if ($status) {

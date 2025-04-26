@@ -5,7 +5,7 @@ import ContactModels from '../../models/ContactModels'
 import { editContact, removeContact } from '../../redux/slices/contactsSlice'
 import { Card, SaveButton, Tag } from '../../styles/globalStyles'
 import * as Contactenums from '../../utils/enums/contactEnums'
-import { ActionBar, CancelButton, ContactTitle, Description, EditButton, InfoContainer, RemoveContactButton } from './ContactCardStyles'
+import { CancelButton, ContactCardActionBar, ContactCardContainer, ContactCardDescription, ContactCardHeader, ContactCardTitle, EditButton, RemoveContactButton } from './ContactCardStyles'
 
 type ContactProps = {
   contact: ContactModels
@@ -42,34 +42,45 @@ const ContactCard = ({ contact }: ContactProps) => {
 
   return (
     <Card>
-      <Tag $status={editedContact.status as Contactenums.status}>{t((editedContact.status as string).toLowerCase())}</Tag>
+      <ContactCardHeader>
+        <Tag $status={editedContact.status as Contactenums.status}>{t((editedContact.status as string).toLowerCase())}</Tag>
+        {isEditing && <h2>{t('editing')}</h2>}
+      </ContactCardHeader>
 
-      <InfoContainer>
+      <ContactCardContainer>
         <label>{t('name')}:</label>
-        <ContactTitle name="name" value={editedContact.name} onChange={handleChange} disabled={!isEditing} />
-      </InfoContainer>
-      <InfoContainer>
+        <ContactCardTitle name="name" value={editedContact.name} onChange={handleChange} disabled={!isEditing} />
+      </ContactCardContainer>
+      <ContactCardContainer>
         <label>{t('email')}:</label>
-        <ContactTitle name="email" value={editedContact.email} onChange={handleChange} disabled={!isEditing} />
-      </InfoContainer>
-      <InfoContainer>
+        <ContactCardTitle name="email" value={editedContact.email} onChange={handleChange} disabled={!isEditing} />
+      </ContactCardContainer>
+      <ContactCardContainer>
         <label>{t('phone')}:</label>
-        <ContactTitle name="phone" value={editedContact.phone} onChange={handleChange} disabled={!isEditing} />
-      </InfoContainer>
-      <Description name="description" value={editedContact.description || ''} onChange={handleChange} disabled={!isEditing} placeholder="description" />
-      <ActionBar>
+        <ContactCardTitle name="phone" value={editedContact.phone} onChange={handleChange} disabled={!isEditing} />
+      </ContactCardContainer>
+      <ContactCardDescription name="description" value={editedContact.description || ''} onChange={handleChange} disabled={!isEditing} placeholder="description" />
+      <ContactCardActionBar>
         {isEditing ? (
           <>
-            <SaveButton onClick={handleSave}>{t('save')}</SaveButton>
-            <CancelButton onClick={handleCancel}>{t('cancel')}</CancelButton>
+            <SaveButton type="button" title={t('save')} onClick={handleSave}>
+              {t('save')}
+            </SaveButton>
+            <CancelButton type="button" title={t('cancel')} onClick={handleCancel}>
+              {t('cancel')}
+            </CancelButton>
           </>
         ) : (
           <>
-            <EditButton onClick={handleEdit}>{t('editContact')} </EditButton>
-            <RemoveContactButton onClick={handleRemove}>{t('remove')}</RemoveContactButton>
+            <EditButton type="button" title={t('editContact')} onClick={handleEdit}>
+              {t('editContact')}
+            </EditButton>
+            <RemoveContactButton type="button" title={t('remove')} onClick={handleRemove}>
+              {t('remove')}
+            </RemoveContactButton>
           </>
         )}
-      </ActionBar>
+      </ContactCardActionBar>
     </Card>
   )
 }
