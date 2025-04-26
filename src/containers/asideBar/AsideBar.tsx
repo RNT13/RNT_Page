@@ -5,8 +5,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa6'
 import { LuTestTubeDiagonal } from 'react-icons/lu'
 import { RiContactsFill } from 'react-icons/ri'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import { LinkButtonIcon, LinkButtonToggle } from '../../components/linkButton/LinkButton'
+import Button from '../../components/button/button'
 import { ToggleButton } from '../../components/toggleButton/ToggleButton'
 import { toggleSidebar } from '../../redux/slices/sideBarSlice'
 import { RootState } from '../../redux/store'
@@ -14,7 +13,6 @@ import { AsideAppsDiv, AsideContainer, AsideContent, AsideSocialLinks } from '..
 
 const AsideBar = () => {
   const { t } = useTranslation()
-  const navigate = useNavigate()
 
   const dispatch = useDispatch()
   const isOpen = useSelector((state: RootState) => state.sidebar.isOpen)
@@ -31,54 +29,54 @@ const AsideBar = () => {
         </ToggleButton>
 
         <AsideAppsDiv>
-          <LinkButtonToggle $isOpen={isOpen} onClick={() => navigate('/CalendarPage')} $isActive={location.pathname === '/CalendarPage'} title={t('calendar')}>
-            <LinkButtonIcon>
+          <Button type="buttonToggle" title="Calendar" to="/CalendarPage" isOpen={isOpen}>
+            <div>
               <FaCalendarAlt />
-            </LinkButtonIcon>
+            </div>
             <span>{t('calendar')}</span>
-          </LinkButtonToggle>
+          </Button>
 
-          <LinkButtonToggle $isOpen={isOpen} onClick={() => navigate('/TasksPage')} $isActive={location.pathname === '/TasksPage'} title={t('tasks')}>
-            <LinkButtonIcon>
+          <Button type="buttonToggle" title={t('tasks')} to="/TasksPage" isOpen={isOpen}>
+            <div>
               <FaTasks />
-            </LinkButtonIcon>
+            </div>
             <span>{t('tasks')}</span>
-          </LinkButtonToggle>
+          </Button>
 
-          <LinkButtonToggle $isOpen={isOpen} onClick={() => navigate('/ContactsPage')} $isActive={location.pathname === '/ContactsPage'} title={t('contacts')}>
-            <LinkButtonIcon>
+          <Button type="buttonToggle" title={t('contacts')} to="/ContactsPage" isOpen={isOpen}>
+            <div>
               <RiContactsFill />
-            </LinkButtonIcon>
+            </div>
             <span>{t('contacts')}</span>
-          </LinkButtonToggle>
+          </Button>
 
-          <LinkButtonToggle $isOpen={isOpen} onClick={() => navigate('/TestPage')} $isActive={location.pathname === '/TestPage'} title={t('test')}>
-            <LinkButtonIcon>
+          <Button type="buttonToggle" title={t('test')} to="/TestPage" isOpen={isOpen}>
+            <div>
               <LuTestTubeDiagonal />
-            </LinkButtonIcon>
+            </div>
             <span>{t('test')}</span>
-          </LinkButtonToggle>
+          </Button>
         </AsideAppsDiv>
 
         <AsideSocialLinks>
-          <LinkButtonToggle as="a" href="https://github.com/RNT13" target="_blank" rel="noopener noreferrer" $isOpen={isOpen} $isActive={false} title="Github">
-            <LinkButtonIcon>
+          <Button type="buttonToggle" title={t('test')} href="https://github.com/RNT13" target="_blank" rel="noopener noreferrer" isOpen={isOpen}>
+            <div>
               <FaGithub />
-            </LinkButtonIcon>
+            </div>
             <span>GitHub</span>
-          </LinkButtonToggle>
-          <LinkButtonToggle as="a" href="https://www.linkedin.com/in/renato-luiz-0b072b327/" target="_blank" rel="noopener noreferrer" $isOpen={isOpen} $isActive={false} title="LinkedIn">
-            <LinkButtonIcon>
+          </Button>
+          <Button type="buttonToggle" title={t('test')} href="https://www.linkedin.com/in/renato-luiz-0b072b247/" target="_blank" rel="noopener noreferrer" isOpen={isOpen}>
+            <div>
               <FaLinkedin />
-            </LinkButtonIcon>
+            </div>
             <span>LinkedIn</span>
-          </LinkButtonToggle>
-          <LinkButtonToggle as="a" href="https://www.instagram.com/renatominoita/" target="_blank" rel="noopener noreferrer" $isOpen={isOpen} $isActive={false} title="LinkedIn">
-            <LinkButtonIcon>
+          </Button>
+          <Button type="buttonToggle" title={t('test')} href="https://www.instagram.com/renatominoita/" target="_blank" rel="noopener noreferrer" isOpen={isOpen}>
+            <div>
               <AiFillInstagram />
-            </LinkButtonIcon>
+            </div>
             <span>Instagram</span>
-          </LinkButtonToggle>
+          </Button>
         </AsideSocialLinks>
       </AsideContent>
     </AsideContainer>
