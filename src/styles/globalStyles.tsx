@@ -88,28 +88,6 @@ export const InputField = styled.input`
   box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
 `
 
-export const Button = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
-  color: ${({ theme }) => theme.colors.textColor};
-  background-color: ${({ theme }) => theme.colors.primaryColor};
-  box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
-  transition: all 0.2s ease;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.grey};
-    color: ${({ theme }) => theme.colors.white};
-    transition: all 0.2s ease;
-  }
-`
-
 export const Card = styled.div`
   background-color: ${({ theme }) => theme.colors.primaryColor};
   border-radius: 16px;

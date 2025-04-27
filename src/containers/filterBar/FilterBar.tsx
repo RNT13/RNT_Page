@@ -1,11 +1,12 @@
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import Button from '../../components/button/button'
 import ContactCardFilter from '../../components/contactsFilterCards/ContactsFilterCards'
 import TaskCardFilter from '../../components/tasksFilterCards/TasksFilterCards'
 import { changeTerm } from '../../redux/slices/filterSlice'
 import { RootState } from '../../redux/store'
-import { Button, InputField } from '../../styles/globalStyles'
+import { InputField } from '../../styles/globalStyles'
 import * as contactEnums from '../../utils/enums/contactEnums'
 import * as taskEnums from '../../utils/enums/taskEnums'
 import { Aside, AsideContent, Filters } from './FilterBarStyles'
@@ -49,7 +50,9 @@ const FilterBar = ({ mostrarFiltros, type }: props) => {
             </Filters>
           </>
         ) : (
-          <Button onClick={() => navigate(-1)}>{t('return')}</Button>
+          <Button type="button" title={t('return')} onClick={() => navigate(-1)}>
+            {t('return')}
+          </Button>
         )}
       </AsideContent>
     </Aside>
