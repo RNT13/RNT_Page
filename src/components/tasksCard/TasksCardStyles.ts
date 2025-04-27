@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { Button } from '../../styles/globalStyles'
+import Button from '../button/button'
 
 export const TaskCardHeader = styled.div`
   display: flex;
@@ -63,6 +63,9 @@ export const TaskCardContainer = styled.div`
     background: transparent;
     color: ${({ theme }) => theme.colors.textColor};
   }
+`
+export const SaveButton = styled(Button)`
+  background-color: ${({ theme }) => theme.colors.green};
 `
 export const RemoveTaskButton = styled(Button)`
   background-color: ${({ theme }) => theme.colors.red};

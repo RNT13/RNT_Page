@@ -33,7 +33,9 @@ const LoginWindow: React.FC = () => {
         </InputWrapper>
       </LoginWindowContent>
       <LoginWindowFooter>
-        <LoginButton>{t('enter')}</LoginButton>
+        <LoginButton type="headerButton" title={t('enter')}>
+          {t('enter')}
+        </LoginButton>
       </LoginWindowFooter>
     </LoginWindowContainer>
   )

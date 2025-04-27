@@ -49,7 +49,7 @@ export const ButtonToggleContainer = styled.button<{ $isActive?: boolean; $isOpe
   align-items: center;
   text-align: center;
   text-align: left;
-  padding: 0px 10px;
+  padding: 5px 10px;
   font-weight: bold;
   font-size: 1rem;
   border-radius: 5px;
@@ -65,7 +65,9 @@ export const ButtonToggleContainer = styled.button<{ $isActive?: boolean; $isOpe
 
   svg {
     font-size: 28px;
-    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
   }
 
   span {

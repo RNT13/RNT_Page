@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
+import Button from '../button/button'
 import CartButton from '../cartButton/CartButton'
-import { ProductsNavButton, ProductsNavContainer, ProductsNavContent } from './ProductsNavStyles'
+import { ProductsNavContainer, ProductsNavContent } from './ProductsNavStyles'
 
 const ProductsNav = () => {
   const { t } = useTranslation()
@@ -8,9 +9,15 @@ const ProductsNav = () => {
   return (
     <ProductsNavContainer>
       <ProductsNavContent>
-        <ProductsNavButton>{t('category')}</ProductsNavButton>
-        <ProductsNavButton>{t('news')}</ProductsNavButton>
-        <ProductsNavButton>{t('promo')}</ProductsNavButton>
+        <Button type="button" title={t('category')}>
+          {t('category')}
+        </Button>
+        <Button type="button" title={t('news')}>
+          {t('news')}
+        </Button>
+        <Button type="button" title={t('promo')}>
+          {t('promo')}
+        </Button>
       </ProductsNavContent>
       <CartButton />
     </ProductsNavContainer>

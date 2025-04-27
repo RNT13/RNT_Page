@@ -1,5 +1,4 @@
 import { styled } from 'styled-components'
-import { Button } from '../../styles/globalStyles'
 
 export const ProductsNavContainer = styled.div`
   max-width: 100%;
@@ -18,5 +17,3 @@ export const ProductsNavContent = styled.nav`
   justify-content: center;
   gap: 12px;
 `
-
-export const ProductsNavButton = styled(Button)``

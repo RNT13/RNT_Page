@@ -110,10 +110,6 @@ export const Button = styled.button`
   }
 `
 
-export const SaveButton = styled(Button)`
-  background-color: ${({ theme }) => theme.colors.green};
-`
-
 export const Card = styled.div`
   background-color: ${({ theme }) => theme.colors.primaryColor};
   border-radius: 16px;

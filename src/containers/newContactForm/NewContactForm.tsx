@@ -2,9 +2,10 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { SaveButton } from '../../components/contactCard/ContactCardStyles'
 import Contacts from '../../models/ContactModels'
 import { addContact } from '../../redux/slices/contactsSlice'
-import { InputField, MainContainer, SaveButton } from '../../styles/globalStyles'
+import { InputField, MainContainer } from '../../styles/globalStyles'
 import * as contactEnums from '../../utils/enums/contactEnums'
 import { Form, Opcoe, Opcoes } from '../newContactForm/NewContactFormStyles'
 
@@ -62,7 +63,9 @@ const NewContactForm = () => {
             </Opcoe>
           ))}
         </Opcoes>
-        <SaveButton type="submit">{t('save')}</SaveButton>
+        <SaveButton type="button" title={t('save')}>
+          {t('save')}
+        </SaveButton>
       </Form>
     </MainContainer>
   )

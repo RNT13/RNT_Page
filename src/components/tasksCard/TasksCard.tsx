@@ -7,8 +7,8 @@ import TaskModels from '../../models/TaskModels'
 import { changeFilter } from '../../redux/slices/filterSlice'
 import { changeStatus, editTask, removeTask } from '../../redux/slices/taskSlice'
 import { RootState } from '../../redux/store'
-import { Card, SaveButton, Tag } from '../../styles/globalStyles'
-import { CancelButton, EditButton, RemoveTaskButton, TaskCardActionBar, TaskCardContainer, TaskCardDescription, TaskCardHeader, TaskCardTitle } from './TasksCardStyles'
+import { Card, Tag } from '../../styles/globalStyles'
+import { CancelButton, EditButton, RemoveTaskButton, SaveButton, TaskCardActionBar, TaskCardContainer, TaskCardDescription, TaskCardHeader, TaskCardTitle } from './TasksCardStyles'
 
 const TaskCard = ({ title, priority, status, description: originalDescription, id }: TaskModels) => {
   const { t } = useTranslation()

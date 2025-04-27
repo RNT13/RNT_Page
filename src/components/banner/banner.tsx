@@ -18,7 +18,7 @@ const Banner = () => {
                   {t('from')} <span>R$ 250,00</span> <br /> {t('forOnly')} R$ 99,90
                 </Price>
               </Title>
-              <ImageButton type="button" title={t('click')}>
+              <ImageButton type="headerButton" title={t('click')}>
                 {t('BuyNow')}
               </ImageButton>
             </ImageTextFooter>

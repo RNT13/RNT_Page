@@ -1,10 +1,5 @@
 import { TiThMenu } from 'react-icons/ti'
 import styled from 'styled-components'
-import { Button } from '../../styles/globalStyles'
-
-export const MenuButtonContainer = styled(Button)`
-  background-color: ${({ theme }) => theme.colors.background};
-`
 
 export const MenuLogo = styled(TiThMenu)`
   font-size: 32px;

@@ -44,14 +44,26 @@ const MenuWindow: React.FC<MenuProps> = ({ onClose }) => {
       <MenuWindowContainer>
         <MenuTitle>{t('menu')}</MenuTitle>
         <MenuCountentContainer>
-          <MenuButton onClick={handleProfileCkick}>{t('profile')}</MenuButton>
-          <MenuButton onClick={handleRequestsClick}>{t('requests')}</MenuButton>
-          <MenuButton onClick={handleLoginClick}>{t('login')}</MenuButton>
+          <MenuButton type="button" title={t('profile')} onClick={handleProfileCkick}>
+            {t('profile')}
+          </MenuButton>
+          <MenuButton type="button" title={t('requests')} onClick={handleRequestsClick}>
+            {t('requests')}
+          </MenuButton>
+          <MenuButton type="button" title={t('login')} onClick={handleLoginClick}>
+            {t('login')}
+          </MenuButton>
         </MenuCountentContainer>
         <MenuFooterContainer>
-          <MenuFooterButton onClick={() => dispatch(toggleTheme())}>{theme === 'dark' ? '🌙 dark' : '☀️ light'}</MenuFooterButton>
-          <MenuFooterButton onClick={handleToggleLanguage}>{language === 'pt' ? '🇧🇷 PT' : '🇺🇸 EN'}</MenuFooterButton>
-          <MenuFooterButton>L</MenuFooterButton>
+          <MenuFooterButton type="button" title="Theme" onClick={() => dispatch(toggleTheme())}>
+            {theme === 'dark' ? '🌙 dark' : '☀️ light'}
+          </MenuFooterButton>
+          <MenuFooterButton type="button" title="Language" onClick={handleToggleLanguage}>
+            {language === 'pt' ? '🇧🇷 PT' : '🇺🇸 EN'}
+          </MenuFooterButton>
+          <MenuFooterButton type="button" title="L">
+            L
+          </MenuFooterButton>
         </MenuFooterContainer>
       </MenuWindowContainer>
     </motion.div>

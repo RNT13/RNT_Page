@@ -1,5 +1,6 @@
 import { styled } from 'styled-components'
-import { Button, TextH3 } from '../../styles/globalStyles'
+import { TextH3 } from '../../styles/globalStyles'
+import Button from '../button/button'
 
 export const MenuWindowContainer = styled.div`
   position: absolute;

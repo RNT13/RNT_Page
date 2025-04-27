@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { Button } from '../../styles/globalStyles'
+import Button from '../button/button'
 
 export const ContactCardHeader = styled.div`
   display: flex;
@@ -59,7 +59,9 @@ export const ContactCardContainer = styled.div`
     color: ${({ theme }) => theme.colors.textColor};
   }
 `
-
+export const SaveButton = styled(Button)`
+  background-color: ${({ theme }) => theme.colors.green};
+`
 export const RemoveContactButton = styled(Button)`
   background-color: ${({ theme }) => theme.colors.red};
 `

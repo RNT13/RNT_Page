@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { Button, Tag } from '../../styles/globalStyles'
+import { Tag } from '../../styles/globalStyles'
+import Button from '../button/button'
 
 export const Image = styled.div`
   width: 100%;

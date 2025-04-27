@@ -2,9 +2,10 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { SaveButton } from '../../components/tasksCard/TasksCardStyles'
 import Tarefa from '../../models/TaskModels'
 import { addTask } from '../../redux/slices/taskSlice'
-import { InputField, MainContainer, SaveButton } from '../../styles/globalStyles'
+import { InputField, MainContainer } from '../../styles/globalStyles'
 import * as taskEnums from '../../utils/enums/taskEnums'
 import { Form, Opcoe, Opcoes } from '../newTaskForm/NewTaskFormStyles'
 
@@ -52,7 +53,9 @@ const NewTaskForm = () => {
             </Opcoe>
           ))}
         </Opcoes>
-        <SaveButton type="submit">{t('save')}</SaveButton>
+        <SaveButton type="button" title={t('save')}>
+          {t('save')}
+        </SaveButton>
       </Form>
     </MainContainer>
   )

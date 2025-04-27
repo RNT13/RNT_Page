@@ -1,13 +1,14 @@
+import { useTranslation } from 'react-i18next'
 import { HiOutlineShoppingCart } from 'react-icons/hi'
-import { CartButtonContainer, CartButtonContent } from './CartButtonStyles'
+import { CartButtonContent } from './CartButtonStyles'
 
 const CartButton = () => {
+  const { t } = useTranslation()
+
   return (
-    <CartButtonContainer to="/CartPage">
-      <CartButtonContent>
-        <HiOutlineShoppingCart />
-      </CartButtonContent>
-    </CartButtonContainer>
+    <CartButtonContent type="headerButton" title={t('cart')}>
+      <HiOutlineShoppingCart />
+    </CartButtonContent>
   )
 }
 

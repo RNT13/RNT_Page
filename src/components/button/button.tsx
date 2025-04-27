@@ -40,7 +40,7 @@ const Button = ({ type, title, children, to, onClick, isOpen, isActive, href, ta
   switch (type) {
     case 'button':
       return (
-        <ButtonContainer type="button" title={title} onClick={handleClick}>
+        <ButtonContainer title={title} onClick={handleClick} {...props}>
           {children}
         </ButtonContainer>
       )
@@ -58,7 +58,7 @@ const Button = ({ type, title, children, to, onClick, isOpen, isActive, href, ta
       )
     case 'link':
       return (
-        <ButtonLinkContainer type="link" to={to as string} title={title}>
+        <ButtonLinkContainer type="link" to={to as string} title={title} {...props}>
           {children}
         </ButtonLinkContainer>
       )

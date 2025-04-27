@@ -1,6 +1,7 @@
 import { AnimatePresence } from 'framer-motion'
 import React, { useState } from 'react'
-import { MenuButtonContainer, MenuLogo, MenuOverlay } from '../menuButton/MenuButtonStyles'
+import Button from '../button/button'
+import { MenuLogo, MenuOverlay } from '../menuButton/MenuButtonStyles'
 import MenuWindow from '../menuWindows/MenuWindow'
 
 const MenuButton: React.FC = () => {
@@ -8,9 +9,9 @@ const MenuButton: React.FC = () => {
 
   return (
     <>
-      <MenuButtonContainer onClick={() => setIsOpen(true)}>
+      <Button type="buttonToggle" title="Menu" onClick={() => setIsOpen(true)}>
         <MenuLogo />
-      </MenuButtonContainer>
+      </Button>
 
       <AnimatePresence>
         {isOpen && (

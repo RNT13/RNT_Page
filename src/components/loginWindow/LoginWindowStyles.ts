@@ -1,5 +1,6 @@
 import { styled } from 'styled-components'
-import { Button, TextH3 } from '../../styles/globalStyles'
+import { TextH3 } from '../../styles/globalStyles'
+import Button from '../button/button'
 
 export const LoginWindowContainer = styled.div`
   width: 350px;

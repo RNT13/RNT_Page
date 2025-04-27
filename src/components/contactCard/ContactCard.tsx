@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
 import ContactModels from '../../models/ContactModels'
 import { editContact, removeContact } from '../../redux/slices/contactsSlice'
-import { Card, SaveButton, Tag } from '../../styles/globalStyles'
+import { Card, Tag } from '../../styles/globalStyles'
 import * as Contactenums from '../../utils/enums/contactEnums'
-import { CancelButton, ContactCardActionBar, ContactCardContainer, ContactCardDescription, ContactCardHeader, ContactCardTitle, EditButton, RemoveContactButton } from './ContactCardStyles'
+import { CancelButton, ContactCardActionBar, ContactCardContainer, ContactCardDescription, ContactCardHeader, ContactCardTitle, EditButton, RemoveContactButton, SaveButton } from './ContactCardStyles'
 
 type ContactProps = {
   contact: ContactModels
