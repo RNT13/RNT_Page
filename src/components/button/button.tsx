@@ -40,19 +40,19 @@ const Button = ({ type, title, children, to, onClick, isOpen, isActive, href, ta
   switch (type) {
     case 'button':
       return (
-        <ButtonContainer title={title} onClick={handleClick} {...props}>
+        <ButtonContainer type="button" title={title} onClick={handleClick} {...props}>
           {children}
         </ButtonContainer>
       )
     case 'buttonToggle':
       return (
-        <ButtonToggleContainer title={title} onClick={handleClick} $isOpen={isOpen} $isActive={finalIsActive} {...props}>
+        <ButtonToggleContainer type="buttonToggle" title={title} onClick={handleClick} $isOpen={isOpen} $isActive={finalIsActive} {...props}>
           {children}
         </ButtonToggleContainer>
       )
     case 'headerButton':
       return (
-        <HeaderButtonContainer title={title} onClick={handleClick} $isActive={finalIsActive} {...props}>
+        <HeaderButtonContainer type="headerButton" title={title} onClick={handleClick} $isActive={finalIsActive} {...props}>
           {children}
         </HeaderButtonContainer>
       )

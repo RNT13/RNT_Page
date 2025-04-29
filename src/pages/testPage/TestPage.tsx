@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import Tag from '../../components/tag/tag'
 import { GlobalMainContent, TitleH2 } from '../../styles/globalStyles'
 import { GradientButton, LineHoverButton, TestContent } from '../testPage/TestPageStyles'
 
@@ -15,6 +16,9 @@ const TestPage = () => {
         <LineHoverButton>
           <h3>{t('click')}</h3>
         </LineHoverButton>
+        <Tag $status="unknown" size="big">
+          {t('test')}
+        </Tag>
       </TestContent>
     </GlobalMainContent>
   )

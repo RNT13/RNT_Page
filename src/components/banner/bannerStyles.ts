@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Tag } from '../../styles/globalStyles'
 import Button from '../button/button'
 
 export const Image = styled.div`
@@ -26,10 +25,6 @@ export const ImageText = styled.div`
   width: 70%;
   height: 70%;
   color: ${({ theme }) => theme.colors.textColor};
-
-  ${Tag} {
-    font-size: 1rem;
-  }
 `
 export const ImageButton = styled(Button)`
   font-weight: bold;

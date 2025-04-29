@@ -7,7 +7,8 @@ import TaskModels from '../../models/TaskModels'
 import { changeFilter } from '../../redux/slices/filterSlice'
 import { changeStatus, editTask, removeTask } from '../../redux/slices/taskSlice'
 import { RootState } from '../../redux/store'
-import { Card, Tag } from '../../styles/globalStyles'
+import { Card } from '../../styles/globalStyles'
+import Tag from '../tag/tag'
 import { CancelButton, EditButton, RemoveTaskButton, SaveButton, TaskCardActionBar, TaskCardContainer, TaskCardDescription, TaskCardHeader, TaskCardTitle } from './TasksCardStyles'
 
 const TaskCard = ({ title, priority, status, description: originalDescription, id }: TaskModels) => {
@@ -45,10 +46,13 @@ const TaskCard = ({ title, priority, status, description: originalDescription, i
   return (
     <Card>
       <TaskCardHeader>
-        <Tag $priority={priority}>{t(priority.toLowerCase())}</Tag>
-        <Tag $priority="status" $status={taskState}>
+        <Tag $priority={priority} size="mid">
+          {t(priority.toLowerCase())}
+        </Tag>
+        <Tag $priority={taskState} $status={taskState} size="mid">
           {t(taskState.toLowerCase())}
         </Tag>
+
         {isEditing && <h2>{t('editing')}</h2>}
       </TaskCardHeader>
       <TaskCardContainer>

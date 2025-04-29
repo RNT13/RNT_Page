@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
 import ContactModels from '../../models/ContactModels'
 import { editContact, removeContact } from '../../redux/slices/contactsSlice'
-import { Card, Tag } from '../../styles/globalStyles'
-import * as Contactenums from '../../utils/enums/contactEnums'
+import { Card } from '../../styles/globalStyles'
+import Tag from '../tag/tag'
 import { CancelButton, ContactCardActionBar, ContactCardContainer, ContactCardDescription, ContactCardHeader, ContactCardTitle, EditButton, RemoveContactButton, SaveButton } from './ContactCardStyles'
 
 type ContactProps = {
@@ -43,7 +43,9 @@ const ContactCard = ({ contact }: ContactProps) => {
   return (
     <Card>
       <ContactCardHeader>
-        <Tag $status={editedContact.status as Contactenums.status}>{t((editedContact.status as string).toLowerCase())}</Tag>
+        <Tag $status={editedContact.status} size="mid">
+          {t((editedContact.status as string).toLowerCase())}
+        </Tag>
         {isEditing && <h2>{t('editing')}</h2>}
       </ContactCardHeader>
 

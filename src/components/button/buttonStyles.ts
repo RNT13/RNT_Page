@@ -1,6 +1,19 @@
 import { Link } from 'react-router-dom'
 import { styled } from 'styled-components'
 
+export type ButtonProps = {
+  type: 'button' | 'link' | 'buttonToggle' | 'headerButton'
+  title: string
+  to?: string
+  onClick?: () => void
+  children?: React.ReactNode
+  $isOpen?: boolean
+  $isActive?: boolean
+  href?: string
+  target?: string
+  rel?: string
+}
+
 export const ButtonContainer = styled.button`
   display: flex;
   justify-content: center;
@@ -44,7 +57,7 @@ export const ButtonLinkContainer = styled(Link)`
   }
 `
 
-export const ButtonToggleContainer = styled.button<{ $isActive?: boolean; $isOpen?: boolean }>`
+export const ButtonToggleContainer = styled.button<ButtonProps>`
   display: flex;
   align-items: center;
   text-align: center;
@@ -84,7 +97,7 @@ export const ButtonToggleContainer = styled.button<{ $isActive?: boolean; $isOpe
   }
 `
 
-export const HeaderButtonContainer = styled.button<{ $isActive?: boolean }>`
+export const HeaderButtonContainer = styled.button<ButtonProps>`
   display: flex;
   justify-content: center;
   align-items: center;

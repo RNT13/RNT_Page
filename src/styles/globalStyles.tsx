@@ -123,39 +123,6 @@ export const FilterCard = styled.div<{ $ativo: boolean }>`
   }
 `
 
-export const Tag = styled.span<{ $status?: string; $priority?: string }>`
-  padding: 4px 8px;
-  color: ${({ theme }) => theme.colors.shadow};
-  font-weight: bold;
-  font-size: 10px;
-  border-radius: 8px;
-  display: inline-block;
-  background-color: ${({ $status, $priority, theme }) => {
-    if ($status) {
-      switch ($status) {
-        case 'Friend':
-        case 'Completed':
-          return theme.colors.green
-        case 'Known':
-          return theme.colors.orange
-        case 'Pending':
-          return theme.colors.yellow
-        case 'Unknown':
-          return theme.colors.red
-        case 'Highlight':
-          return theme.colors.green
-        default:
-          return theme.colors.black
-      }
-    }
-    if ($priority) {
-      return $priority === 'Urgent' ? theme.colors.red : theme.colors.blue
-    }
-    return theme.colors.black
-  }};
-  box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
-`
-
 export const Counter = styled.span`
   font-size: 1.5rem;
   font-weight: bold;

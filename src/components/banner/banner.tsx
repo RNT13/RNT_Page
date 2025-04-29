@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { Tag } from '../../styles/globalStyles'
+import Tag from '../tag/tag'
 import { Image, ImageButton, ImageContent, ImageText, ImageTextFooter, Price, Title } from './bannerStyles'
 
 const Banner = () => {
@@ -10,7 +10,9 @@ const Banner = () => {
       <Image style={{ backgroundImage: `url(/images/banner-homem-aranha.png)` }}>
         <ImageContent>
           <ImageText>
-            <Tag $status="Highlight">{t('DailyHighlight')}</Tag>
+            <Tag $status="Highlight" size="big">
+              {t('DailyHighlight')}
+            </Tag>
             <ImageTextFooter>
               <Title>
                 {t('SpiderMan')}

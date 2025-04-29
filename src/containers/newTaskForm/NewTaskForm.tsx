@@ -53,7 +53,7 @@ const NewTaskForm = () => {
             </Opcoe>
           ))}
         </Opcoes>
-        <SaveButton type="button" title={t('save')}>
+        <SaveButton type="headerButton" title={t('save')}>
           {t('save')}
         </SaveButton>
       </Form>

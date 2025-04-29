@@ -6,6 +6,24 @@ export const breakpoints = {
   }
 }
 
+export const tagTheme = {
+  status: {
+    friend: '#28a745',
+    completed: '#39FF14',
+    known: '#ff4500',
+    pending: '#ffff00',
+    unknown: '#ff3347',
+    highlight: '#28a731',
+    default: '#000'
+  },
+  priority: {
+    urgent: '#ff3347',
+    normal: '#0d6efd',
+    important: '#ffff00',
+    default: '#000'
+  }
+}
+
 export const darkTheme = {
   colors: {
     primaryColor: '#13161b',
@@ -64,3 +82,5 @@ export const themeConfig = {
   light: lightTheme,
   dark: darkTheme
 }
+
+export type ThemeType = typeof darkTheme
