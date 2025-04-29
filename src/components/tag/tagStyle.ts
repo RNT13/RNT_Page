@@ -1,7 +1,6 @@
-// eslint-disable-next-line prettier/prettier
-import styled from 'styled-components';
-// eslint-disable-next-line prettier/prettier
-import { tagTheme } from '../../styles/theme';
+import styled from 'styled-components'
+import { media } from '../../styles/media'
+import { tagTheme } from '../../styles/theme'
 
 export type TagProps = {
   size?: 'small' | 'mid' | 'big'
@@ -11,9 +10,9 @@ export type TagProps = {
 }
 
 const sizeMap = {
-  small: '0.5rem',
-  mid: '0.8rem',
-  big: '1.1rem'
+  small: { fontSize: '0.6rem', padding: '4px 8px' },
+  mid: { fontSize: '0.8rem', padding: '6px 12px' },
+  big: { fontSize: '1.1rem', padding: '8px 16px' }
 }
 
 const getStatusColor = ($status: string | undefined) => {
@@ -49,9 +48,9 @@ const getPriorityColor = ($priority: string | undefined) => {
 }
 
 export const TagContainer = styled.span<TagProps>`
-  padding: 4px 6px;
-  font-size: ${({ size }) => sizeMap[size || 'small']};
-  border-radius: 10px;
+  padding: ${({ size }) => sizeMap[size || 'small'].padding};
+  font-size: ${({ size }) => sizeMap[size || 'small'].fontSize};
+  border-radius: 15px;
   font-weight: bold;
   line-height: 1.5;
   display: inline-block;
@@ -66,4 +65,16 @@ export const TagContainer = styled.span<TagProps>`
     return theme.colors.primaryColor
   }};
   box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
+
+  ${media.md} {
+    font-size: ${sizeMap.mid.fontSize};
+    padding: ${sizeMap.mid.padding};
+    background-color: red;
+  }
+
+  ${media.sm} {
+    font-size: ${sizeMap.small.fontSize};
+    padding: ${sizeMap.small.padding};
+    background-color: yellow;
+  }
 `
