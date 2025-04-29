@@ -69,12 +69,10 @@ export const TagContainer = styled.span<TagProps>`
   ${media.md} {
     font-size: ${sizeMap.mid.fontSize};
     padding: ${sizeMap.mid.padding};
-    background-color: red;
   }
 
   ${media.sm} {
     font-size: ${sizeMap.small.fontSize};
     padding: ${sizeMap.small.padding};
-    background-color: yellow;
   }
 `
