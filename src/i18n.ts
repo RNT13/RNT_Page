@@ -71,7 +71,40 @@ i18n.use(initReactI18next).init({
         goToCart: 'Go to Cart',
         toggleTheme: 'Toggle Theme',
         toggleLanguage: 'Toggle Language',
-        searchPlaceholder: 'Search...'
+        searchPlaceholder: 'Search...',
+        games: 'Games',
+        action: 'Action',
+        adventure: 'Adventure',
+        rpg: 'RPG',
+        strategy: 'Strategy',
+        simulation: 'Simulation',
+        sports: 'Sports',
+        racing: 'Racing',
+        fighting: 'Fighting',
+        horror: 'Horror',
+        puzzle: 'Puzzle',
+        platformer: 'Platformer',
+        shooter: 'Shooter',
+        openWorld: 'Open World',
+        stealth: 'Stealth',
+        survival: 'Survival',
+        multiplayer: 'Multiplayer',
+        singlePlayer: 'Single Player',
+        coOp: 'Co-Op',
+        online: 'Online',
+        comingSoon: 'Coming Soon',
+        resident: 'Resident Evil 4 Remake',
+        residentDescription:
+          "Resident Evil 4 Remake is a survival horror game developed and published by Capcom. It is a remake of the original Resident Evil 4, released in 2005. The game follows Leon S. Kennedy as he attempts to rescue the President's daughter from a cult in rural Spain.",
+        diablo: 'Diablo IV',
+        diabloDescription:
+          'Diablo IV is an action role-playing video game developed by Blizzard Entertainment and published by Activision. It is the fourth main installment in the Diablo series, released in 2022.',
+        starWars: 'Star Wars Jedi: Survivor',
+        starWarsDescription:
+          'Star Wars Jedi: Survivor is an action-adventure game developed by Respawn Entertainment and published by Electronic Arts. It is a sequel to Star Wars Jedi: Fallen Order, released in 2023.',
+        zelda: 'Zelda: Tears of the Kingdom',
+        zeldaDescription:
+          'Zelda: Tears of the Kingdom is an action-adventure game developed by Nintendo EAD and published by Nintendo. It is the sequel to The Legend of Zelda: Breath of the Wild, released in 2023.'
       }
     },
     pt: {
@@ -142,7 +175,40 @@ i18n.use(initReactI18next).init({
         goToCart: 'Ir para o Carrinho',
         toggleTheme: 'Alternar Tema',
         toggleLanguage: 'Alternar Idioma',
-        searchPlaceholder: 'Pesquisar...'
+        searchPlaceholder: 'Pesquisar...',
+        games: 'Jogos',
+        action: 'Ação',
+        adventure: 'Aventura',
+        rpg: 'RPG',
+        strategy: 'Estratégia',
+        simulation: 'Simulação',
+        sports: 'Esportes',
+        racing: 'Corrida',
+        fighting: 'Luta',
+        horror: 'Horror',
+        puzzle: 'Quebra-cabeça',
+        platformer: 'Plataforma',
+        shooter: 'Tiro',
+        openWorld: 'Mundo Aberto',
+        stealth: 'Furtivo',
+        survival: 'Sobrevivência',
+        multiplayer: 'Multijogador',
+        singlePlayer: 'Jogador Unico',
+        coOp: 'Co-op',
+        online: 'Online',
+        comingSoon: 'Em Breve',
+        resident: 'Resident Evil 4 Remake',
+        residentDescription:
+          'Resident Evil 4 Remake é um jogo de survival horror desenvolvido e publicado pela Capcom. É um remake do Resident Evil 4 original, lançado em 2005. O jogo segue Leon S. Kennedy enquanto ele tenta resgatar a filha do presidente de um culto no interior da Espanha.',
+        diablo: 'Diablo IV',
+        diabloDescription:
+          'Diablo IV é um jogo de RPG de ação desenvolvido pela Blizzard Entertainment e publicado pela Activision. É a quarta edição principal da série Diablo, lançada em 2022.',
+        starWars: 'Star Wars Jedi: Survivor',
+        starWarsDescription:
+          'Star Wars Jedi: Survivor é um jogo de ação e aventura desenvolvido pela Respawn Entertainment e publicado pela Electronic Arts. É uma sequência de Star Wars Jedi: Fallen Order, lançado em 2023.',
+        zelda: 'Zelda: Tears of the Kingdom',
+        zeldaDescription:
+          'Zelda: Tears of the Kingdom é um jogo de ação e aventura desenvolvido pela Nintendo EAD e publicado pela Nintendo. É a sequência de The Legend of Zelda: Breath of the Wild, lançado em 2023.'
       }
     }
   },

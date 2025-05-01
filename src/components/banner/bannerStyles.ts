@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { media } from '../../styles/media'
 import Button from '../button/button'
+import { TagContainer } from '../tag/tagStyle'
 
 export const Image = styled.div`
   width: 100%;
@@ -36,17 +37,23 @@ export const ImageText = styled.div`
   width: 70%;
   height: 70%;
   color: ${({ theme }) => theme.colors.textColor};
+
+  ${TagContainer} {
+    font-size: clamp(0.5rem, 2.5vw, 2.5rem);
+    padding: clamp(2px, 4px, 4px);
+  }
 `
 export const ImageButton = styled(Button)`
   font-weight: bold;
   background-color: transparent;
   font-size: clamp(0.5rem, 2vw, 2.5rem);
   padding: clamp(2px, 4px, 8px);
-  border: 2px solid ${({ theme }) => theme.colors.textColor};
+  border: 2px solid ${({ theme }) => theme.colors.grey};
+  color: ${({ theme }) => theme.colors.grey};
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.textColor};
-    color: ${({ theme }) => theme.colors.primaryColor};
+    background-color: ${({ theme }) => theme.colors.grey};
+    color: ${({ theme }) => theme.colors.shadow};
   }
 `
 
@@ -60,7 +67,7 @@ export const ImageTextFooter = styled.div`
 export const Title = styled.div`
   font-weight: bold;
   font-size: clamp(0.5rem, 2vw, 2.5rem);
-  color: ${({ theme }) => theme.colors.textColor};
+  color: ${({ theme }) => theme.colors.grey};
 `
 
 export const Price = styled.h2`

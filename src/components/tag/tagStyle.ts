@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { media } from '../../styles/media'
 import { tagTheme } from '../../styles/theme'
 
 export type TagProps = {
@@ -9,9 +8,9 @@ export type TagProps = {
   children: React.ReactNode
 }
 
-const sizeMap = {
-  small: { fontSize: '0.6rem', padding: '4px 8px' },
-  mid: { fontSize: '0.8rem', padding: '6px 12px' },
+export const sizeMap = {
+  small: { fontSize: '0.7rem', padding: '3px 6px' },
+  mid: { fontSize: '0.9rem', padding: '6px 12px' },
   big: { fontSize: '1.1rem', padding: '8px 16px' }
 }
 
@@ -52,8 +51,9 @@ export const TagContainer = styled.span<TagProps>`
   font-size: ${({ size }) => sizeMap[size || 'small'].fontSize};
   border-radius: 15px;
   font-weight: bold;
-  line-height: 1.5;
+  line-height: 1;
   display: inline-block;
+  max-width: fit-content;
   color: ${({ theme }) => theme.colors.shadow};
   background-color: ${({ $status, $priority, theme }) => {
     if ($status) {
@@ -65,14 +65,4 @@ export const TagContainer = styled.span<TagProps>`
     return theme.colors.primaryColor
   }};
   box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
-
-  ${media.md} {
-    font-size: ${sizeMap.mid.fontSize};
-    padding: ${sizeMap.mid.padding};
-  }
-
-  ${media.sm} {
-    font-size: ${sizeMap.small.fontSize};
-    padding: ${sizeMap.small.padding};
-  }
 `

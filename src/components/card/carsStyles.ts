@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Button from '../button/button'
+import { TagContainer } from '../tag/tagStyle'
 
 export const CardContainer = styled.div`
   position: relative;
@@ -8,12 +9,17 @@ export const CardContainer = styled.div`
   height: 500px;
   padding: 8px;
   border-radius: 8px;
-  background: ${({ theme }) => theme.colors.primaryColor};
+  background-color: ${({ theme }) => theme.colors.background};
+  border: 1px solid ${({ theme }) => theme.colors.grey};
   box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
   transition:
     opacity 0.3s ease,
     transform 0.3s ease;
   overflow: hidden;
+
+  ${TagContainer} {
+    margin: 0px 4px 0px 4px;
+  }
 
   &:hover .card-footer {
     height: 100px;
@@ -21,16 +27,26 @@ export const CardContainer = styled.div`
     visibility: visible;
     transform: translateY(10px);
     background-color: ${({ theme }) => theme.colors.secondaryColor};
+
     transition:
       opacity 0.3s ease,
       transform 0.3s ease;
   }
+
+  &:hover {
+    border: 1px solid ${({ theme }) => theme.colors.blue};
+    box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.blue2};
+  }
 `
 
-export const CardHeader = styled.div``
+export const CardHeader = styled.div`
+  position: absolute;
+  top: 16px;
+  right: 16px;
+`
 
-export const ProductImage = styled.img`
-  width: 280px;
+export const CardImage = styled.img`
+  width: 100%;
   height: 260px;
   object-fit: cover;
   margin: 0px auto;
@@ -38,15 +54,24 @@ export const ProductImage = styled.img`
   border-radius: 8px;
 `
 
-export const CardBody = styled.div`
-  margin: 10px 0px 0px 0px;
-  color: ${({ theme }) => theme.colors.textColor};
-  position: relative;
+export const CardTitle = styled.h3`
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
+  color: ${({ theme }) => theme.colors.textColor};
+
+  margin: 4px 0px 4px 0px;
+  font-size: 1.1rem;
+  font-weight: bold;
 `
+
+export const CardDescription = styled.p`
+  margin: 16px 0px 0px 0px;
+  font-size: 1rem;
+  color: ${({ theme }) => theme.colors.textColor};
+`
+
+export const CardBody = styled.div``
 
 export const CardFooter = styled.div`
   position: absolute;
@@ -57,6 +82,7 @@ export const CardFooter = styled.div`
   left: 0;
   width: 100%;
   padding: 10px;
+  left: 0;
   opacity: 0;
   transform: translateY(100%);
   transition:
