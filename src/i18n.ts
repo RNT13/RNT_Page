@@ -90,6 +90,8 @@ i18n.use(initReactI18next).init({
         survival: 'Survival',
         multiplayer: 'Multiplayer',
         singlePlayer: 'Single Player',
+        actionAdventure: 'Action-Adventure',
+        actionRPG: 'Action-RPG',
         coOp: 'Co-Op',
         online: 'Online',
         comingSoon: 'Coming Soon',
@@ -104,7 +106,28 @@ i18n.use(initReactI18next).init({
           'Star Wars Jedi: Survivor is an action-adventure game developed by Respawn Entertainment and published by Electronic Arts. It is a sequel to Star Wars Jedi: Fallen Order, released in 2023.',
         zelda: 'Zelda: Tears of the Kingdom',
         zeldaDescription:
-          'Zelda: Tears of the Kingdom is an action-adventure game developed by Nintendo EAD and published by Nintendo. It is the sequel to The Legend of Zelda: Breath of the Wild, released in 2023.'
+          'Zelda: Tears of the Kingdom is an action-adventure game developed by Nintendo EAD and published by Nintendo. It is the sequel to The Legend of Zelda: Breath of the Wild, released in 2023.',
+        theLastOfUs: 'The Last of Us Remastered',
+        theLastOfUsDescription:
+          'The Last of Us Remastered is an action-adventure game developed by Naughty Dog and published by Sony Computer Entertainment. The game follows Joel and Ellie as they navigate a post-apocalyptic world filled with infected creatures and hostile humans.',
+        untilDawn: 'Until Dawn',
+        untilDawnDescription:
+          'Until Dawn is an interactive drama survival horror video game developed by Supermassive Games and published by Sony Computer Entertainment. The game follows a group of friends who must survive a night in a remote mountain lodge while being hunted by a mysterious killer.',
+        godOfWarRagnarok: 'God of War Ragnarök',
+        godOfWarRagnarokDescription:
+          'God of War Ragnarök is an action-adventure game developed by Santa Monica Studio and published by Sony Interactive Entertainment. It is the sequel to God of War (2018), released in 2022.',
+        helldivers: 'Helldivers',
+        helldiversDescription:
+          'Helldivers is a top-down shooter game developed by Arrowhead Game Studios and published by Sony Computer Entertainment. The game is a satirical take on the shooter genre, and features a variety of weapons and vehicles to fight against an alien threat.',
+        horizonForbiddenWest: 'Horizon Forbidden West',
+        horizonForbiddenWestDescription:
+          'Horizon Forbidden West is an action role-playing game developed by Guerrilla Games and published by Sony Interactive Entertainment. It is the sequel to Horizon Zero Dawn, released in 2022.',
+        horizonZeroDawn: 'Horizon Zero Dawn',
+        horizonZeroDawnDescription:
+          'Horizon Zero Dawn is an action role-playing game developed by Guerrilla Games and published by Sony Interactive Entertainment. The game takes place in a post-apocalyptic world where humans have regressed to a tribal state and must fight against robotic creatures.',
+        ratchetAndClankRiftApart: 'Ratchet & Clank: Rift Apart',
+        ratchetAndClankRiftApartDescription:
+          'Ratchet & Clank: Rift Apart is a platformer game developed by Insomniac Games and published by Sony Interactive Entertainment. It is the sequel to Ratchet & Clank (2016), released in 2021.'
       }
     },
     pt: {
@@ -194,6 +217,8 @@ i18n.use(initReactI18next).init({
         survival: 'Sobrevivência',
         multiplayer: 'Multijogador',
         singlePlayer: 'Jogador Unico',
+        actionAdventure: 'Ação-Aventura',
+        actionRPG: 'Ação-RPG',
         coOp: 'Co-op',
         online: 'Online',
         comingSoon: 'Em Breve',
@@ -208,7 +233,28 @@ i18n.use(initReactI18next).init({
           'Star Wars Jedi: Survivor é um jogo de ação e aventura desenvolvido pela Respawn Entertainment e publicado pela Electronic Arts. É uma sequência de Star Wars Jedi: Fallen Order, lançado em 2023.',
         zelda: 'Zelda: Tears of the Kingdom',
         zeldaDescription:
-          'Zelda: Tears of the Kingdom é um jogo de ação e aventura desenvolvido pela Nintendo EAD e publicado pela Nintendo. É a sequência de The Legend of Zelda: Breath of the Wild, lançado em 2023.'
+          'Zelda: Tears of the Kingdom é um jogo de ação e aventura desenvolvido pela Nintendo EAD e publicado pela Nintendo. É a sequência de The Legend of Zelda: Breath of the Wild, lançado em 2023.',
+        theLastOfUs: 'The Last of Us Remastered',
+        theLastOfUsDescription:
+          'The Last of Us Remastered é um jogo de ação e aventura desenvolvido pela Naughty Dog e publicado pela Sony Interactive Entertainment. É um remake do The Last of Us, lançado em 2013.',
+        untilDawn: 'Until Dawn',
+        untilDawnDescription:
+          'Until Dawn é um jogo de drama interativo e survival horror desenvolvido pela Supermassive Games e publicado pela Sony. O jogo segue um grupo de amigos que devem sobreviver a uma noite em uma cabana remota nas montanhas enquanto são caçados por um assassino misterioso.',
+        godOfWarRagnarok: 'God of War Ragnarök',
+        godOfWarRagnarokDescription:
+          'God of War Ragnarök é um jogo de ação e aventura desenvolvido pelo Santa Monica Studio e publicado pela Sony Interactive Entertainment. É a sequência de God of War (2018), lançado em 2022.',
+        helldivers: 'Helldivers',
+        helldiversDescription:
+          'Helldivers é um jogo de ação e aventura desenvolvido pela Ubisoft Montreal e publicado pela Ubisoft. O jogo segue um grupo de mercenarios em uma missão de resgate na Terra do Oeste.',
+        horizonForbiddenWest: 'Horizon Forbidden West',
+        horizonForbiddenWestDescription:
+          'Horizon Forbidden West é um jogo de RPG de ação desenvolvido pela Guerrilla Games e publicado pela Sony Interactive Entertainment. É a sequência de Horizon Zero Dawn, lançado em 2022.',
+        horizonZeroDawn: 'Horizon Zero Dawn',
+        horizonZeroDawnDescription:
+          'Horizon Zero Dawn é um jogo de RPG de ação desenvolvido pela Guerrilla Games e publicado pela Sony Interactive Entertainment.',
+        ratchetAndClankRiftApart: 'Ratchet & Clank: Rift Apart',
+        ratchetAndClankRiftApartDescription:
+          'Ratchet & Clank: Rift Apart é um jogo de plataforma desenvolvido pela Insomniac Games e publicado pela Sony Interactive Entertainment. É a sequência de Ratchet & Clank (2016), lançado em 2021.'
       }
     }
   },

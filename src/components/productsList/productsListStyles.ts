@@ -6,7 +6,7 @@ export type listProps = {
   $background: 'grey' | 'black'
 }
 
-export const ProductsListContainer = styled.div<Omit<listProps, 'title'>>`
+export const ProductsListContainer = styled.div<Omit<listProps, 'title' | 'games'>>`
   background-color: ${props =>
     props.$background === 'grey' ? props.theme.colors.secondaryColor : props.theme.colors.background};
 `
