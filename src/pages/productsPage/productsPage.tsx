@@ -16,7 +16,7 @@ const ProductsPage = () => {
         <Card
           categoty={t('horror')}
           system="PC/PS5"
-          image="public\images\resident.png"
+          image="/images/resident.png"
           infos={['-10%', 'R$ 150,00']}
           title={t('resident')}
           description={t('residentDescription')}
@@ -24,7 +24,7 @@ const ProductsPage = () => {
         <Card
           categoty={t('action')}
           system="PC/PS5"
-          image="public\images\diablo.png"
+          image="/images/diablo.png"
           infos={['-10%', 'R$ 150,00']}
           title={t('diablo')}
           description={t('diabloDescription')}
@@ -32,7 +32,7 @@ const ProductsPage = () => {
         <Card
           categoty={t('adventure')}
           system="PC/PS5"
-          image="public\images\star_wars.png"
+          image="/images/star_wars.png"
           infos={['-10%', 'R$ 150,00']}
           title={t('starWars')}
           description={t('starWarsDescription')}
@@ -40,7 +40,15 @@ const ProductsPage = () => {
         <Card
           categoty={t('action')}
           system="PC/PS5"
-          image="public\images\zelda.png"
+          image="/images/zelda.png"
+          infos={['-10%', 'R$ 150,00']}
+          title={t('zelda')}
+          description={t('zeldaDescription')}
+        />
+        <Card
+          categoty={t('action')}
+          system="PC/PS5"
+          image="/images/zelda.png"
           infos={['-10%', 'R$ 150,00']}
           title={t('zelda')}
           description={t('zeldaDescription')}
@@ -50,7 +58,7 @@ const ProductsPage = () => {
         <Card
           categoty={t('horror')}
           system="PC/PS5"
-          image="public\images\resident.png"
+          image="/images/resident.png"
           infos={['-10%', 'R$ 150,00']}
           title={t('resident')}
           description={t('residentDescription')}
@@ -58,7 +66,7 @@ const ProductsPage = () => {
         <Card
           categoty={t('action')}
           system="PC/PS5"
-          image="public\images\diablo.png"
+          image="/images/diablo.png"
           infos={['-10%', 'R$ 150,00']}
           title={t('diablo')}
           description={t('diabloDescription')}
@@ -66,7 +74,7 @@ const ProductsPage = () => {
         <Card
           categoty={t('adventure')}
           system="PC/PS5"
-          image="public\images\star_wars.png"
+          image="/images/star_wars.png"
           infos={['-10%', 'R$ 150,00']}
           title={t('starWars')}
           description={t('starWarsDescription')}
@@ -74,7 +82,15 @@ const ProductsPage = () => {
         <Card
           categoty={t('action')}
           system="PC/PS5"
-          image="public\images\zelda.png"
+          image="/images/zelda.png"
+          infos={['-10%', 'R$ 150,00']}
+          title={t('zelda')}
+          description={t('zeldaDescription')}
+        />
+        <Card
+          categoty={t('action')}
+          system="PC/PS5"
+          image="/images/zelda.png"
           infos={['-10%', 'R$ 150,00']}
           title={t('zelda')}
           description={t('zeldaDescription')}
