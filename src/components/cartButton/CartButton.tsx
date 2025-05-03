@@ -6,7 +6,7 @@ const CartButton = () => {
   const { t } = useTranslation()
 
   return (
-    <CartButtonContent type="headerButton" title={t('cart')}>
+    <CartButtonContent type="headerButton" title={t('cart')} to="/CartPage">
       <HiOutlineShoppingCart />
     </CartButtonContent>
   )

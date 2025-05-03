@@ -10,6 +10,7 @@ import { themeConfig } from './styles/theme'
 
 // pages
 import { useSelector } from 'react-redux'
+import Footer from './components/footer/Footer'
 import CalendarPage from './pages/calendarPage/CalendarPage'
 import CartPage from './pages/cartPage/CartPage'
 import ContactsPage from './pages/contactsPage/ContactsPage'
@@ -34,6 +35,7 @@ const Layout = () => {
       <AsideBar />
       <MainContent $isOpen={isOpen}>
         <Outlet />
+        <Footer />
       </MainContent>
     </ThemeProvider>
   )

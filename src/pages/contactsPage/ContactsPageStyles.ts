@@ -1,13 +1,12 @@
 import styled from 'styled-components'
-import { GlobalMainContent } from '../../styles/globalStyles'
 import { media } from '../../styles/media'
 
-export const ContactsContainer = styled(GlobalMainContent)`
-  flex-direction: row;
+export const ContactsContainer = styled.div`
+  display: flex;
+  height: 100vh;
 
   ${(media.sm, media.md)} {
-    display: flex;
-    flex-direction: column;
+    display: block;
   }
 `
 

@@ -4,7 +4,6 @@ import { media } from '../../styles/media'
 export const Aside = styled.aside`
   padding: 16px;
   margin-left: 80px;
-  height: calc(100vh - 70px);
   background-color: ${({ theme }) => theme.colors.background};
 
   ${(media.sm, media.md)} {

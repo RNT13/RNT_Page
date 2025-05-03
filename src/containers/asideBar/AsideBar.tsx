@@ -59,19 +59,40 @@ const AsideBar = () => {
         </AsideAppsDiv>
 
         <AsideSocialLinks>
-          <Button type="buttonToggle" title={t('test')} href="https://github.com/RNT13" target="_blank" rel="noopener noreferrer" isOpen={isOpen}>
+          <Button
+            type="buttonToggle"
+            title={t('test')}
+            href="https://github.com/RNT13"
+            target="_blank"
+            rel="noopener noreferrer"
+            isOpen={isOpen}
+          >
             <div>
               <FaGithub />
             </div>
             <span>GitHub</span>
           </Button>
-          <Button type="buttonToggle" title={t('test')} href="https://www.linkedin.com/in/renato-luiz-0b072b247/" target="_blank" rel="noopener noreferrer" isOpen={isOpen}>
+          <Button
+            type="buttonToggle"
+            title={t('test')}
+            href="https://www.linkedin.com/in/renato-luiz-0b072b247/"
+            target="_blank"
+            rel="noopener noreferrer"
+            isOpen={isOpen}
+          >
             <div>
               <FaLinkedin />
             </div>
             <span>LinkedIn</span>
           </Button>
-          <Button type="buttonToggle" title={t('test')} href="https://www.instagram.com/renatominoita/" target="_blank" rel="noopener noreferrer" isOpen={isOpen}>
+          <Button
+            type="buttonToggle"
+            title={t('test')}
+            href="https://www.instagram.com/renatominoita/"
+            target="_blank"
+            rel="noopener noreferrer"
+            isOpen={isOpen}
+          >
             <div>
               <AiFillInstagram />
             </div>

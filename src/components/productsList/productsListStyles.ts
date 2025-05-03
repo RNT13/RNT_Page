@@ -17,7 +17,6 @@ export const ProductsListContent = styled.ul<Omit<listProps, 'title'>>`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 30px;
-  margin-bottom: 50px;
 
   ${CardContainer} {
     background-color: ${props =>
@@ -25,5 +24,7 @@ export const ProductsListContent = styled.ul<Omit<listProps, 'title'>>`
   }
 
   ${(media.sm, media.md)} {
+    margin: 0px auto;
+    grid-template-columns: 1fr;
   }
 `

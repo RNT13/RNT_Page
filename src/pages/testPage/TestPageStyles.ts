@@ -1,10 +1,6 @@
 import { styled } from 'styled-components'
 
-export const TestContainer = styled.div`
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-`
+export const TestPageContainer = styled.div``
 
 export const TestContent = styled.div`
   display: flex;

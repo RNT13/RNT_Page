@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom'
 import { SaveButton } from '../../components/contactCard/ContactCardStyles'
 import Contacts from '../../models/ContactModels'
 import { addContact } from '../../redux/slices/contactsSlice'
-import { InputField, MainContainer } from '../../styles/globalStyles'
+import { InputField } from '../../styles/globalStyles'
 import * as contactEnums from '../../utils/enums/contactEnums'
-import { Form, Opcoe, Opcoes } from '../newContactForm/NewContactFormStyles'
+import { Form, NewContactFormContainer, Opcoe, Opcoes } from '../newContactForm/NewContactFormStyles'
 
 const NewContactForm = () => {
   const { t } = useTranslation()
@@ -49,7 +49,7 @@ const NewContactForm = () => {
   }
 
   return (
-    <MainContainer>
+    <NewContactFormContainer>
       <Form onSubmit={registerContact}>
         <InputField id="name" value={name} onChange={e => setName(e.target.value)} type="text" placeholder={t('fullName')} />
         <InputField id="email" value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder={t('email')} />
@@ -58,7 +58,14 @@ const NewContactForm = () => {
           <p>Status</p>
           {Object.values(contactEnums.status).map(statusValue => (
             <Opcoe key={statusValue}>
-              <input value={statusValue} name="status" type="radio" id={statusValue} checked={status === statusValue} onChange={e => setStatus(e.target.value as contactEnums.status)} />
+              <input
+                value={statusValue}
+                name="status"
+                type="radio"
+                id={statusValue}
+                checked={status === statusValue}
+                onChange={e => setStatus(e.target.value as contactEnums.status)}
+              />
               <label htmlFor={statusValue}>{statusValue}</label>
             </Opcoe>
           ))}
@@ -67,7 +74,7 @@ const NewContactForm = () => {
           {t('save')}
         </SaveButton>
       </Form>
-    </MainContainer>
+    </NewContactFormContainer>
   )
 }
 

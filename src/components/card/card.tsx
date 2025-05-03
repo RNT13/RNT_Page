@@ -20,7 +20,7 @@ const Card = ({ title, categoty, system, description, infos, image }: CardProps)
         <Tag $status="highlight">{infos[0]}</Tag>
         <Tag $status="highlight">{infos[1]}</Tag>
       </CardHeader>
-      <CardImage src={image} alt={title} />
+      <CardImage src={image || undefined} alt={title || 'Default Alt Text'} />
       <CardBody>
         <CardTitle>{title}</CardTitle>
         <Tag $status="highlight">{categoty}</Tag>

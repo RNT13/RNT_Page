@@ -1,12 +1,14 @@
 import styled from 'styled-components'
-import { GlobalMainContent } from '../../styles/globalStyles'
 import { media } from '../../styles/media'
 
-export const NewTaskContainer = styled(GlobalMainContent)`
-  flex-direction: row;
+export const NewTaskContainer = styled.div`
+  display: flex;
+
+  ${(media.sm, media.md)} {
+    display: block;
+  }
 
   aside {
-    height: calc(100vh - 70px);
     padding-top: 36px;
 
     ${(media.sm, media.md)} {

@@ -32,31 +32,19 @@ export const GlobalStyle = createGlobalStyle`
       background: ${({ theme }) => theme.colors.textColor};
     }
   }
-
-  body,html {
-
-  }
 `
 
-export const GlobalMainContent = styled.main`
+export const MainContent = styled.main<{ $isOpen: boolean }>`
   height: calc(100vh - 70px);
-  display: flex;
-  flex-direction: column;
-  background-color: ${({ theme }) => theme.colors.secondaryColor};
   overflow-y: auto;
+  margin-left: ${({ $isOpen }) => ($isOpen ? '170px' : '0px')};
+  background-color: ${({ theme }) => theme.colors.secondaryColor};
+  transition: margin-left 0.2s linear;
 
   ${(media.sm, media.md)} {
     display: block;
     padding-bottom: 50px;
   }
-`
-export const MainContent = styled.main<{ $isOpen: boolean }>`
-  margin-left: ${({ $isOpen }) => ($isOpen ? '170px' : '0px')};
-  transition: margin-left 0.2s linear;
-`
-
-export const MainContainer = styled.main`
-  margin: 0 auto;
 `
 
 export const TitleH2 = styled.h2`
@@ -64,6 +52,11 @@ export const TitleH2 = styled.h2`
   justify-content: center;
   font-size: 3em;
   margin: 20px 50px;
+
+  ${(media.sm, media.md)} {
+    font-size: 2em;
+    margin: 20px 0px;
+  }
 `
 
 export const TextH3 = styled.h3`

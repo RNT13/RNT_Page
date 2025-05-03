@@ -3,8 +3,7 @@ import { media } from '../../styles/media'
 
 export const AsideContainer = styled.aside<{ $isOpen: boolean }>`
   position: fixed;
-  height: calc(100vh - 70px);
-  max-height: 100%;
+  height: 100vh;
   width: ${props => (props.$isOpen ? '250px' : '80px')};
   background-color: ${({ theme }) => theme.colors.primaryColor};
   transition: all 0.2s linear;
@@ -20,12 +19,12 @@ export const AsideContainer = styled.aside<{ $isOpen: boolean }>`
   }
 `
 export const AsideContent = styled.div`
-  margin-top: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
+  height: 90%;
+  margin-top: 20px;
 
   ${media.md} {
     margin-top: 0;

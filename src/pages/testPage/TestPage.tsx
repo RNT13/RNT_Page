@@ -2,14 +2,14 @@ import { useTranslation } from 'react-i18next'
 import Card from '../../components/card/card'
 import ProductCard from '../../components/productsCard/ProductsCard'
 import Tag from '../../components/tag/tag'
-import { GlobalMainContent, TitleH2 } from '../../styles/globalStyles'
-import { GradientButton, LineHoverButton, TestContent } from '../testPage/TestPageStyles'
+import { TitleH2 } from '../../styles/globalStyles'
+import { GradientButton, LineHoverButton, TestContent, TestPageContainer } from '../testPage/TestPageStyles'
 
 const TestPage = () => {
   const { t } = useTranslation()
 
   return (
-    <GlobalMainContent>
+    <TestPageContainer>
       <TitleH2>{t('test')}</TitleH2>
       <TestContent>
         <GradientButton>
@@ -31,7 +31,7 @@ const TestPage = () => {
         />
         <ProductCard image={''} name={''} description={''} />
       </TestContent>
-    </GlobalMainContent>
+    </TestPageContainer>
   )
 }
 

@@ -1,5 +1,12 @@
 import styled from 'styled-components'
 
+export const NewContactFormContainer = styled.main`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
 export const Form = styled.form`
   max-width: 550px;
   width: 100%;

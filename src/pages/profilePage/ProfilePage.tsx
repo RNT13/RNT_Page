@@ -1,13 +1,14 @@
 import { useTranslation } from 'react-i18next'
-import { GlobalMainContent, TitleH2 } from '../../styles/globalStyles'
+import { TitleH2 } from '../../styles/globalStyles'
+import { ProfilePageContainer } from './ProfilePageStyles'
 
 const ProfilePage = () => {
   const { t } = useTranslation()
 
   return (
-    <GlobalMainContent>
+    <ProfilePageContainer>
       <TitleH2>{t('profile')}</TitleH2>
-    </GlobalMainContent>
+    </ProfilePageContainer>
   )
 }
 
