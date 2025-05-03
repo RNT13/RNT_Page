@@ -1,7 +1,6 @@
-import { styled } from 'styled-components'
+import styled from 'styled-components'
 
 export const FooterContainer = styled.div`
-  height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;

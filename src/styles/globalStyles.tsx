@@ -34,17 +34,31 @@ export const GlobalStyle = createGlobalStyle`
   }
 `
 
-export const MainContent = styled.main<{ $isOpen: boolean }>`
-  height: calc(100vh - 70px);
-  overflow-y: auto;
-  margin-left: ${({ $isOpen }) => ($isOpen ? '170px' : '0px')};
-  background-color: ${({ theme }) => theme.colors.secondaryColor};
-  transition: margin-left 0.2s linear;
+export const MainLayout = styled.main<{ $isOpen: boolean }>`
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'aside main';
+  grid-template-columns: ${({ $isOpen }: { $isOpen: boolean }) => ($isOpen ? '170px 1fr' : '0px 1fr')};
+  grid-template-rows: 70px 1fr;
+  height: 100vh;
+  transition: all 0.3s ease;
 
   ${(media.sm, media.md)} {
-    display: block;
-    padding-bottom: 50px;
+    grid-template-areas:
+      'header'
+      'main'
+      'aside';
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 1fr auto;
   }
+`
+
+export const ContentWrapper = styled.main`
+  grid-area: main;
+  overflow-y: auto;
+  background-color: ${({ theme }) => theme.colors.secondaryColor};
+  transition: all 0.3s ease;
 `
 
 export const TitleH2 = styled.h2`

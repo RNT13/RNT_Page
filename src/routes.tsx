@@ -5,12 +5,14 @@ import AsideBar from './containers/asideBar/AsideBar'
 import Header from './containers/header/Header'
 import i18n from './i18n'
 import { RootState } from './redux/store'
-import { GlobalStyle, MainContent } from './styles/globalStyles'
+import { ContentWrapper, GlobalStyle, MainLayout } from './styles/globalStyles'
 import { themeConfig } from './styles/theme'
 
 // pages
 import { useSelector } from 'react-redux'
-import Footer from './components/footer/Footer'
+import { AsideWrapper } from './containers/asideBar/AsideBarStyles'
+import Footer from './containers/footer/Footer'
+import { HeaderWrapper } from './containers/header/HeaderStyles'
 import CalendarPage from './pages/calendarPage/CalendarPage'
 import CartPage from './pages/cartPage/CartPage'
 import ContactsPage from './pages/contactsPage/ContactsPage'
@@ -31,12 +33,20 @@ const Layout = () => {
   return (
     <ThemeProvider theme={themeConfig[theme]}>
       <GlobalStyle />
-      <Header />
-      <AsideBar />
-      <MainContent $isOpen={isOpen}>
-        <Outlet />
-        <Footer />
-      </MainContent>
+      <MainLayout $isOpen={isOpen}>
+        <HeaderWrapper>
+          <Header />
+        </HeaderWrapper>
+
+        <AsideWrapper>
+          <AsideBar />
+        </AsideWrapper>
+
+        <ContentWrapper>
+          <Outlet />
+          <Footer />
+        </ContentWrapper>
+      </MainLayout>
     </ThemeProvider>
   )
 }

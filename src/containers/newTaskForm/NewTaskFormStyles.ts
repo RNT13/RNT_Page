@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const NewTaskFormContainer = styled.main`
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

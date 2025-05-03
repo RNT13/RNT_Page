@@ -1,21 +1,27 @@
 import styled from 'styled-components'
 import { media } from '../../styles/media'
 
+export const AsideWrapper = styled.aside`
+  grid-area: aside;
+  transition: all 0.3s ease;
+`
+
 export const AsideContainer = styled.aside<{ $isOpen: boolean }>`
   position: fixed;
-  height: 100vh;
   width: ${props => (props.$isOpen ? '250px' : '80px')};
+  overflow: hidden;
   background-color: ${({ theme }) => theme.colors.primaryColor};
-  transition: all 0.2s linear;
-  z-index: 1;
+  transition: width 0.3s ease;
+  height: 100%;
 
   ${(media.sm, media.md)} {
-    top: auto;
-    bottom: 0;
-    left: 0;
+    position: relative;
+    padding: 10px;
     width: 100%;
-    height: 60px;
-    transition: none;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
 `
 export const AsideContent = styled.div`
