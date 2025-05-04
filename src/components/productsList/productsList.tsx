@@ -20,12 +20,12 @@ const ProductsList = ({ title, background, games }: listProps) => {
         {games.map(game => (
           <Card
             key={game.id}
-            categoty={game.category}
+            categoty={t(game.category)}
             system={game.system}
             image={game.image}
-            infos={game.infos}
-            title={game.title}
-            description={game.description}
+            infos={game.infos.map(info => t(info))}
+            title={t(game.title)}
+            description={t(game.description)}
           />
         ))}
       </ProductsListContent>

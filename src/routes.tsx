@@ -5,7 +5,7 @@ import AsideBar from './containers/asideBar/AsideBar'
 import Header from './containers/header/Header'
 import i18n from './i18n'
 import { RootState } from './redux/store'
-import { ContentWrapper, GlobalStyle, MainLayout } from './styles/globalStyles'
+import { AppLayout, ContentWrapper, GlobalStyle } from './styles/globalStyles'
 import { themeConfig } from './styles/theme'
 
 // pages
@@ -20,7 +20,7 @@ import Home from './pages/homePage/HomePage'
 import LoginPage from './pages/loginPage/LoginPage'
 import NewContactsPage from './pages/newContactPage/NewContactPage'
 import NewTaskPage from './pages/newTaskPage/NewTaskPage'
-import ProductsPage from './pages/productsPage/productsPage'
+import ProductsPage from './pages/productsPage/ProductsPage'
 import ProfilePage from './pages/profilePage/ProfilePage'
 import RequestsPage from './pages/requestsPage/RequestsPage'
 import TasksPage from './pages/tasksPage/TasksPage'
@@ -33,7 +33,7 @@ const Layout = () => {
   return (
     <ThemeProvider theme={themeConfig[theme]}>
       <GlobalStyle />
-      <MainLayout $isOpen={isOpen}>
+      <AppLayout $isOpen={isOpen}>
         <HeaderWrapper>
           <Header />
         </HeaderWrapper>
@@ -46,7 +46,7 @@ const Layout = () => {
           <Outlet />
           <Footer />
         </ContentWrapper>
-      </MainLayout>
+      </AppLayout>
     </ThemeProvider>
   )
 }

@@ -1,9 +1,11 @@
 import { FooterContainer, FooterText } from './FooterStyles'
 
+const currentYear = new Date().getFullYear()
+
 const Footer = () => {
   return (
     <FooterContainer>
-      <FooterText>2025 - &copy; RNT projects all rights reserved</FooterText>
+      <FooterText>{currentYear} - &copy; RNT projects all rights reserved</FooterText>
     </FooterContainer>
   )
 }

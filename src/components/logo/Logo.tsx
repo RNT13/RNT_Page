@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { icons } from '../../assets/icons'
 import { RootState } from '../../redux/store'
 import { LogImg, LogoDiv } from '../logo/LogoStyles'
@@ -9,7 +10,9 @@ export const Logo = () => {
 
   return (
     <LogoDiv>
-      <LogImg src={logoSrc} alt="Logo" />
+      <Link to={'/'}>
+        <LogImg src={logoSrc} alt="Logo" />
+      </Link>
     </LogoDiv>
   )
 }

@@ -34,7 +34,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 `
 
-export const MainLayout = styled.main<{ $isOpen: boolean }>`
+export const AppLayout = styled.main<{ $isOpen: boolean }>`
   display: grid;
   grid-template-areas:
     'header header'
