@@ -1,4 +1,4 @@
-import LoginWindow from '../../components/loginWindow/LoginWindow'
+import LoginWindow from '../../components/LoginWindow/LoginWindow'
 import { LoginContainer } from '../loginPage/LoginPageStyles'
 
 const LoginPage = () => {

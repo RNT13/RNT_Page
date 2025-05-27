@@ -40,6 +40,7 @@ export const darkTheme = {
     shadow: '#000',
     grey: '#a1a1a1',
     textColor: '#f1f1f1',
+    overlay: 'rgba(0, 0, 0, 0.7)',
     neon: {
       pink1: '#FF1493',
       pink2: '#FF00FF',
@@ -67,6 +68,7 @@ export const lightTheme = {
     shadow: '#000',
     grey: '#a1a1a1',
     textColor: '#13161b',
+    overlay: 'rgba(0, 0, 0, 0.5)',
     neon: {
       pink1: '#FF1493',
       pink2: '#FF00FF',

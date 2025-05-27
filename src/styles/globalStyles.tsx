@@ -32,6 +32,11 @@ export const GlobalStyle = createGlobalStyle`
       background: ${({ theme }) => theme.colors.textColor};
     }
   }
+
+  .container {
+    width: 1000px;
+    margin: 0 auto;
+  }
 `
 
 export const AppLayout = styled.main<{ $isOpen: boolean }>`
@@ -57,15 +62,21 @@ export const AppLayout = styled.main<{ $isOpen: boolean }>`
 export const ContentWrapper = styled.main`
   grid-area: main;
   overflow-y: auto;
+  overflow-x: hidden;
   background-color: ${({ theme }) => theme.colors.secondaryColor};
   transition: all 0.3s ease;
+  margin-left: 80px;
+
+  ${(media.sm, media.md)} {
+    margin-left: 0px;
+  }
 `
 
 export const TitleH2 = styled.h2`
   display: flex;
   justify-content: center;
   font-size: 3em;
-  margin: 20px 50px;
+  margin: 20px 0px;
 
   ${(media.sm, media.md)} {
     font-size: 2em;

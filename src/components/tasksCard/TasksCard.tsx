@@ -8,8 +8,18 @@ import { changeFilter } from '../../redux/slices/filterSlice'
 import { changeStatus, editTask, removeTask } from '../../redux/slices/taskSlice'
 import { RootState } from '../../redux/store'
 import { Card } from '../../styles/globalStyles'
-import Tag from '../tag/tag'
-import { CancelButton, EditButton, RemoveTaskButton, SaveButton, TaskCardActionBar, TaskCardContainer, TaskCardDescription, TaskCardHeader, TaskCardTitle } from './TasksCardStyles'
+import Tag from '../Tag/Tag'
+import {
+  CancelButton,
+  EditButton,
+  RemoveTaskButton,
+  SaveButton,
+  TaskCardActionBar,
+  TaskCardContainer,
+  TaskCardDescription,
+  TaskCardHeader,
+  TaskCardTitle
+} from './TasksCardStyles'
 
 const TaskCard = ({ title, priority, status, description: originalDescription, id }: TaskModels) => {
   const { t } = useTranslation()
@@ -58,10 +68,19 @@ const TaskCard = ({ title, priority, status, description: originalDescription, i
       <TaskCardContainer>
         <label htmlFor={title}>
           <input type="checkbox" id={title} checked={taskState === taskEnums.status.COMPLETED} onChange={changeStatusTask} />
-          {isEditing ? <input type="text" value={taskTitle} onChange={e => setTaskTitle(e.target.value)} placeholder="Edit task title" /> : <TaskCardTitle>{title}</TaskCardTitle>}
+          {isEditing ? (
+            <input type="text" value={taskTitle} onChange={e => setTaskTitle(e.target.value)} placeholder="Edit task title" />
+          ) : (
+            <TaskCardTitle>{title}</TaskCardTitle>
+          )}
         </label>
       </TaskCardContainer>
-      <TaskCardDescription id="description" disabled={!isEditing} value={description} onChange={e => setdescription(e.target.value)} />
+      <TaskCardDescription
+        id="description"
+        disabled={!isEditing}
+        value={description}
+        onChange={e => setdescription(e.target.value)}
+      />
       <TaskCardActionBar>
         {isEditing ? (
           <>

@@ -16,6 +16,7 @@ import { HeaderWrapper } from './containers/header/HeaderStyles'
 import CalendarPage from './pages/calendarPage/CalendarPage'
 import CartPage from './pages/cartPage/CartPage'
 import ContactsPage from './pages/contactsPage/ContactsPage'
+import DetailsPage from './pages/detailsPage/DetailsPage'
 import Home from './pages/homePage/HomePage'
 import LoginPage from './pages/loginPage/LoginPage'
 import NewContactsPage from './pages/newContactPage/NewContactPage'
@@ -74,7 +75,8 @@ const AppContent = () => {
         { path: '/ProfilePage', element: <ProfilePage /> },
         { path: '/RequestsPage', element: <RequestsPage /> },
         { path: '/TestPage', element: <TestPage /> },
-        { path: '/CartPage', element: <CartPage /> }
+        { path: '/CartPage', element: <CartPage /> },
+        { path: '/DetailsPage/:id', element: <DetailsPage /> }
       ]
     }
   ])

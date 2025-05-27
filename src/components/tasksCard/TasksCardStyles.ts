@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import Button from '../button/button'
+import Button from '../Button/Button'
 
 export const TaskCardHeader = styled.div`
   display: flex;

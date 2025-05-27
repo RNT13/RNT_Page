@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
-import Button from '../../components/button/button'
-import { Logo } from '../../components/logo/Logo'
-import MenuButton from '../../components/menuButton/MenuButton'
+import Button from '../../components/Button/Button'
+import { Logo } from '../../components/Logo/Logo'
+import MenuButton from '../../components/MenuButton/MenuButton'
 import { HeaderContainer, Nav, NavLeft } from '../header/HeaderStyles'
 
 const Header = () => {

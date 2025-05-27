@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import Button from '../../components/button/button'
-import ContactCardFilter from '../../components/contactsFilterCards/ContactsFilterCards'
-import TaskCardFilter from '../../components/tasksFilterCards/TasksFilterCards'
+import Button from '../../components/Button/Button'
+import ContactCardFilter from '../../components/ContactsFilterCards/ContactsFilterCards'
+import TaskCardFilter from '../../components/TasksFilterCards/TasksFilterCards'
 import { changeTerm } from '../../redux/slices/filterSlice'
 import { RootState } from '../../redux/store'
 import { InputField } from '../../styles/globalStyles'
@@ -28,7 +28,13 @@ const FilterBar = ({ mostrarFiltros, type }: props) => {
       <AsideContent>
         {mostrarFiltros ? (
           <>
-            <InputField id="search" type="text" placeholder={t('search')} value={term} onChange={evento => dispatch(changeTerm(evento.target.value))} />
+            <InputField
+              id="search"
+              type="text"
+              placeholder={t('search')}
+              value={term}
+              onChange={evento => dispatch(changeTerm(evento.target.value))}
+            />
             <Filters>
               {type === 'tasks' ? (
                 <>

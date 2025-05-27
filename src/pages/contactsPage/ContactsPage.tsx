@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { AddButtonContacts } from '../../components/addButton/AddButton'
+import { AddButtonContacts } from '../../components/AddButton/AddButton'
 import ContactsList from '../../containers/contactsList/ContactsList'
 import FilterBar from '../../containers/filterBar/FilterBar'
 import { TitleH2 } from '../../styles/globalStyles'

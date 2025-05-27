@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
-import Card from '../../components/card/card'
-import ProductCard from '../../components/productsCard/ProductsCard'
-import Tag from '../../components/tag/tag'
+import Card from '../../components/Card/Card'
+import ProductCard from '../../components/ProductsCard/ProductsCard'
+import Tag from '../../components/Tag/Tag'
 import { TitleH2 } from '../../styles/globalStyles'
 import { GradientButton, LineHoverButton, TestContent, TestPageContainer } from '../testPage/TestPageStyles'
 
