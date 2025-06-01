@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 
-import { Game } from '../../pages/productsPage/ProductsPage'
+import { Game } from '../../utils/GameApi'
 import { priceFormat } from '../ProductsList/ProductsList'
 import Tag from '../Tag/Tag'
 import { HeroButton, HeroContainer, HeroContent, HeroHeader, HeroInfo, HeroText, HeroTextFooter, Price } from './HeroStyles'

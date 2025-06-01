@@ -1,4 +1,4 @@
-import { Circle } from './AddButtonStyles'
+import { Circle } from '../AddButton/AddButtonStyles'
 
 export const AddButtonTask = () => {
   return <Circle to="/NewTaskPage">+</Circle>

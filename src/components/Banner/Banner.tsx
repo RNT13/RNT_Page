@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Game } from '../../pages/productsPage/ProductsPage'
+import { apiFetch, Game } from '../../utils/GameApi'
+import { BannerContainer, ImageButton, ImageContent, ImageText, ImageTextFooter, Price, Title } from '../Banner/BannerStyles'
 import { priceFormat } from '../ProductsList/ProductsList'
 import Tag from '../Tag/Tag'
-import { BannerContainer, ImageButton, ImageContent, ImageText, ImageTextFooter, Price, Title } from './BannerStyles'
 
 const Banner = () => {
   const { t } = useTranslation()
   const [game, setGame] = useState<Game>()
 
   useEffect(() => {
-    fetch('https://fake-api-tau.vercel.app/api/eplay/destaque')
-      .then(res => res.json())
+    apiFetch('/destaque')
       .then(res => setGame(res))
+      .catch(error => console.error(error))
   }, [])
 
   if (!game)

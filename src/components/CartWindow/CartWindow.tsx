@@ -4,7 +4,7 @@ interface CartWindowProps {
   onClose: () => void
 }
 
-const CartWindow: React.FC<CartWindowProps> = ({ onClose }) => {
+const CartWindow: React.FC<CartWindowProps> = () => {
   return (
     <>
       <CartWindowContainer></CartWindowContainer>

@@ -3,35 +3,12 @@ import { useTranslation } from 'react-i18next'
 import Banner from '../../components/Banner/Banner'
 import ProductsList from '../../components/ProductsList/ProductsList'
 import ProductsNav from '../../components/ProductsNav/ProductsNav'
+import { apiFetch, Game } from '../../utils/GameApi'
 import { ProductsContainer } from './ProductsPageStyles'
 
 export interface GalleryItem {
   type: 'image' | 'video'
   url: string
-}
-
-export type Game = {
-  id: number
-  name: string
-  description: string
-  release_date?: string
-  prices: {
-    discount?: number
-    old?: number
-    current?: number
-  }
-  details: {
-    category: string
-    system: string
-    developer: string
-    publisher: string
-    language: string[]
-  }
-  media: {
-    thumbnail: string
-    cover: string
-    gallery: GalleryItem[]
-  }
 }
 
 const ProductsPage = () => {
@@ -44,29 +21,29 @@ const ProductsPage = () => {
   const [fight, setFight] = useState<Game[]>()
 
   useEffect(() => {
-    fetch('https://fake-api-tau.vercel.app/api/eplay/promocoes')
-      .then(res => res.json())
+    apiFetch('/promocoes')
       .then(res => setPromotions(res))
+      .catch(error => console.error(error))
 
-    fetch('https://fake-api-tau.vercel.app/api/eplay/em-breve')
-      .then(res => res.json())
+    apiFetch('/em-breve')
       .then(res => setComingSoon(res))
+      .catch(error => console.error(error))
 
-    fetch('https://fake-api-tau.vercel.app/api/eplay/acao')
-      .then(res => res.json())
+    apiFetch('/acao')
       .then(res => setAction(res))
+      .catch(error => console.error(error))
 
-    fetch('https://fake-api-tau.vercel.app/api/eplay/rpg')
-      .then(res => res.json())
+    apiFetch('/rpg')
       .then(res => setRpg(res))
+      .catch(error => console.error(error))
 
-    fetch('https://fake-api-tau.vercel.app/api/eplay/simulacao')
-      .then(res => res.json())
+    apiFetch('/simulacao')
       .then(res => setSimulation(res))
+      .catch(error => console.error(error))
 
-    fetch('https://fake-api-tau.vercel.app/api/eplay/luta')
-      .then(res => res.json())
+    apiFetch('/luta')
       .then(res => setFight(res))
+      .catch(error => console.error(error))
   }, [])
 
   return (

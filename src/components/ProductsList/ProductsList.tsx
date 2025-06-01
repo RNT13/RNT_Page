@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
-import { Game } from '../../pages/productsPage/ProductsPage'
 import { TitleH2 } from '../../styles/globalStyles'
+import { Game } from '../../utils/GameApi'
 import Card from '../Card/Card'
 import { ProductsListContainer, ProductsListContent } from './ProductsListStyles'
 

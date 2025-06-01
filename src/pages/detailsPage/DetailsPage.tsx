@@ -5,7 +5,7 @@ import Gallery from '../../components/Gallery/Gallery'
 import Hero from '../../components/Hero/Hero'
 import Section from '../../components/Section/Section'
 import { TitleH2 } from '../../styles/globalStyles'
-import { Game } from '../productsPage/ProductsPage'
+import { apiFetch, Game } from '../../utils/GameApi'
 import { DetailsPageContainer } from './DetailsPageStyles'
 
 const DetailsPage = () => {
@@ -15,9 +15,9 @@ const DetailsPage = () => {
 
   useEffect(() => {
     if (!id || id === 'undefined') return
-    fetch(`https://fake-api-tau.vercel.app/api/eplay/jogos/${id}`)
-      .then(res => res.json())
+    apiFetch(`/jogos/${id}`)
       .then(res => setGame(res))
+      .catch(error => console.error(error))
   }, [id])
 
   if (!id || id === 'undefined') {
