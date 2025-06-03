@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const HeaderWrapper = styled.header`
   grid-area: header;
-  z-index: 100;
+  z-index: 1;
 `
 
 export const HeaderContainer = styled.header`

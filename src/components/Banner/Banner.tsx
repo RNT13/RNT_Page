@@ -1,19 +1,12 @@
-import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { apiFetch, Game } from '../../utils/GameApi'
+import { useGetFeaturedGamesQuery } from '../../services/api'
 import { BannerContainer, ImageButton, ImageContent, ImageText, ImageTextFooter, Price, Title } from '../Banner/BannerStyles'
 import { priceFormat } from '../ProductsList/ProductsList'
 import Tag from '../Tag/Tag'
 
 const Banner = () => {
   const { t } = useTranslation()
-  const [game, setGame] = useState<Game>()
-
-  useEffect(() => {
-    apiFetch('/destaque')
-      .then(res => setGame(res))
-      .catch(error => console.error(error))
-  }, [])
+  const { data: game } = useGetFeaturedGamesQuery()
 
   if (!game)
     return (

@@ -64,7 +64,7 @@ export const Modal = styled.div`
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 1;
 
   &.active {
     display: flex;
@@ -85,7 +85,7 @@ export const ModalContent = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  z-index: 999;
+  z-index: 1;
 
   header {
     color: ${({ theme }) => theme.colors.textColor};

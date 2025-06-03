@@ -1,28 +1,21 @@
-import { AnimatePresence } from 'framer-motion'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Button from '../Button/Button'
 import MenuWindow from '../MenuWindows/MenuWindow'
-import { MenuLogo, MenuOverlay } from './MenuButtonStyles'
+import { MenuLogo } from './MenuButtonStyles'
 
-const MenuButton: React.FC = () => {
+const MenuButton = () => {
   const [isOpen, setIsOpen] = useState(false)
+
+  const handleToggleMenu = () => {
+    setIsOpen(!isOpen)
+  }
 
   return (
     <>
-      <Button type="buttonToggle" title="Menu" onClick={() => setIsOpen(true)}>
+      <Button type="buttonToggle" title="Menu" onClick={handleToggleMenu}>
         <MenuLogo />
       </Button>
-
-      <AnimatePresence>
-        {isOpen && (
-          <>
-            <MenuOverlay onClick={() => setIsOpen(false)} />
-            <div style={{ position: 'relative', zIndex: 20 }} onClick={e => e.stopPropagation()}>
-              <MenuWindow onClose={() => setIsOpen(false)} />
-            </div>
-          </>
-        )}
-      </AnimatePresence>
+      <MenuWindow isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
   )
 }

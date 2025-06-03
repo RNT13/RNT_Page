@@ -11,6 +11,7 @@ export const BannerContainer = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  z-index: 0;
 
   &::after {
     content: '';
@@ -20,7 +21,6 @@ export const BannerContainer = styled.div`
     width: 100%;
     height: 100%;
     background-color: ${({ theme }) => theme.colors.overlay};
-    z-index: 1;
   }
 
   ${media.md} {
@@ -50,7 +50,7 @@ export const ImageText = styled.div`
   width: 70%;
   height: 70%;
   color: ${({ theme }) => theme.colors.textColor};
-  z-index: 2;
+  z-index: 1;
 
   ${media.md} {
     ${TagContainer} {

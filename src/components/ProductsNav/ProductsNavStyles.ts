@@ -12,8 +12,13 @@ export const ProductsNavContainer = styled.div`
 `
 
 export const ProductsNavContent = styled.nav`
+  width: 100%;
+  max-width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    gap: 12px;
+  }
 `

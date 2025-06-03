@@ -31,7 +31,7 @@ export default [
           singleQuote: true,
           trailingComma: 'none',
           semi: false,
-          printWidth: 130,
+          printWidth: 150,
           arrowParens: 'avoid'
         }
       ]

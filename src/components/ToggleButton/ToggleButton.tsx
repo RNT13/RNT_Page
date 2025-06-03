@@ -5,13 +5,10 @@ export const ToggleButton = styled.button<{ $isOpen: boolean }>`
   position: fixed;
   top: 60px;
   left: ${({ $isOpen }) => ($isOpen ? '260px' : '90px')};
-  transform: translateX(-50%);
-  z-index: 1000;
-
+  transform: translateX(-140%);
   width: 30px;
   height: 30px;
   padding: 8px;
-  border-radius: 0 6px 6px 0;
   background: ${({ theme }) => theme.colors.primaryColor};
   color: ${({ theme }) => theme.colors.textColor};
   border: none;

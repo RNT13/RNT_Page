@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import Button from '../Button/Button'
+import CartBar from '../CartBar/CartBar'
 import CartButton from '../CartButton/CartButton'
 import { ProductsNavContainer, ProductsNavContent } from './ProductsNavStyles'
 
@@ -9,17 +10,22 @@ const ProductsNav = () => {
   return (
     <ProductsNavContainer>
       <ProductsNavContent>
-        <Button type="button" title={t('category')}>
-          {t('category')}
-        </Button>
-        <Button type="button" title={t('news')}>
-          {t('news')}
-        </Button>
-        <Button type="button" title={t('promo')}>
-          {t('promo')}
-        </Button>
+        <div>
+          <Button type="button" title={t('category')}>
+            {t('category')}
+          </Button>
+          <Button type="button" title={t('news')}>
+            {t('news')}
+          </Button>
+          <Button type="button" title={t('promo')}>
+            {t('promo')}
+          </Button>
+        </div>
+        <div>
+          <CartButton />
+        </div>
       </ProductsNavContent>
-      <CartButton />
+      <CartBar />
     </ProductsNavContainer>
   )
 }

@@ -150,3 +150,14 @@ export const Counter = styled.span`
     font-size: 1rem;
   }
 `
+
+export const OverlayBlur = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
+`
