@@ -50,7 +50,6 @@ export const TooglePasswordButton = styled.button`
   cursor: pointer;
   box-shadow: none;
   font-weight: bold;
-  z-index: 1;
 `
 export const FloatingLabel = styled.label`
   position: absolute;

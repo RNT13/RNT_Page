@@ -1,7 +1,10 @@
 import { useTranslation } from 'react-i18next'
 import { useGetFeaturedGamesQuery } from '../../services/api'
+import { OverlayDark } from '../../styles/globalStyles'
 import { BannerContainer, ImageButton, ImageContent, ImageText, ImageTextFooter, Price, Title } from '../Banner/BannerStyles'
-import { priceFormat } from '../ProductsList/ProductsList'
+
+import i18n from '../../i18n'
+import { priceFormat } from '../../utils/PriceFormat'
 import Tag from '../Tag/Tag'
 
 const Banner = () => {
@@ -17,6 +20,7 @@ const Banner = () => {
 
   return (
     <BannerContainer style={{ backgroundImage: `url(${game.media.cover})` }}>
+      <OverlayDark />
       <ImageContent>
         <ImageText>
           <Tag $status="Highlight" size="big">
@@ -26,8 +30,8 @@ const Banner = () => {
             <Title>
               {game.name}
               <Price>
-                {t('from')} <span>{priceFormat(game.prices.old)}</span> <br />
-                {t('forOnly')} {priceFormat(game.prices.current)}
+                {t('from')} <span>{priceFormat(game.prices.old ?? 0, i18n.language)}</span> <br />
+                {t('forOnly')} {priceFormat(game.prices.current ?? 0, i18n.language)}
               </Price>
             </Title>
             <ImageButton to={`/DetailsPage/${game.id}`} type="headerButton" title={t('click')}>

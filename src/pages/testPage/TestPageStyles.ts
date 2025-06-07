@@ -51,7 +51,6 @@ export const LineHoverButton = styled.button`
     position: relative;
     margin: 0;
     font-size: 1rem;
-    z-index: 1;
   }
 
   &::after {

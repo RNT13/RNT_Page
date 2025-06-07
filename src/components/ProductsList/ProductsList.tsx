@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { TitleH2 } from '../../styles/globalStyles'
 import { Game } from '../../utils/GameApi'
+import { priceFormat } from '../../utils/PriceFormat'
 import Card from '../Card/Card'
 import { ProductsListContainer, ProductsListContent } from './ProductsListStyles'
 
@@ -8,14 +9,6 @@ export type listProps = {
   title: string
   background: 'grey' | 'black'
   games: Game[]
-}
-
-export const priceFormat = (price = 0) => {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
-    minimumFractionDigits: 2
-  }).format(price)
 }
 
 const ProductsList = ({ title, background, games }: listProps) => {

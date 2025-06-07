@@ -5,6 +5,8 @@ i18n.use(initReactI18next).init({
   resources: {
     en: {
       translation: {
+        totalOf: 'Total of ',
+        off: 'up to 10% off paying in cash',
         home: 'Home',
         tasks: 'Tasks',
         editing: 'Editing...',
@@ -13,6 +15,7 @@ i18n.use(initReactI18next).init({
         phone: 'Phone',
         save: 'Save',
         cancel: 'Cancel',
+        itemsOnCart: 'Items on Cart',
         continue: 'Continue with Purchase',
         editContact: 'Edit contact',
         editTask: 'Edit task',
@@ -210,7 +213,9 @@ i18n.use(initReactI18next).init({
     },
     pt: {
       translation: {
+        totalOf: 'Total de ',
         home: 'Início',
+        off: 'até 10% off pagando em dinheiro',
         tasks: 'Tarefas',
         editing: 'Editando...',
         name: 'Nome',
@@ -218,6 +223,7 @@ i18n.use(initReactI18next).init({
         phone: 'Telefone',
         save: 'Salvar',
         cancel: 'Cancelar',
+        itemsOnCart: 'Itens no Carrinho',
         continue: 'Continuar com a compra',
         editContact: 'Editar contato',
         editTask: 'Editar tarefa',

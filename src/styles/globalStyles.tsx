@@ -152,12 +152,22 @@ export const Counter = styled.span`
 `
 
 export const OverlayBlur = styled.div`
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   backdrop-filter: blur(5px);
-  z-index: 1;
+  z-index: 10;
   box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
+`
+
+export const OverlayDark = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: ${({ theme }) => theme.colors.overlay};
 `

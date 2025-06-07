@@ -8,6 +8,7 @@ import { Action, GalleryItems, Item, Modal, ModalContent } from './GalleryStyles
 
 import { useState } from 'react'
 import { GalleryItem } from '../../pages/productsPage/ProductsPage'
+import { OverlayBlur } from '../../styles/globalStyles'
 
 type GalleryProps = {
   defaultCover: string
@@ -71,6 +72,7 @@ const Gallery = ({ defaultCover, name, items }: GalleryProps) => {
       </Section>
       {modalState.modalActive && modalState.url && (
         <Modal className="active">
+          <OverlayBlur onClick={cloneModal} />
           <ModalContent className="container">
             <header>
               <h4>{name}</h4>
@@ -78,10 +80,9 @@ const Gallery = ({ defaultCover, name, items }: GalleryProps) => {
             </header>
             {modalState.type === 'image' ? <img src={modalState.url} alt={name} /> : <iframe src={modalState.url} title={name} />}
           </ModalContent>
-          <div className="overlay" onClick={cloneModal} />
         </Modal>
       )}
-      {!(modalState.modalActive && modalState.url) && <Modal>{}</Modal>}
+      {!(modalState.modalActive && modalState.url) && <Modal>{''}</Modal>}
     </>
   )
 }

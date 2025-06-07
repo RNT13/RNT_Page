@@ -22,3 +22,9 @@ export const ProductsNavContent = styled.nav`
     gap: 12px;
   }
 `
+
+export const CartDiv = styled.div`
+  display: flex;
+  gap: 12px;
+  align-items: center;
+`

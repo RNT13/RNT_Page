@@ -1,11 +1,14 @@
 import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../redux/store'
 import Button from '../Button/Button'
 import CartBar from '../CartBar/CartBar'
 import CartButton from '../CartButton/CartButton'
-import { ProductsNavContainer, ProductsNavContent } from './ProductsNavStyles'
+import { CartDiv, ProductsNavContainer, ProductsNavContent } from './ProductsNavStyles'
 
 const ProductsNav = () => {
   const { t } = useTranslation()
+  const { items } = useSelector((state: RootState) => state.cart)
 
   return (
     <ProductsNavContainer>
@@ -21,9 +24,12 @@ const ProductsNav = () => {
             {t('promo')}
           </Button>
         </div>
-        <div>
+        <CartDiv>
+          <p>
+            {items.length} {t('itemsOnCart')}
+          </p>
           <CartButton />
-        </div>
+        </CartDiv>
       </ProductsNavContent>
       <CartBar />
     </ProductsNavContainer>

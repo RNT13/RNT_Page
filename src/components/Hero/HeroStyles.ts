@@ -12,17 +12,6 @@ export const HeroContainer = styled.div`
   background-size: cover;
   background-position: center;
 
-  &:after {
-    content: '';
-    position: absolute;
-    background-color: ${({ theme }) => theme.colors.shadow};
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0.56;
-  }
-
   ${media.md} {
     height: 325px;
     aspect-ratio: 4 / 3;
@@ -35,14 +24,14 @@ export const HeroContainer = styled.div`
 `
 
 export const HeroContent = styled.div`
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 1;
-  position: relative;
+  z-index: 2;
 `
 
 export const HeroHeader = styled.div`

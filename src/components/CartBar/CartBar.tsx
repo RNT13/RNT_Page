@@ -6,14 +6,14 @@ import Button from '../Button/Button'
 import { CartBarContainer, CartBarContent, CartItem, Prices, Quantity } from './CartBarStyles'
 
 import { useDispatch, useSelector } from 'react-redux'
-import starWarrs from '../../assets/images/starWars.png'
 import { RootState } from '../../redux/store'
 import { OverlayBlur } from '../../styles/globalStyles'
+import { priceFormat } from '../../utils/PriceFormat'
 import Tag from '../Tag/Tag'
 
 const CartBar = () => {
-  const { t } = useTranslation()
-  const { isOpen } = useSelector((state: RootState) => state.cart)
+  const { t, i18n } = useTranslation()
+  const { isOpen, items } = useSelector((state: RootState) => state.cart)
   const dispatch = useDispatch()
 
   const closeCart = () => {
@@ -25,40 +25,29 @@ const CartBar = () => {
       <OverlayBlur onClick={closeCart} />
       <CartBarContent>
         <ul>
-          <CartItem>
-            <img src={starWarrs} />
-            <div>
-              <h3>Nome do jogo</h3>
-              <Tag $status="highlight">RPG</Tag>
-              <Tag $status="highlight">PS5</Tag>
-              <h4>R$ 200,00</h4>
-            </div>
-            <IoIosCloseCircleOutline />
-          </CartItem>
-          <CartItem>
-            <img src={starWarrs} />
-            <div>
-              <h3>Nome do jogo</h3>
-              <Tag $status="highlight">RPG</Tag>
-              <Tag $status="highlight">PS5</Tag>
-              <h4>R$ 200,00</h4>
-            </div>
-            <IoIosCloseCircleOutline />
-          </CartItem>
-          <CartItem>
-            <img src={starWarrs} />
-            <div>
-              <h3>Nome do jogo</h3>
-              <Tag $status="highlight">RPG</Tag>
-              <Tag $status="highlight">PS5</Tag>
-              <h4>R$ 200,00</h4>
-            </div>
-            <IoIosCloseCircleOutline />
-          </CartItem>
+          {items.map(item => (
+            <CartItem key={item.id}>
+              <img src={item.media.thumbnail} alt={item.name} />
+              <div>
+                <h3>{item.name}</h3>
+                <Tag $status="highlight">{item.details.category}</Tag>
+                <Tag $status="highlight">{item.details.system}</Tag>
+                <h4>{priceFormat(item.prices.current ?? 0, i18n.language)}</h4>
+              </div>
+              <IoIosCloseCircleOutline />
+            </CartItem>
+          ))}
         </ul>
-        <Quantity> 2 jogos no carrinho</Quantity>
+        <Quantity>
+          {items.length} {t('itemsOnCart')}
+        </Quantity>
         <Prices>
-          total de R$ 200 <span>em até 6x sem juros</span>
+          {t('totalOf')}
+          {priceFormat(
+            items.reduce((sum, item) => sum + (item.prices.current ?? 0), 0),
+            i18n.language
+          )}
+          <span>{t('off')}</span>
         </Prices>
         <Button type={'button'} title={t('continue')}>
           {t('continue')}

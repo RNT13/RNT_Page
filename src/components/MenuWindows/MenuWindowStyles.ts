@@ -3,14 +3,14 @@ import { TextH3 } from '../../styles/globalStyles'
 import Button from '../Button/Button'
 
 export const MenuWindowContainer = styled.div`
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   display: none;
   justify-content: end;
-  z-index: 1;
+  z-index: 10;
 
   &.isOpen {
     display: flex;
@@ -31,7 +31,7 @@ export const MenuWindowContent = styled.div`
   flex-direction: column;
   gap: 20px;
   justify-content: space-between;
-  z-index: 1;
+  z-index: 11;
 `
 
 export const MenuButtons = styled(Button)`
@@ -41,7 +41,6 @@ export const MenuButtons = styled(Button)`
   box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
   padding: 8px;
   border-radius: 5px;
-  cursor: pointer;
   font-size: 14px;
   text-transform: uppercase;
 
