@@ -34,8 +34,17 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .container {
-    width: 1000px;
+    max-width: 1000px;
+    width: 100%;
     margin: 0 auto;
+
+    ${media.md} {
+      max-width: 80%;
+    }
+
+    ${media.sm} {
+      max-width: 90%;
+    }
   }
 `
 
@@ -168,6 +177,6 @@ export const OverlayDark = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 0;
   background-color: ${({ theme }) => theme.colors.overlay};
 `

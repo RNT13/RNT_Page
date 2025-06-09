@@ -9,9 +9,10 @@ export type listProps = {
   title: string
   background: 'grey' | 'black'
   games: Game[]
+  id?: string
 }
 
-const ProductsList = ({ title, background, games }: listProps) => {
+const ProductsList = ({ title, background, games, id }: listProps) => {
   const { t } = useTranslation()
 
   const getGameTags = (game: Game) => {
@@ -32,7 +33,7 @@ const ProductsList = ({ title, background, games }: listProps) => {
   }
 
   return (
-    <ProductsListContainer $background={background}>
+    <ProductsListContainer id={id} $background={background}>
       <TitleH2>{t(title)}</TitleH2>
       <ProductsListContent $background={background}>
         {games.map(game => (

@@ -11,7 +11,7 @@ const Header = () => {
     <HeaderContainer>
       <Logo />
       <Nav>
-        <Button type="headerButton" title={t('products')} to="/ProductsPage">
+        <Button type="headerButton" title={t('products')} to="/ProductsPage#nav">
           {t('products')}
         </Button>
       </Nav>

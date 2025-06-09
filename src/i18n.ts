@@ -6,6 +6,7 @@ i18n.use(initReactI18next).init({
     en: {
       translation: {
         totalOf: 'Total of ',
+        gameAlert: 'The game has already been added to the cart',
         off: 'up to 10% off paying in cash',
         home: 'Home',
         tasks: 'Tasks',
@@ -214,6 +215,7 @@ i18n.use(initReactI18next).init({
     pt: {
       translation: {
         totalOf: 'Total de ',
+        gameAlert: 'O Jogo já foi adicionado ao carrinho',
         home: 'Início',
         off: 'até 10% off pagando em dinheiro',
         tasks: 'Tarefas',

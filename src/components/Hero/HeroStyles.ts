@@ -6,20 +6,16 @@ import { TagContainer } from '../Tag/TagStyle'
 export const HeroContainer = styled.div`
   position: relative;
   display: block;
-  height: clamp(400px, 80vh, 650px);
+  height: 480px;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 
   ${media.md} {
-    height: 325px;
-    aspect-ratio: 4 / 3;
   }
 
   ${media.sm} {
-    height: 175px;
-    aspect-ratio: 4 / 3;
   }
 `
 
@@ -31,7 +27,7 @@ export const HeroContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  z-index: 0;
 `
 
 export const HeroHeader = styled.div`
@@ -55,11 +51,9 @@ export const HeroText = styled.div`
   }
 
   ${media.md} {
-    width: 70%;
   }
 
   ${media.sm} {
-    width: 70%;
   }
 `
 
@@ -67,8 +61,8 @@ export const HeroButton = styled(Button)`
   font-weight: bold;
   background-color: transparent;
   margin-top: 12px;
-  font-size: clamp(0.5rem, 1.7vw, 2rem);
-  padding: clamp(2px 4px, 3px 6px, 4px 8px);
+  font-size: 0.8rem;
+  padding: 8px 12px;
   background-color: ${({ theme }) => theme.colors.green};
   color: ${({ theme }) => theme.colors.textColor};
 
@@ -89,7 +83,6 @@ export const HeroTextFooter = styled.div`
 
 export const HeroInfo = styled.div`
   font-weight: bold;
-  font-size: clamp(0.5rem, 2vw, 2.5rem);
   color: ${({ theme }) => theme.colors.textColor};
 
   h2 {
@@ -98,6 +91,7 @@ export const HeroInfo = styled.div`
   }
 
   span {
+    font-size: 1rem;
     display: block;
     text-decoration: line-through;
   }
@@ -105,5 +99,5 @@ export const HeroInfo = styled.div`
 
 export const Price = styled.h3`
   margin-top: 12px;
-  font-size: clamp(0.5rem, 2vw, 2.5rem);
+  font-size: 1rem;
 `

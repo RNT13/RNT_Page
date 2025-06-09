@@ -9,9 +9,7 @@ export const SectionConteiner = styled.section<Omit<SectionProps, 'title' | 'gam
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 0px 50px;
-  background-color: ${props =>
-    props.$background === 'grey' ? props.theme.colors.secondaryColor : props.theme.colors.background};
+  background-color: ${props => (props.$background === 'grey' ? props.theme.colors.secondaryColor : props.theme.colors.background)};
 `
 
 export const SectionContent = styled.div`

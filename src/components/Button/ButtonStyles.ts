@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { HashLink as Link } from 'react-router-hash-link'
 import { styled } from 'styled-components'
 
 export type ButtonProps = {
@@ -97,7 +97,8 @@ export const ButtonToggleContainer = styled.button<ButtonProps>`
   }
 `
 
-export const HeaderButtonContainer = styled.button<ButtonProps>`
+// eslint-disable-next-line prettier/prettier
+export const HeaderButtonContainer = styled(Link) <ButtonProps>`
   display: flex;
   justify-content: center;
   align-items: center;

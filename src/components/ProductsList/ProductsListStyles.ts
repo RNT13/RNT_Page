@@ -7,8 +7,7 @@ export type listProps = {
 }
 
 export const ProductsListContainer = styled.div<Omit<listProps, 'title' | 'games'>>`
-  background-color: ${props =>
-    props.$background === 'grey' ? props.theme.colors.secondaryColor : props.theme.colors.background};
+  background-color: ${props => (props.$background === 'grey' ? props.theme.colors.secondaryColor : props.theme.colors.background)};
   padding: 50px 0;
 
   ${media.md} {
@@ -22,19 +21,21 @@ export const ProductsListContainer = styled.div<Omit<listProps, 'title' | 'games
 `
 
 export const ProductsListContent = styled.ul<Omit<listProps, 'title'>>`
-  margin: 0px 100px auto;
-  place-items: center;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
+  margin: 0px 30px;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 20px;
 
   ${CardContainer} {
-    background-color: ${props =>
-      props.$background === 'grey' ? props.theme.colors.background : props.theme.colors.secondaryColor};
+    background-color: ${props => (props.$background === 'grey' ? props.theme.colors.background : props.theme.colors.secondaryColor)};
   }
 
-  ${(media.sm, media.md)} {
-    margin: 0px auto;
-    grid-template-columns: 1fr;
+  ${media.md} {
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  }
+
+  ${media.sm} {
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   }
 `

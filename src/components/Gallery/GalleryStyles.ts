@@ -2,22 +2,14 @@ import { styled } from 'styled-components'
 import { media } from '../../styles/media'
 
 export const GalleryItems = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  place-items: center;
-
-  ${media.md} {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  ${media.sm} {
-    grid-template-columns: 2fr;
-  }
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
 `
 
 export const Item = styled.div`
   position: relative;
-  margin: 16px;
 
   img {
     border: 2px solid ${({ theme }) => theme.colors.textColor};
@@ -25,6 +17,11 @@ export const Item = styled.div`
     width: 150px;
     height: 150px;
     object-fit: cover;
+
+    ${media.sm} {
+      width: 130px;
+      height: 130px;
+    }
   }
 `
 
@@ -53,6 +50,11 @@ export const Action = styled.div`
     transition: opacity 0.5s ease;
     border-radius: 8px;
   }
+
+  ${media.sm} {
+    width: 130px;
+    height: 130px;
+  }
 `
 
 export const Modal = styled.div`
@@ -76,6 +78,9 @@ export const Modal = styled.div`
     width: 100%;
     height: 100%;
     background-color: ${({ theme }) => theme.colors.overlay};
+  }
+
+  ${media.sm} {
   }
 `
 

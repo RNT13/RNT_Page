@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { IoIosCloseCircleOutline } from 'react-icons/io'
-import { close } from '../../redux/slices/cartSlice'
+import { close, remove } from '../../redux/slices/cartSlice'
 import Button from '../Button/Button'
 
 import { CartBarContainer, CartBarContent, CartItem, Prices, Quantity } from './CartBarStyles'
@@ -20,6 +20,12 @@ const CartBar = () => {
     dispatch(close())
   }
 
+  const removeItem = (id: number) => {
+    dispatch(remove(id))
+  }
+
+  const getTotalPrice = () => items.reduce((sum, item) => sum + (item.prices.current ?? 0), 0)
+
   return (
     <CartBarContainer className={isOpen ? 'isOpen' : ''}>
       <OverlayBlur onClick={closeCart} />
@@ -34,7 +40,7 @@ const CartBar = () => {
                 <Tag $status="highlight">{item.details.system}</Tag>
                 <h4>{priceFormat(item.prices.current ?? 0, i18n.language)}</h4>
               </div>
-              <IoIosCloseCircleOutline />
+              <IoIosCloseCircleOutline onClick={() => removeItem(item.id)} />
             </CartItem>
           ))}
         </ul>
@@ -43,10 +49,7 @@ const CartBar = () => {
         </Quantity>
         <Prices>
           {t('totalOf')}
-          {priceFormat(
-            items.reduce((sum, item) => sum + (item.prices.current ?? 0), 0),
-            i18n.language
-          )}
+          {priceFormat(getTotalPrice(), i18n.language)}
           <span>{t('off')}</span>
         </Prices>
         <Button type={'button'} title={t('continue')}>

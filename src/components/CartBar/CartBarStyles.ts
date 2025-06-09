@@ -1,4 +1,5 @@
 import { styled } from 'styled-components'
+import { media } from '../../styles/media'
 import { ButtonContainer } from '../Button/ButtonStyles'
 import { TagContainer } from '../Tag/TagStyle'
 
@@ -29,6 +30,10 @@ export const CartBarContent = styled.aside`
   ${ButtonContainer} {
     max-width: 100%;
     width: 100%;
+  }
+
+  ${media.sm} {
+    max-width: 320px;
   }
 `
 

@@ -28,7 +28,7 @@ const Banner = () => {
           </Tag>
           <ImageTextFooter>
             <Title>
-              {game.name}
+              <p>{game.name}</p>
               <Price>
                 {t('from')} <span>{priceFormat(game.prices.old ?? 0, i18n.language)}</span> <br />
                 {t('forOnly')} {priceFormat(game.prices.current ?? 0, i18n.language)}
