@@ -1,8 +1,9 @@
 import { useTranslation } from 'react-i18next'
+import { useGetComingSoonQuery, useGetOnSaleQuery } from '../../api/gameApi'
 import Banner from '../../components/Banner/Banner'
+import { Title } from '../../components/Banner/BannerStyles'
 import ProductsList from '../../components/ProductsList/ProductsList'
 import ProductsNav from '../../components/ProductsNav/ProductsNav'
-import { useGetComingSoonQuery, useGetOnSaleQuery } from '../../services/api'
 import { ProductsContainer } from './ProductsPageStyles'
 
 export interface GalleryItem {
@@ -12,8 +13,21 @@ export interface GalleryItem {
 
 const ProductsPage = () => {
   const { t } = useTranslation()
-  const { data: promotions } = useGetOnSaleQuery()
-  const { data: comingSoon } = useGetComingSoonQuery()
+  const { data: promotions, isLoading: loadingPromotions, isError: errorPromotions } = useGetOnSaleQuery({})
+  const { data: comingSoon, isLoading: loadingComingSoon, isError: errorComingSoon } = useGetComingSoonQuery({})
+
+  if (loadingPromotions || loadingComingSoon)
+    return (
+      <ProductsContainer>
+        <Title>{t('loading')}</Title>
+      </ProductsContainer>
+    )
+  if (errorPromotions || errorComingSoon)
+    return (
+      <ProductsContainer>
+        <Title>{t('error')}</Title>
+      </ProductsContainer>
+    )
 
   if (promotions && comingSoon) {
     return (

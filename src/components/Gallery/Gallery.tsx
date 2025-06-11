@@ -10,7 +10,7 @@ import { useState } from 'react'
 import { GalleryItem } from '../../pages/productsPage/ProductsPage'
 import { OverlayBlur } from '../../styles/globalStyles'
 
-type GalleryProps = {
+export type GalleryProps = {
   defaultCover: string
   name: string
   items?: GalleryItem[]

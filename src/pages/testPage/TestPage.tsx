@@ -21,14 +21,7 @@ const TestPage = () => {
         <Tag $status="unknown" size="small">
           {t('test')}
         </Tag>
-        <Card
-          categoty="Ação"
-          system="PC/PS5"
-          image="public\images\resident.png"
-          infos={['-10%', 'R$ 150,00']}
-          title={''}
-          description={''}
-        />
+        <Card category="Ação" system="PC/PS5" image="public\images\resident.png" infos={['-10%', 'R$ 150,00']} title={''} description={''} />
         <ProductCard image={''} name={''} description={''} />
       </TestContent>
     </TestPageContainer>

@@ -1,13 +1,14 @@
 import { useTranslation } from 'react-i18next'
+import { useGetGameQuery } from '../../api/gameApi'
 import i18n from '../../i18n'
-import { useGetFeaturedGamesQuery } from '../../services/api'
 import { priceFormat } from '../../utils/PriceFormat'
+import { Title } from '../Banner/BannerStyles'
 import Tag from '../Tag/Tag'
 import { CardBody, CardButton, CardContainer, CardDescription, CardFooter, CardHeader, CardImage, CardTitle } from './CarsStyles'
 
 type CardProps = {
   title: string
-  categoty: string
+  category: string
   system: string
   description: string
   infos: string[]
@@ -15,9 +16,24 @@ type CardProps = {
   id?: number
 }
 
-const Card = ({ title, categoty, id, system, description, infos, image }: CardProps) => {
+const Card = ({ title, category, id, system, description, infos, image }: CardProps) => {
   const { t } = useTranslation()
-  const { data: game } = useGetFeaturedGamesQuery()
+
+  const { data: game, isLoading: loading, isError: error } = useGetGameQuery(id!)
+
+  if (loading)
+    return (
+      <CardContainer>
+        <Title>{t('loading')}</Title>
+      </CardContainer>
+    )
+  if (error)
+    return (
+      <CardContainer>
+        <Title>{t('error')}</Title>
+      </CardContainer>
+    )
+
   const getDescription = (description: string) => {
     if (description.length > 200) {
       return description.slice(0, 200) + '...'
@@ -34,7 +50,7 @@ const Card = ({ title, categoty, id, system, description, infos, image }: CardPr
       <CardImage src={image || undefined} alt={title || 'Default Alt Text'} />
       <CardBody>
         <CardTitle>{title}</CardTitle>
-        <Tag $status="highlight">{categoty}</Tag>
+        <Tag $status="highlight">{category}</Tag>
         <Tag $status="highlight">{system}</Tag>
         <CardDescription>{getDescription(description)}</CardDescription>
       </CardBody>

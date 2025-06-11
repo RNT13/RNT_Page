@@ -1,17 +1,30 @@
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
+import { useGetGameQuery } from '../../api/gameApi'
+import { Title } from '../../components/Banner/BannerStyles'
 import Gallery from '../../components/Gallery/Gallery'
 import Hero from '../../components/Hero/Hero'
-import ProductsNav from '../../components/ProductsNav/ProductsNav'
 import Section from '../../components/Section/Section'
-import { useGetGameQuery } from '../../services/api'
 import { TitleH2 } from '../../styles/globalStyles'
 import { DetailsPageContainer } from './DetailsPageStyles'
 
 const DetailsPage = () => {
   const { t } = useTranslation()
   const { id } = useParams()
-  const { data: game } = useGetGameQuery(id!)
+  const { data: game, isLoading: loading, isError: error } = useGetGameQuery(id!)
+
+  if (loading)
+    return (
+      <DetailsPageContainer>
+        <Title>{t('loading')}</Title>
+      </DetailsPageContainer>
+    )
+  if (error)
+    return (
+      <DetailsPageContainer>
+        <Title>{t('error')}</Title>
+      </DetailsPageContainer>
+    )
 
   if (!id || id === 'undefined') {
     return (
@@ -30,7 +43,6 @@ const DetailsPage = () => {
 
   return (
     <>
-      <ProductsNav />
       <DetailsPageContainer>
         <Hero game={game} />
         <Section $background="grey" title={t('aboutTheGame')}>

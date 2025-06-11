@@ -28,11 +28,11 @@ export default [
       'prettier/prettier': [
         'error',
         {
-          singleQuote: true,
           trailingComma: 'none',
           semi: false,
+          singleQuote: true,
           printWidth: 150,
-          arrowParens: 'avoid'
+          arrowParens: ['error', 'as-needed']
         }
       ]
     }

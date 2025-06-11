@@ -1,6 +1,6 @@
 import { combineReducers, configureStore as toolkitConfigureStore } from '@reduxjs/toolkit'
 
-import api from '../services/api'
+import { apiSlice } from '../api/apiSlice'
 import cartReducer from './slices/cartSlice'
 import contactsReducer from './slices/contactsSlice'
 import filterReducer from './slices/filterSlice'
@@ -17,18 +17,19 @@ const rootReducer = combineReducers({
   language: languageReducer,
   sidebar: sideBarSlice,
   cart: cartReducer,
-  [api.reducerPath]: api.reducer
+  [apiSlice.reducerPath]: apiSlice.reducer
 })
+
+export type RootState = ReturnType<typeof rootReducer>
 
 export function configureStore(preloadedState?: Partial<RootState>) {
   return toolkitConfigureStore({
     reducer: rootReducer,
     preloadedState,
-    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(api.middleware)
+    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(apiSlice.middleware)
   })
 }
 
 export const store = configureStore()
 
 export type AppStore = ReturnType<typeof configureStore>
-export type RootState = ReturnType<typeof rootReducer>

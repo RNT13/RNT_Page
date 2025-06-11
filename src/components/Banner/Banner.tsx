@@ -1,20 +1,27 @@
 import { useTranslation } from 'react-i18next'
-import { useGetFeaturedGamesQuery } from '../../services/api'
 import { OverlayDark } from '../../styles/globalStyles'
 import { BannerContainer, ImageButton, ImageContent, ImageText, ImageTextFooter, Price, Title } from '../Banner/BannerStyles'
 
+import { useGetFeaturedGamesQuery } from '../../api/gameApi'
 import i18n from '../../i18n'
 import { priceFormat } from '../../utils/PriceFormat'
 import Tag from '../Tag/Tag'
 
 const Banner = () => {
   const { t } = useTranslation()
-  const { data: game } = useGetFeaturedGamesQuery()
 
-  if (!game)
+  const { data: game, isLoading: loading, isError: error } = useGetFeaturedGamesQuery({})
+
+  if (loading)
     return (
       <BannerContainer>
         <Title>{t('loading')}</Title>
+      </BannerContainer>
+    )
+  if (error)
+    return (
+      <BannerContainer>
+        <Title>{t('error')}</Title>
       </BannerContainer>
     )
 

@@ -1,17 +1,17 @@
 import { useTranslation } from 'react-i18next'
+import { useGetActionGamesQuery, useGetFightGamesQuery, useGetRpgGamesQuery, useGetSimulationGamesQuery } from '../../api/gameApi'
 import Banner from '../../components/Banner/Banner'
 import ProductsList from '../../components/ProductsList/ProductsList'
 import ProductsNav from '../../components/ProductsNav/ProductsNav'
-import { useGetActionGamesQuery, useGetFightGamesQuery, useGetRpgGamesQuery, useGetSimulationGamesQuery } from '../../services/api'
 import { TitleH2 } from '../../styles/globalStyles'
 import { CategoryPageContent } from './CategoryPageStyles'
 
 const CategoryPage = () => {
   const { t } = useTranslation()
-  const { data: action } = useGetActionGamesQuery()
-  const { data: rpg } = useGetRpgGamesQuery()
-  const { data: fight } = useGetFightGamesQuery()
-  const { data: simulation } = useGetSimulationGamesQuery()
+  const { data: action } = useGetActionGamesQuery({})
+  const { data: rpg } = useGetRpgGamesQuery({})
+  const { data: fight } = useGetFightGamesQuery({})
+  const { data: simulation } = useGetSimulationGamesQuery({})
 
   return (
     <CategoryPageContent>

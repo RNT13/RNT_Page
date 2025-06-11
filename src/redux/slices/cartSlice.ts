@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { t } from 'i18next'
-import { Game } from '../../utils/GameApi'
+import { Game } from '../../api/gameApi'
 
 type CartState = {
   items: Game[]

@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 
-export const CategotyPageContainer = styled.div`
+export const CategoryPageContainer = styled.div`
   display: flex;
   height: 100vh;
 `

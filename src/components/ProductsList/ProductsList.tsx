@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { TitleH2 } from '../../styles/globalStyles'
-import { Game } from '../../utils/GameApi'
+import { Game } from '../../types/gameType'
 import { priceFormat } from '../../utils/PriceFormat'
 import Card from '../Card/Card'
 import { ProductsListContainer, ProductsListContent } from './ProductsListStyles'
@@ -40,7 +40,7 @@ const ProductsList = ({ title, background, games, id }: listProps) => {
           <li key={game.id}>
             <Card
               id={game.id}
-              categoty={t(game.details.category)}
+              category={t(game.details.category)}
               system={game.details.system}
               image={game.media.thumbnail}
               infos={getGameTags(game)}
