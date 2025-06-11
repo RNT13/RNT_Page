@@ -31,7 +31,7 @@ const ProductsPage = () => {
 
   if (promotions && comingSoon) {
     return (
-      <ProductsContainer>
+      <ProductsContainer id="nav">
         <ProductsNav />
         <Banner />
         <ProductsList id="onSale" title={t('games')} background="grey" games={Array.isArray(promotions) ? promotions : []}></ProductsList>

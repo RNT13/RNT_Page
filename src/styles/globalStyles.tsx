@@ -72,6 +72,7 @@ export const ContentWrapper = styled.main`
   grid-area: main;
   overflow-y: auto;
   overflow-x: hidden;
+  height: 100%;
   background-color: ${({ theme }) => theme.colors.secondaryColor};
   transition: all 0.3s ease;
   margin-left: 80px;

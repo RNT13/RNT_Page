@@ -2,15 +2,23 @@ import { styled } from 'styled-components'
 import { media } from '../../styles/media'
 
 export const ProductsNavContainer = styled.div`
-  top: 0px;
+  position: sticky;
+  top: 0;
   max-width: 100%;
-  padding: 24px;
-  margin: 36px 16px;
+  padding: 12px;
+  margin: 24px 16px;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
   background-color: ${({ theme }) => theme.colors.primaryColor};
   box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
+  z-index: 5;
+  transition: all 0.05s;
+
+  &.isSticky {
+    margin: 0px;
+    border-radius: 0px;
+  }
 
   ${media.md} {
     margin: 12px;

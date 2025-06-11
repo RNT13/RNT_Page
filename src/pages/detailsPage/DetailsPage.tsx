@@ -4,6 +4,7 @@ import { useGetGameQuery } from '../../api/gameApi'
 import { Title } from '../../components/Banner/BannerStyles'
 import Gallery from '../../components/Gallery/Gallery'
 import Hero from '../../components/Hero/Hero'
+import ProductsNav from '../../components/ProductsNav/ProductsNav'
 import Section from '../../components/Section/Section'
 import { TitleH2 } from '../../styles/globalStyles'
 import { DetailsPageContainer } from './DetailsPageStyles'
@@ -43,6 +44,7 @@ const DetailsPage = () => {
 
   return (
     <>
+      <ProductsNav />
       <DetailsPageContainer>
         <Hero game={game} />
         <Section $background="grey" title={t('aboutTheGame')}>
