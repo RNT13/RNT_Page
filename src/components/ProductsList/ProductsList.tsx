@@ -26,7 +26,7 @@ const ProductsList = ({ title, background, games, id }: listProps) => {
     }
 
     if (game.prices.current) {
-      tags.push(priceFormat(game.prices.current))
+      tags.push(String(priceFormat(game.prices.current ?? 0)))
     }
 
     return tags
@@ -39,7 +39,7 @@ const ProductsList = ({ title, background, games, id }: listProps) => {
         {games.map(game => (
           <li key={game.id}>
             <Card
-              id={game.id}
+              id={Number(game.id)}
               category={t(game.details.category)}
               system={game.details.system}
               image={game.media.thumbnail}

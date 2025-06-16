@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { useGetComingSoonQuery, useGetOnSaleQuery } from '../../api/gameApi'
+import { useGetUnifiedGamesQuery } from '../../api/gameApi'
 import Banner from '../../components/Banner/Banner'
 import { Title } from '../../components/Banner/BannerStyles'
 import ProductsList from '../../components/ProductsList/ProductsList'
@@ -13,29 +13,21 @@ export interface GalleryItem {
 
 const ProductsPage = () => {
   const { t } = useTranslation()
-  const { data: promotions, isLoading: loadingPromotions, isError: errorPromotions } = useGetOnSaleQuery({})
-  const { data: comingSoon, isLoading: loadingComingSoon, isError: errorComingSoon } = useGetComingSoonQuery({})
+  const { data: allGames, isLoading, isError } = useGetUnifiedGamesQuery()
 
-  if (loadingPromotions || loadingComingSoon)
-    return (
-      <ProductsContainer>
-        <Title>{t('loading')}</Title>
-      </ProductsContainer>
-    )
-  if (errorPromotions || errorComingSoon)
-    return (
-      <ProductsContainer>
-        <Title>{t('error')}</Title>
-      </ProductsContainer>
-    )
+  if (isLoading || !allGames) return <Title>{t('loading')}</Title>
+  if (isError) return <Title>{t('error')}</Title>
+
+  const promotions = allGames.filter(g => g.prices.discount > 0)
+  const comingSoon = allGames.filter(g => new Date(g.release_date) > new Date())
 
   if (promotions && comingSoon) {
     return (
       <ProductsContainer id="nav">
         <ProductsNav />
         <Banner />
-        <ProductsList id="onSale" title={t('games')} background="grey" games={Array.isArray(promotions) ? promotions : []}></ProductsList>
-        <ProductsList id="comingSoon" title={t('comingSoon')} background="black" games={Array.isArray(comingSoon) ? comingSoon : []}></ProductsList>
+        <ProductsList id="onSale" title={t('games')} background="grey" games={promotions} />
+        <ProductsList id="comingSoon" title={t('comingSoon')} background="black" games={comingSoon} />
       </ProductsContainer>
     )
   }

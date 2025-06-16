@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
-import { useGetGameQuery } from '../../api/gameApi'
+import { useGetFullGameDetailsQuery } from '../../api/gameApi'
 import { Title } from '../../components/Banner/BannerStyles'
 import Gallery from '../../components/Gallery/Gallery'
 import Hero from '../../components/Hero/Hero'
@@ -12,7 +12,7 @@ import { DetailsPageContainer } from './DetailsPageStyles'
 const DetailsPage = () => {
   const { t } = useTranslation()
   const { id } = useParams()
-  const { data: game, isLoading: loading, isError: error } = useGetGameQuery(id!)
+  const { data: game, isLoading: loading, isError: error } = useGetFullGameDetailsQuery(id!)
 
   if (loading)
     return (

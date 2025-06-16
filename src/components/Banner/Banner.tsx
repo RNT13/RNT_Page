@@ -2,15 +2,14 @@ import { useTranslation } from 'react-i18next'
 import { OverlayDark } from '../../styles/globalStyles'
 import { BannerContainer, ImageButton, ImageContent, ImageText, ImageTextFooter, Price, Title } from '../Banner/BannerStyles'
 
-import { useGetFeaturedGamesQuery } from '../../api/gameApi'
-import i18n from '../../i18n'
+import { useGetUnifiedGamesQuery } from '../../api/gameApi'
 import { priceFormat } from '../../utils/PriceFormat'
 import Tag from '../Tag/Tag'
 
 const Banner = () => {
   const { t } = useTranslation()
 
-  const { data: game, isLoading: loading, isError: error } = useGetFeaturedGamesQuery({})
+  const { data: game, isLoading: loading, isError: error } = useGetUnifiedGamesQuery()
 
   if (loading)
     return (
@@ -26,7 +25,7 @@ const Banner = () => {
     )
 
   return (
-    <BannerContainer style={{ backgroundImage: `url(${game.media.cover})` }}>
+    <BannerContainer style={{ backgroundImage: `url(${game && game[0]?.media.cover})` }}>
       <OverlayDark />
       <ImageContent>
         <ImageText>
@@ -35,13 +34,13 @@ const Banner = () => {
           </Tag>
           <ImageTextFooter>
             <Title>
-              <p>{game.name}</p>
+              <p>{game && game[0]?.name}</p>
               <Price>
-                {t('from')} <span>{priceFormat(game.prices.old ?? 0, i18n.language)}</span> <br />
-                {t('forOnly')} {priceFormat(game.prices.current ?? 0, i18n.language)}
+                {t('from')} <span>{priceFormat((game && game[0]?.prices.original) ?? 0)}</span> <br />
+                {t('forOnly')} {priceFormat((game && game[0]?.prices.current) ?? 0)}
               </Price>
             </Title>
-            <ImageButton to={`/DetailsPage/${game.id}`} type="headerButton" title={t('click')}>
+            <ImageButton to={`/DetailsPage/${game && game[0]?.id}`} type="headerButton" title={t('click')}>
               {t('BuyNow')}
             </ImageButton>
           </ImageTextFooter>

@@ -12,7 +12,7 @@ import { priceFormat } from '../../utils/PriceFormat'
 import Tag from '../Tag/Tag'
 
 const CartBar = () => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const { isOpen, items } = useSelector((state: RootState) => state.cart)
   const dispatch = useDispatch()
 
@@ -38,7 +38,7 @@ const CartBar = () => {
                 <h3>{item.name}</h3>
                 <Tag $status="highlight">{item.details.category}</Tag>
                 <Tag $status="highlight">{item.details.system}</Tag>
-                <h4>{priceFormat(item.prices.current ?? 0, i18n.language)}</h4>
+                <h4>{priceFormat(item.prices.current ?? 0)}</h4>
               </div>
               <IoIosCloseCircleOutline onClick={() => removeItem(item.id)} />
             </CartItem>
@@ -49,7 +49,7 @@ const CartBar = () => {
         </Quantity>
         <Prices>
           {t('totalOf')}
-          {priceFormat(getTotalPrice(), i18n.language)}
+          {priceFormat(getTotalPrice())}
           <span>{t('off')}</span>
         </Prices>
         <Button type={'button'} title={t('continue')}>

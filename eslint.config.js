@@ -24,17 +24,7 @@ export default [
       'react-hooks/exhaustive-deps': 'warn',
       'react/prop-types': 'off',
       'react/react-in-jsx-scope': 'off',
-      '@typescript-eslint/explicit-module-boundary-types': 'off',
-      'prettier/prettier': [
-        'error',
-        {
-          trailingComma: 'none',
-          semi: false,
-          singleQuote: true,
-          printWidth: 150,
-          arrowParens: ['error', 'as-needed']
-        }
-      ]
+      '@typescript-eslint/explicit-module-boundary-types': 'off'
     }
   },
 

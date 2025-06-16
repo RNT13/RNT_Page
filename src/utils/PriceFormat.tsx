@@ -1,11 +1,21 @@
-export const priceFormat = (value: number, language: string = 'pt-BR') => {
-  const USD_RATE = 5
-  if (language === 'en') {
-    return (value / USD_RATE).toLocaleString('en-US', { style: 'currency', currency: 'USD' })
+import i18n from '../i18n'
+
+const USD_TO_BRL = 5.2
+
+export const priceFormat = (price: number, language: string = 'pt-BR') => {
+  const locale = i18n.language || 'en'
+  let value = price
+  let currency = 'USD'
+
+  if (language === 'pt-BR') {
+    value = price * USD_TO_BRL
+    currency = 'BRL'
   }
-  return new Intl.NumberFormat('pt-BR', {
+
+  return value.toLocaleString(locale, {
     style: 'currency',
-    currency: 'BRL',
-    minimumFractionDigits: 2
-  }).format(value)
+    currency,
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  })
 }

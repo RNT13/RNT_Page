@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { useGetGameQuery } from '../../api/gameApi'
-import i18n from '../../i18n'
+import { useGetFullGameDetailsQuery } from '../../api/gameApi'
 import { priceFormat } from '../../utils/PriceFormat'
 import { Title } from '../Banner/BannerStyles'
 import Tag from '../Tag/Tag'
@@ -19,7 +18,7 @@ type CardProps = {
 const Card = ({ title, category, id, system, description, infos, image }: CardProps) => {
   const { t } = useTranslation()
 
-  const { data: game, isLoading: loading, isError: error } = useGetGameQuery(id!)
+  const { data: game, isLoading: loading, isError: error } = useGetFullGameDetailsQuery(String(id!))
 
   if (loading)
     return (
@@ -45,7 +44,7 @@ const Card = ({ title, category, id, system, description, infos, image }: CardPr
     <CardContainer>
       <CardHeader>
         {infos[0] && <Tag $status="highlight">{infos[0]}</Tag>}
-        {game?.prices.current && <Tag $status="highlight">{priceFormat(game.prices.current ?? 0, i18n.language)}</Tag>}
+        {game?.prices.current && <Tag $status="highlight">{priceFormat(game.prices.current ?? 0)}</Tag>}
       </CardHeader>
       <CardImage src={image || undefined} alt={title || 'Default Alt Text'} />
       <CardBody>
