@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import Button from '../Button/Button'
 import { TagContainer } from '../Tag/TagStyle'
 
-export const CardContainer = styled.div`
+export const GameCardContainer = styled.div`
   position: relative;
   width: 100%;
   max-width: 300px;
@@ -21,7 +21,7 @@ export const CardContainer = styled.div`
     margin: 0px 4px 0px 4px;
   }
 
-  &:hover .card-footer {
+  &:hover .GameCardFooter {
     height: 100px;
     opacity: 1;
     visibility: visible;
@@ -39,13 +39,13 @@ export const CardContainer = styled.div`
   }
 `
 
-export const CardHeader = styled.div`
+export const GameCardHeader = styled.div`
   position: absolute;
   top: 16px;
   right: 16px;
 `
 
-export const CardImage = styled.img`
+export const GameCardImage = styled.img`
   width: 100%;
   height: 260px;
   object-fit: cover;
@@ -54,7 +54,7 @@ export const CardImage = styled.img`
   border-radius: 8px;
 `
 
-export const CardTitle = styled.h3`
+export const GameCardTitle = styled.h3`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,15 +65,15 @@ export const CardTitle = styled.h3`
   font-weight: bold;
 `
 
-export const CardDescription = styled.p`
+export const GameCardDescription = styled.p`
   margin: 16px 0px 0px 0px;
   font-size: 1rem;
   color: ${({ theme }) => theme.colors.textColor};
 `
 
-export const CardBody = styled.div``
+export const GameCardBody = styled.div``
 
-export const CardFooter = styled.div`
+export const GameCardFooter = styled.div`
   position: absolute;
   display: flex;
   justify-content: center;
@@ -90,7 +90,7 @@ export const CardFooter = styled.div`
     transform 0.3s ease;
 `
 
-export const CardButton = styled(Button)`
+export const GameCardButton = styled(Button)`
   width: 100%;
   padding: 10px;
   transition:

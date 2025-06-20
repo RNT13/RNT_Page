@@ -16,6 +16,7 @@ import { HeaderWrapper } from './containers/header/HeaderStyles'
 import CalendarPage from './pages/calendarPage/CalendarPage'
 import CartPage from './pages/cartPage/CartPage'
 import CategoryPage from './pages/categoryPage/CategoryPage'
+import CheckOutPage from './pages/checkOutPage/checkOutPage'
 import ContactsPage from './pages/contactsPage/ContactsPage'
 import DetailsPage from './pages/detailsPage/DetailsPage'
 import Home from './pages/homePage/HomePage'
@@ -78,7 +79,8 @@ const AppContent = () => {
         { path: '/TestPage', element: <TestPage /> },
         { path: '/CartPage', element: <CartPage /> },
         { path: '/DetailsPage/:id', element: <DetailsPage /> },
-        { path: '/CategoryPage', element: <CategoryPage /> }
+        { path: '/CategoryPage', element: <CategoryPage /> },
+        { path: '/CheckOutPage', element: <CheckOutPage /> }
       ]
     }
   ])

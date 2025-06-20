@@ -17,3 +17,15 @@ export interface RawgGame {
   parent_platforms: { platform: { name: string } }[]
   screenshots: { image: string }[]
 }
+
+export interface RawgMovieData {
+  results: {
+    id: number
+    name: string
+    preview: string
+    data: {
+      '480': string
+      max: string
+    }
+  }[]
+}

@@ -52,7 +52,7 @@ const CartBar = () => {
           {priceFormat(getTotalPrice())}
           <span>{t('off')}</span>
         </Prices>
-        <Button type={'button'} title={t('continue')}>
+        <Button to={'/CheckOutPage'} type="button" title={t('continue')}>
           {t('continue')}
         </Button>
       </CartBarContent>

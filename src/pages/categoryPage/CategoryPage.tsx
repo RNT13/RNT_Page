@@ -10,26 +10,38 @@ const CategoryPage = () => {
   const { t } = useTranslation()
   const { data: allGames = [], isLoading, isError } = useGetUnifiedGamesQuery()
 
-  // Filtra por categoria
-  const action = allGames.filter(game => game.details.category?.toLowerCase() === 'ação' || game.details.category?.toLowerCase() === 'action')
-  const rpg = allGames.filter(game => game.details.category?.toLowerCase() === 'rpg')
-  const fight = allGames.filter(game => game.details.category?.toLowerCase() === 'luta' || game.details.category?.toLowerCase() === 'fight')
-  const simulation = allGames.filter(
-    game => game.details.category?.toLowerCase() === 'simulação' || game.details.category?.toLowerCase() === 'simulation'
-  )
-
   if (isLoading) return <TitleH2>{t('loading')}</TitleH2>
   if (isError) return <TitleH2>{t('error')}</TitleH2>
+
+  // Agrupa por categoria
+  const categoriesMap: Record<string, typeof allGames> = {}
+
+  allGames.forEach(game => {
+    const category = game.details.category?.toLowerCase()
+    if (category) {
+      if (!categoriesMap[category]) {
+        categoriesMap[category] = []
+      }
+      categoriesMap[category].push(game)
+    }
+  })
+
+  const sortedCategories = Object.entries(categoriesMap).sort(([a], [b]) => a.localeCompare(b))
 
   return (
     <CategoryPageContent>
       <ProductsNav />
       <Banner />
-      <TitleH2>Category</TitleH2>
-      <ProductsList id="action" title={t('action')} background="grey" games={action} />
-      <ProductsList id="rpg" title={t('rpg')} background="black" games={rpg} />
-      <ProductsList id="fight" title={t('fight')} background="grey" games={fight} />
-      <ProductsList id="simulation" title={t('simulation')} background="black" games={simulation} />
+      <TitleH2>{t('category')}</TitleH2>
+      {sortedCategories.map(([categoryName, games], index) => (
+        <ProductsList
+          key={categoryName}
+          id={categoryName}
+          title={t(categoryName.toLowerCase()) || categoryName}
+          background={index % 2 === 0 ? 'grey' : 'black'}
+          games={games}
+        />
+      ))}
     </CategoryPageContent>
   )
 }

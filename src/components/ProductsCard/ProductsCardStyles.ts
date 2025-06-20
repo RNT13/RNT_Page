@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Button from '../Button/Button'
 
-export const CardContainer = styled.div`
+export const ProductCardContainer = styled.div`
   position: relative;
   width: 100%;
   max-width: 300px;
@@ -15,7 +15,7 @@ export const CardContainer = styled.div`
     transform 0.3s ease;
   overflow: hidden;
 
-  &:hover .card-footer {
+  &:hover .productCard-footer {
     height: 100px;
     opacity: 1;
     visibility: visible;
@@ -27,9 +27,9 @@ export const CardContainer = styled.div`
   }
 `
 
-export const CardHeader = styled.div``
+export const ProductCardHeader = styled.div``
 
-export const ProductImage = styled.img`
+export const ProductCardImage = styled.img`
   width: 280px;
   height: 260px;
   object-fit: cover;
@@ -38,7 +38,7 @@ export const ProductImage = styled.img`
   border-radius: 8px;
 `
 
-export const CardBody = styled.div`
+export const ProductCardBody = styled.div`
   margin: 10px 0px 0px 0px;
   color: ${({ theme }) => theme.colors.textColor};
   position: relative;
@@ -48,7 +48,7 @@ export const CardBody = styled.div`
   gap: 20px;
 `
 
-export const CardFooter = styled.div`
+export const ProductCardFooter = styled.div`
   position: absolute;
   display: flex;
   justify-content: center;
@@ -64,7 +64,7 @@ export const CardFooter = styled.div`
     transform 0.3s ease;
 `
 
-export const CardButton = styled(Button)`
+export const ProductCardButton = styled(Button)`
   width: 100%;
   padding: 10px;
   transition:

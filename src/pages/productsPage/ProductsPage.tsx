@@ -9,6 +9,7 @@ import { ProductsContainer } from './ProductsPageStyles'
 export interface GalleryItem {
   type: 'image' | 'video'
   url: string
+  preview?: string
 }
 
 const ProductsPage = () => {

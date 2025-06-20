@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { TitleH2 } from '../../styles/globalStyles'
 import { Game } from '../../types/gameType'
 import { priceFormat } from '../../utils/PriceFormat'
-import Card from '../Card/Card'
+import Card from '../GameCard/GameCard'
 import { ProductsListContainer, ProductsListContent } from './ProductsListStyles'
 
 export type listProps = {

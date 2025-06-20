@@ -1,31 +1,38 @@
 import { useTranslation } from 'react-i18next'
-import { CardBody, CardButton, CardContainer, CardFooter, CardHeader, ProductImage } from './ProductsCardStyles'
+import {
+  ProductCardBody,
+  ProductCardButton,
+  ProductCardContainer,
+  ProductCardFooter,
+  ProductCardHeader,
+  ProductCardImage
+} from './ProductsCardStyles'
 
-export type CardProps = {
+export type ProductCardProps = {
   image: string
   name: string
   description: string
 }
 
-const ProductCard = ({ image, name, description }: CardProps) => {
+const ProductProductCard = ({ image, name, description }: ProductCardProps) => {
   const { t } = useTranslation()
 
   return (
-    <CardContainer>
-      <CardHeader>
-        <ProductImage src={image} alt={name} />
-      </CardHeader>
-      <CardBody>
+    <ProductCardContainer>
+      <ProductCardHeader>
+        <ProductCardImage src={image} alt={name} />
+      </ProductCardHeader>
+      <ProductCardBody>
         <h3>{name}</h3>
         <p>{description}</p>
-      </CardBody>
-      <CardFooter className="card-footer">
-        <CardButton type="button" title={t('addToCart')}>
+      </ProductCardBody>
+      <ProductCardFooter className="ProductCard-footer">
+        <ProductCardButton type="button" title={t('addToCart')}>
           {t('addToCart')}
-        </CardButton>
-      </CardFooter>
-    </CardContainer>
+        </ProductCardButton>
+      </ProductCardFooter>
+    </ProductCardContainer>
   )
 }
 
-export default ProductCard
+export default ProductProductCard

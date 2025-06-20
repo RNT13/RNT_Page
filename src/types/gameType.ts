@@ -6,7 +6,7 @@ export interface Game {
   media: {
     thumbnail: string
     cover: string
-    gallery: { type: 'image' | 'video'; url: string }[]
+    gallery: { type: 'image' | 'video'; url: string; preview?: string }[]
   }
   details: {
     system: string

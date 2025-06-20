@@ -28,10 +28,8 @@ const Gallery = ({ defaultCover, name, items }: GalleryProps) => {
   })
   const { t } = useTranslation()
   const getMedisCover = (item: GalleryItem) => {
-    if (item.type === 'image') {
-      return item.url
-    }
-    return defaultCover
+    if (item.type === 'image') return item.url
+    return item.preview || defaultCover
   }
 
   const getMedisIcon = (item: GalleryItem) => {

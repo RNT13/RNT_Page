@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 import { media } from '../../styles/media'
-import { CardContainer } from '../Card/CarsStyles'
+import { GameCardContainer } from '../GameCard/GameCardStyles'
 
 export type listProps = {
   $background: 'grey' | 'black'
@@ -27,7 +27,7 @@ export const ProductsListContent = styled.ul<Omit<listProps, 'title'>>`
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 20px;
 
-  ${CardContainer} {
+  ${GameCardContainer} {
     background-color: ${props => (props.$background === 'grey' ? props.theme.colors.background : props.theme.colors.secondaryColor)};
   }
 

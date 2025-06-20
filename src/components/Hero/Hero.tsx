@@ -42,20 +42,12 @@ const Hero = ({ game }: HeroProps) => {
                   {t('from')} {priceFormat(game.prices.original ?? 0)}
                 </span>
               )}
-              {game.release_date ? (
-                <h3>
-                  {t('releaseDate')}: {game.release_date}
-                </h3>
-              ) : (
-                <>
-                  <Price>
-                    {t('forOnly')} {priceFormat(game.prices.current ?? 0)}
-                  </Price>
-                  <HeroButton onClick={addToCart} type="headerButton" title={t('click')}>
-                    {t('addToCart')}
-                  </HeroButton>
-                </>
-              )}
+              <Price>
+                {t('forOnly')} {priceFormat(game.prices.current ?? 0)}
+              </Price>
+              <HeroButton onClick={addToCart} type="headerButton" title={t('click')}>
+                {t('addToCart')}
+              </HeroButton>
             </HeroInfo>
           </HeroTextFooter>
         </HeroText>

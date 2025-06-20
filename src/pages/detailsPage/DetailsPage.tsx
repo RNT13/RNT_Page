@@ -61,7 +61,7 @@ const DetailsPage = () => {
             <b>{t('language')}:</b> {t('languageDetails')} {game.details?.language?.join(', ')}
           </p>
         </Section>
-        <Gallery name={game.name} defaultCover={game.media.cover} items={game.media.gallery} />
+        <Gallery defaultCover={game.media.thumbnail} items={game.media.gallery} name={game.name} />
       </DetailsPageContainer>
     </>
   )
