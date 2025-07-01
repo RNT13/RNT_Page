@@ -1,5 +1,6 @@
 import { styled } from 'styled-components'
 import { TextH3 } from '../../styles/globalStyles'
+import { transition } from '../../styles/theme'
 import Button from '../Button/Button'
 
 export const MenuWindowContainer = styled.div`
@@ -47,7 +48,7 @@ export const MenuButtons = styled(Button)`
   &:hover {
     background-color: ${({ theme }) => theme.colors.grey};
     color: ${({ theme }) => theme.colors.textColor};
-    transition: all 0.2s ease;
+    transition: ${transition.default};
   }
 `
 

@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { media } from '../../styles/media'
+import { media, transition } from '../../styles/theme'
 
 export const ToggleButton = styled.button<{ $isOpen: boolean }>`
   position: fixed;
@@ -16,7 +16,7 @@ export const ToggleButton = styled.button<{ $isOpen: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
+  transition: ${transition.default};
 
   ${(media.sm, media.md)} {
     display: none;

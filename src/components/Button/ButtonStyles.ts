@@ -1,5 +1,6 @@
 import { HashLink as Link } from 'react-router-hash-link'
 import { styled } from 'styled-components'
+import { transition } from '../../styles/theme'
 
 export type ButtonProps = {
   type: 'button' | 'link' | 'buttonToggle' | 'headerButton'
@@ -27,7 +28,7 @@ export const ButtonContainer = styled.button`
   color: ${({ theme }) => theme.colors.textColor};
   background-color: ${({ theme }) => theme.colors.primaryColor};
   box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
-  transition: all 0.2s ease;
+  transition: ${transition.default};
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.grey};
@@ -49,7 +50,7 @@ export const ButtonLinkContainer = styled(Link)`
   color: ${({ theme }) => theme.colors.textColor};
   background-color: ${({ theme }) => theme.colors.primaryColor};
   box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
-  transition: all 0.2s ease;
+  transition: ${transition.default};
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.grey};
@@ -74,7 +75,7 @@ export const ButtonToggleContainer = styled.button<ButtonProps>`
   color: ${({ theme, $isActive }) => ($isActive ? theme.colors.blue2 : theme.colors.textColor)};
   background-color: ${({ theme, $isActive }) => ($isActive ? theme.colors.grey : theme.colors.background)};
   box-shadow: 5px 5px 5px ${({ theme, $isActive }) => ($isActive ? theme.colors.blue2 : theme.colors.shadow)};
-  transition: all 0.2s ease;
+  transition: ${transition.default};
 
   svg {
     font-size: 28px;
@@ -97,8 +98,7 @@ export const ButtonToggleContainer = styled.button<ButtonProps>`
   }
 `
 
-// eslint-disable-next-line prettier/prettier
-export const HeaderButtonContainer = styled(Link) <ButtonProps>`
+export const HeaderButtonContainer = styled(Link)<ButtonProps>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,7 +112,7 @@ export const HeaderButtonContainer = styled(Link) <ButtonProps>`
   color: ${({ theme, $isActive }) => ($isActive ? theme.colors.blue2 : theme.colors.textColor)};
   background-color: ${({ theme, $isActive }) => ($isActive ? theme.colors.grey : theme.colors.background)};
   box-shadow: 5px 5px 5px ${({ theme, $isActive }) => ($isActive ? theme.colors.blue2 : theme.colors.shadow)};
-  transition: all 0.2s ease;
+  transition: ${transition.default};
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.grey};

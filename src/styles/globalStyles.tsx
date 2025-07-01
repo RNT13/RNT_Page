@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
-import { media } from './media'
+import { media, transition } from './theme'
 
 // 🌍 Estilos globais
 export const GlobalStyle = createGlobalStyle`
@@ -56,7 +56,7 @@ export const AppLayout = styled.main<{ $isOpen: boolean }>`
   grid-template-columns: ${({ $isOpen }: { $isOpen: boolean }) => ($isOpen ? '170px 1fr' : '0px 1fr')};
   grid-template-rows: 70px 1fr;
   height: 100vh;
-  transition: all 0.3s ease;
+  transition: ${transition.default};
 
   ${(media.sm, media.md)} {
     grid-template-areas:
@@ -74,7 +74,7 @@ export const ContentWrapper = styled.main`
   overflow-x: hidden;
   height: 100%;
   background-color: ${({ theme }) => theme.colors.secondaryColor};
-  transition: all 0.3s ease;
+  transition: ${transition.default};
   margin-left: 80px;
 
   ${(media.sm, media.md)} {

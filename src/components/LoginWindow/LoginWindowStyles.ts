@@ -1,5 +1,6 @@
 import { styled } from 'styled-components'
 import { TextH3 } from '../../styles/globalStyles'
+import { transition } from '../../styles/theme'
 import Button from '../Button/Button'
 
 export const LoginWindowContainer = styled.div`
@@ -58,7 +59,7 @@ export const FloatingLabel = styled.label`
   transform: translateY(-30%);
   font-size: 16px;
   color: ${({ theme }) => theme.colors.grey};
-  transition: all 0.2s ease-in-out;
+  transition: ${transition.default}-in-out;
 
   &.active {
     top: -4px;

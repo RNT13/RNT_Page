@@ -12,9 +12,10 @@ export type ButtonProps = {
   href?: string
   target?: string
   rel?: string
+  onSubmit?: () => void
 }
 
-const Button = ({ type, title, children, to, onClick, isOpen, isActive, href, target, rel, ...props }: ButtonProps) => {
+const Button = ({ type, title, children, to, onClick, isOpen, isActive, href, target, rel, onSubmit, ...props }: ButtonProps) => {
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -24,6 +25,9 @@ const Button = ({ type, title, children, to, onClick, isOpen, isActive, href, ta
     if (onClick) {
       onClick()
     }
+    if (onSubmit) {
+      onSubmit()
+    }
     if (to) {
       navigate(to)
     }
@@ -31,16 +35,7 @@ const Button = ({ type, title, children, to, onClick, isOpen, isActive, href, ta
 
   if (href) {
     return (
-      <ButtonToggleContainer
-        as="a"
-        href={href}
-        target={target}
-        rel={rel}
-        onClick={handleClick}
-        $isOpen={isOpen}
-        $isActive={finalIsActive}
-        title={title}
-      >
+      <ButtonToggleContainer as="a" href={href} target={target} rel={rel} onClick={handleClick} $isOpen={isOpen} $isActive={finalIsActive} title={title}>
         {children}
       </ButtonToggleContainer>
     )

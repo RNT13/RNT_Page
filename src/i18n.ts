@@ -5,7 +5,9 @@ i18n.use(initReactI18next).init({
   resources: {
     en: {
       translation: {
+        finishPurchase: 'Finish purchase',
         totalOf: 'Total of ',
+        CheckOutPage: 'CheckOut Page',
         gameAlert: 'The game has already been added to the cart',
         off: 'up to 10% off paying in cash',
         bill: 'Bank slip',
@@ -219,7 +221,9 @@ i18n.use(initReactI18next).init({
     },
     pt: {
       translation: {
+        finishPurchase: 'Finalizar compra',
         totalOf: 'Total de ',
+        CheckOutPage: 'Pagina de CheckOut',
         gameAlert: 'O Jogo já foi adicionado ao carrinho',
         home: 'Início',
         allProducts: 'Todos os produtos',

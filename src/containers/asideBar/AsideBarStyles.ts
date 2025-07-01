@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { media } from '../../styles/media'
+import { media, transition } from '../../styles/theme'
 
 export const AsideWrapper = styled.aside`
   grid-area: aside;
-  transition: all 0.3s ease;
+  transition: ${transition.default};
 `
 
 export const AsideContainer = styled.aside<{ $isOpen: boolean }>`

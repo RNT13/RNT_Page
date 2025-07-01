@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { media } from '../../styles/media'
+import { media } from '../../styles/theme'
 
 export const LoginContainer = styled.div`
   height: calc(100vh - 100px);

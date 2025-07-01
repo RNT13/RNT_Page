@@ -1,9 +1,11 @@
-export const breakpoints = {
-  breakpoints: {
-    sm: '480px',
-    md: '768px',
-    lg: '1024px'
-  }
+export const media = {
+  sm: `@media (max-width: 480px)`,
+  md: `@media (max-width: 768px)`,
+  lg: `@media (max-width: 1024px)`
+}
+
+export const transition = {
+  default: 'all 0.3s ease-in-out'
 }
 
 export const tagTheme = {

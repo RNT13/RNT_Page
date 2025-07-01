@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { media } from '../../styles/media'
+import { media } from '../../styles/theme'
 import Button from '../Button/Button'
 
 export const BannerContainer = styled.div`
