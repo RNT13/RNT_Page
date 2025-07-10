@@ -1,5 +1,6 @@
 import { styled } from 'styled-components'
 import Button from '../../components/Button/Button'
+import { ProductsNavContainer } from '../../components/ProductsNav/ProductsNavStyles'
 
 type InputGroupProps = {
   maxWidth?: string
@@ -15,7 +16,17 @@ type PaymentButtonProps = {
 
 export const CheckOutPageContainer = styled.form``
 
-export const CheckOutPageContent = styled.div``
+export const CheckOutPageContent = styled.div`
+  ${ProductsNavContainer} {
+    position: relative;
+
+    p {
+      span {
+        display: none;
+      }
+    }
+  }
+`
 
 export const Row = styled.div<RowProps>`
   display: flex;

@@ -1,15 +1,13 @@
 import { styled } from 'styled-components'
 import { media } from '../../styles/theme'
+import { MenuLogo } from '../MenuButton/MenuButtonStyles'
 
 export const ProductsNavContainer = styled.div`
   position: sticky;
   top: 0;
-  max-width: 100%;
   padding: 12px;
   margin: 24px 16px;
   border-radius: 10px;
-  display: flex;
-  justify-content: space-between;
   background-color: ${({ theme }) => theme.colors.primaryColor};
   box-shadow: 5px 5px 5px ${({ theme }) => theme.colors.shadow};
   z-index: 5;
@@ -28,34 +26,73 @@ export const ProductsNavContainer = styled.div`
 
 export const ProductsNavContent = styled.nav`
   width: 100%;
-  max-width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 
   ${media.md} {
-    display: block;
+  }
+`
+
+export const ProductsNavRow = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  ${media.md} {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: center;
+  }
+`
+
+export const Hamburguer = styled.div`
+  display: none;
+  cursor: pointer;
+  width: 30px;
+
+  ${MenuLogo} {
+    color: ${({ theme }) => theme.colors.textColor};
+  }
+
+  ${(media.sm, media.md)} {
+    display: flex;
   }
 `
 
 export const ButtonDiv = styled.div`
-  display: flex;
-  width: 70%;
+  width: 100%;
   gap: 8px;
-  justify-content: flex-start;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 
-  ${media.md} {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+  ${(media.sm, media.md)} {
+    display: none;
   }
 `
 
+export const ButtonDivRow = styled.div`
+  ${(media.sm, media.md)} {
+    display: flex;
+  }
+`
+
+export const HamburgerButton = styled.div`
+  width: 100%;
+  gap: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
 export const CartDiv = styled.div`
+  width: 100%;
+  gap: 8px;
   display: flex;
   justify-content: flex-end;
-  width: 30%;
-  gap: 8px;
   align-items: center;
 
   p {
@@ -63,9 +100,10 @@ export const CartDiv = styled.div`
   }
 
   ${media.md} {
-    margin-top: 12px;
-    width: 100%;
     display: flex;
-    justify-content: center;
+
+    span {
+      display: none;
+    }
   }
 `

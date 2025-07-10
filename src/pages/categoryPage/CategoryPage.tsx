@@ -34,13 +34,7 @@ const CategoryPage = () => {
       <Banner />
       <TitleH2>{t('category')}</TitleH2>
       {sortedCategories.map(([categoryName, games], index) => (
-        <ProductsList
-          key={categoryName}
-          id={categoryName}
-          title={t(categoryName.toLowerCase()) || categoryName}
-          background={index % 2 === 0 ? 'grey' : 'black'}
-          games={games}
-        />
+        <ProductsList key={categoryName} id={categoryName} title={t(categoryName.toLowerCase()) || categoryName} background={index % 2 === 0 ? 'grey' : 'black'} games={games} />
       ))}
     </CategoryPageContent>
   )

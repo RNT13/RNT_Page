@@ -7,12 +7,15 @@ import { useFormik } from 'formik'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import * as Yup from 'yup'
+import { usePurchaseMutation } from '../../api/checkoutApi'
 import Button from '../../components/Button/Button'
+import ProductsNav from '../../components/ProductsNav/ProductsNav'
 import { CheckOutPageContainer, CheckOutPageContent, FinishPurchase, InputGroup, PaymentButton, PaymentButtonDiv, Row } from './checkOutPageStyles'
 
 const CheckOutPage = () => {
   const { t } = useTranslation()
   const [payWithCard, setPayWithCard] = useState(false)
+  const [purchase, { isLoading, isError, data }] = usePurchaseMutation()
 
   const form = useFormik({
     initialValues: {
@@ -48,7 +51,39 @@ const CheckOutPage = () => {
       cardCode: Yup.string().when((_values, schema) => (payWithCard ? schema.required('Campo obrigatório') : schema))
     }),
     onSubmit: values => {
-      console.log(values)
+      purchase({
+        billing: {
+          document: values.CPF,
+          email: values.Email,
+          name: values.FullName
+        },
+        delivery: {
+          email: values.deliveryEmail
+        },
+        payment: {
+          card: {
+            active: payWithCard,
+            code: Number(values.cardCode),
+            name: values.cardDisplayName,
+            nunber: values.cardNumber,
+            owner: {
+              document: values.cpfCardOwner,
+              name: values.cardDisplayName
+            },
+            expires: {
+              month: 1,
+              year: 2025
+            }
+          },
+          installments: 1
+        },
+        products: [
+          {
+            id: 1,
+            price: 100
+          }
+        ]
+      })
     }
   })
 
@@ -64,6 +99,7 @@ const CheckOutPage = () => {
   return (
     <CheckOutPageContainer onSubmit={form.handleSubmit} className="container">
       <CheckOutPageContent>
+        <ProductsNav />
         <TitleH2>{t('CheckOutPage')}</TitleH2>
         <Card title="Dados de cobrança">
           <Row>

@@ -4,6 +4,12 @@ export const media = {
   lg: `@media (max-width: 1024px)`
 }
 
+export const minWidth = {
+  sm: '@media (min-width: 480px)',
+  md: '@media (min-width: 768px)',
+  lg: '@media (min-width: 1024px)'
+}
+
 export const transition = {
   default: 'all 0.3s ease-in-out'
 }
