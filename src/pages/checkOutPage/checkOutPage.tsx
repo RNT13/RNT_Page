@@ -87,6 +87,14 @@ const CheckOutPage = () => {
     }
   })
 
+  if (isError) {
+    console.log(data)
+  }
+
+  if (isLoading) {
+    return <h4>{t('loading')}</h4>
+  }
+
   const getErrorMessage = (fieldName: string, message?: string) => {
     const isTouched = fieldName in form.touched
     const isError = fieldName in form.errors
